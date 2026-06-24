@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixus Bank | Loan Calculator</title>
+
+    <link rel="stylesheet" href="css/loan.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="loan-container">
+
+    <div class="loan-card">
+
+        <h1>Pixus Loan Calculator</h1>
+
+        <p>Calculate your estimated loan repayments instantly.</p>
+
+        <form id="loanForm">
+
+            <div class="input-group">
+                <label>Loan Amount (₦)</label>
+                <input type="number" id="loanAmount" placeholder="100000">
+            </div>
+
+            <div class="input-group">
+                <label>Annual Interest Rate (%)</label>
+                <input type="number" id="interestRate" placeholder="12">
+            </div>
+
+            <div class="input-group">
+                <label>Duration (Months)</label>
+                <input type="number" id="loanMonths" placeholder="12">
+            </div>
+
+            <div class="button-group">
+                <button type="submit">Calculate</button>
+                <button type="button" id="resetBtn">Reset</button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="results">
+
+        <div class="result-card">
+            <h3>Monthly Payment</h3>
+            <h2 id="monthlyPayment">₦0</h2>
+        </div>
+
+        <div class="result-card">
+            <h3>Total Interest</h3>
+            <h2 id="totalInterest">₦0</h2>
+        </div>
+
+        <div class="result-card">
+            <h3>Total Repayment</h3>
+            <h2 id="totalRepayment">₦0</h2>
+        </div>
+
+    </div>
+
+</div>
+<style>
+    :root{
+    --primary:#081F5C;
+    --secondary:#1D4ED8;
+    --accent:#60A5FA;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    padding:30px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    radial-gradient(circle at top left,#1D4ED8,transparent 30%),
+    radial-gradient(circle at bottom right,#60A5FA,transparent 30%),
+    #020617;
+}
+
+.loan-container{
+    width:100%;
+    max-width:1100px;
+}
+
+.loan-card{
+    padding:35px;
+
+    border-radius:25px;
+
+    backdrop-filter:blur(20px);
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    color:white;
+
+    margin-bottom:25px;
+}
+
+.loan-card h1{
+    margin-bottom:10px;
+}
+
+.loan-card p{
+    margin-bottom:25px;
+    color:#cbd5e1;
+}
+
+.input-group{
+    margin-bottom:18px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:8px;
+    color:white;
+}
+
+.input-group input{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+}
+
+.button-group{
+    display:flex;
+    gap:15px;
+}
+
+.button-group button{
+    flex:1;
+    border:none;
+    cursor:pointer;
+    padding:15px;
+    border-radius:12px;
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--secondary),
+        var(--accent)
+    );
+}
+
+.results{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.result-card{
+    padding:25px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    backdrop-filter:blur(20px);
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    color:white;
+
+    transition:.3s;
+}
+
+.result-card:hover{
+    transform:translateY(-5px);
+}
+
+.result-card h3{
+    margin-bottom:10px;
+}
+
+.result-card h2{
+    color:var(--accent);
+}
+
+@media(max-width:768px){
+
+    .button-group{
+        flex-direction:column;
+    }
+}
+</style>
+
+<script>
+    const loanForm =
+document.getElementById("loanForm");
+
+const resetBtn =
+document.getElementById("resetBtn");
+
+loanForm.addEventListener("submit",(e)=>{
+
+    e.preventDefault();
+
+    const amount =
+    Number(
+    document.getElementById(
+    "loanAmount"
+    ).value);
+
+    const rate =
+    Number(
+    document.getElementById(
+    "interestRate"
+    ).value);
+
+    const months =
+    Number(
+    document.getElementById(
+    "loanMonths"
+    ).value);
+
+    if(
+        !amount ||
+        !rate ||
+        !months
+    ){
+
+        alert(
+        "Please fill all fields"
+        );
+
+        return;
+    }
+
+    const monthlyRate =
+    (rate / 100) / 12;
+
+    const monthlyPayment =
+
+    (
+        amount *
+        monthlyRate *
+        Math.pow(
+        1 + monthlyRate,
+        months
+        )
+    ) /
+
+    (
+        Math.pow(
+        1 + monthlyRate,
+        months
+        ) - 1
+    );
+
+    const totalRepayment =
+    monthlyPayment * months;
+
+    const totalInterest =
+    totalRepayment - amount;
+
+    document.getElementById(
+    "monthlyPayment"
+    ).textContent =
+
+    "₦" +
+    monthlyPayment
+    .toLocaleString(
+    undefined,
+    {
+        maximumFractionDigits:2
+    });
+
+    document.getElementById(
+    "totalInterest"
+    ).textContent =
+
+    "₦" +
+    totalInterest
+    .toLocaleString(
+    undefined,
+    {
+        maximumFractionDigits:2
+    });
+
+    document.getElementById(
+    "totalRepayment"
+    ).textContent =
+
+    "₦" +
+    totalRepayment
+    .toLocaleString(
+    undefined,
+    {
+        maximumFractionDigits:2
+    });
+
+});
+
+resetBtn.addEventListener("click",()=>{
+
+    loanForm.reset();
+
+    document.getElementById(
+    "monthlyPayment"
+    ).textContent = "₦0";
+
+    document.getElementById(
+    "totalInterest"
+    ).textContent = "₦0";
+
+    document.getElementById(
+    "totalRepayment"
+    ).textContent = "₦0";
+
+});
+</script>
+
+</body>
+</html>

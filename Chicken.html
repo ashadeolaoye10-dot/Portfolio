@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="Food.html" class="restaurant-card">
+        <div class="image-box">
+         <img src="images (42).jpeg" alt="chicken">
+         <div class="Discount">-35% some items</div>
+         <div class="logo">🍗</div>   
+        </div>
+        <h2>Chicken Republic</h2>
+        <div class="info">
+            <span class="free">Free</span>
+            <span>👍96% (500+)</span>
+        </div>
+    </a>
+    <div class="restaurant-card">
+        <div class="image-box">
+         <img src="images (44).jpeg" alt="chicken">
+         <div class="Discount">-30% on orders over #3,000</div>
+         <div class="logo">🍗</div>   
+        </div>
+        <h2>Kentucky Chicken</h2>
+        <div class="info">
+            <span class="free">Free</span>
+            <span>👍97% (500+)</span>
+        </div>
+    </div>
+    <div class="restaurant-card">
+        <div class="image-box">
+         <img src="images (9).jpeg" alt="chicken">
+         <div class="Discount">-30% on orders over #3,000</div>
+         <div class="logo">🍛</div>   
+        </div>
+        <h2>KFC</h2>
+        <div class="info">
+            <span class="free">Free</span>
+            <span>👍91% (500+)</span>
+        </div>
+    </div>
+    <div class="restaurant-card">
+        <div class="image-box">
+         <img src="images (40).jpeg" alt="chicken">
+         <div class="Discount">-30% on orders over #3,000</div>
+         <div class="logo">🍕</div>   
+        </div>
+        <h2>Dodo Pizza</h2>
+        <div class="info">
+            <span class="free">Free</span>
+            <span>👍94% (500+)</span>
+        </div>
+    </div>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background: #f2f2f2;
+            display: flex;
+            justify-content:center;
+            padding:30px;
+        }
+        .container{
+            width:100%;
+            max-width:500px;
+            margin:auto;
+            display:flex;
+            flex-direction: column;
+            gap:30px;
+        }
+        .restaurant-card{
+            margin-bottom: 35px;
+            width:100%;
+            margin-bottom:30px;
+            text-decoration: none;
+            color:black;
+            
+        }
+        .image-box{
+            position: relative;
+            height:260px;
+            border-radius:22px;
+            overflow: hidden;
+        }
+        .image-box img{
+            width: 100%;
+            height:100%;
+            object-fit: cover;
+        }
+        .discount{
+            position: absolute;
+            top:15px;
+            left:15px;
+            background:#ffd54f;
+            padding:10px 16px;
+            border-radius:12px;
+            font-weight:bold;
+            font-size: 20px;
+        }
+        .logo{
+            position:absolute;
+            bottom:18px;
+            left:18px;
+
+            width: 90px;
+            height: 90px;
+
+            border-radius:20px;
+            background:white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size:45px;
+
+            box-shadow:0 4px 15px rgba(0,0,0.2);
+        }
+        h2{
+            margin-top:14px;
+            font-size:32px;
+            font-weight: 600;
+        }
+        .info{
+            display:flex;
+            align-items: center;
+            gap:15px;
+            margin-top:10px;
+            font-size:22px;
+        }
+        .free{
+            background: #ffd54f;
+            padding:8px 14px;
+            border-radius:12px;
+            font-weight:bold;
+        }
+    </style>
+    <script>
+        const restaurantCards = document.querySelectorAll('.restaurant-card');
+
+        restaurantCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const restaurantName = card.querySelector('h2').innerText;
+                alert(`You clicked on ${restaurantName}`);
+            });
+        });
+    </script>
+</body>
+</html>

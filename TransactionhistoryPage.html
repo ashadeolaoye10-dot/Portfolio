@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixus Bank | Transactions</title>
+
+    <link rel="stylesheet" href="css/transactions.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="transactions-card">
+
+        <div class="header">
+
+            <h1>Transaction History</h1>
+
+            <button id="exportBtn">
+                Export CSV
+            </button>
+
+        </div>
+
+        <div class="controls">
+
+            <input
+            type="text"
+            id="search"
+            placeholder="Search transaction">
+
+            <select id="filter">
+
+                <option value="all">
+                    All Transactions
+                </option>
+
+                <option value="credit">
+                    Credit
+                </option>
+
+                <option value="debit">
+                    Debit
+                </option>
+
+            </select>
+
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="tableBody">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+<style>
+    :root{
+    --primary:#081F5C;
+    --secondary:#1D4ED8;
+    --accent:#60A5FA;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:
+    radial-gradient(circle at top left,#1D4ED8,transparent 30%),
+    radial-gradient(circle at bottom right,#60A5FA,transparent 30%),
+    #020617;
+
+    padding:30px;
+}
+
+.transactions-card{
+
+    width:100%;
+
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    backdrop-filter:blur(20px);
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    color:white;
+}
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+}
+
+.header button{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:12px 18px;
+
+    border-radius:10px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--secondary),
+    var(--accent));
+}
+
+.controls{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-bottom:25px;
+}
+
+.controls input,
+.controls select{
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+th{
+
+    text-align:left;
+
+    padding:15px;
+
+    color:var(--accent);
+}
+
+td{
+
+    padding:15px;
+
+    border-top:
+    1px solid rgba(255,255,255,.1);
+}
+
+.credit{
+
+    color:#22c55e;
+}
+
+.debit{
+
+    color:#ef4444;
+}
+
+@media(max-width:768px){
+
+    .controls{
+
+        flex-direction:column;
+    }
+
+    table{
+
+        display:block;
+
+        overflow-x:auto;
+    }
+
+    .header{
+
+        flex-direction:column;
+
+        gap:15px;
+    }
+}
+</style>
+
+<script>
+const transactions = [
+
+{
+date:"09/06/2026",
+description:"Salary Credit",
+type:"credit",
+amount:"₦500,000",
+status:"Successful"
+},
+
+{
+date:"08/06/2026",
+description:"Netflix",
+type:"debit",
+amount:"₦4,500",
+status:"Successful"
+},
+
+{
+date:"07/06/2026",
+description:"Airtime Purchase",
+type:"debit",
+amount:"₦2,000",
+status:"Successful"
+},
+
+{
+date:"06/06/2026",
+description:"Transfer Received",
+type:"credit",
+amount:"₦150,000",
+status:"Successful"
+},
+
+{
+date:"05/06/2026",
+description:"Electricity Bill",
+type:"debit",
+amount:"₦20,000",
+status:"Successful"
+}
+
+];
+
+const tableBody =
+document.getElementById("tableBody");
+
+function renderTransactions(data){
+
+    tableBody.innerHTML = "";
+
+    data.forEach(transaction => {
+
+        const row =
+        document.createElement("tr");
+
+        row.innerHTML = `
+
+        <td>${transaction.date}</td>
+
+        <td>${transaction.description}</td>
+
+        <td class="${transaction.type}">
+        ${transaction.type}
+        </td>
+
+        <td>${transaction.amount}</td>
+
+        <td>${transaction.status}</td>
+
+        `;
+
+        tableBody.appendChild(row);
+
+    });
+
+}
+
+renderTransactions(transactions);
+
+
+/* SEARCH */
+
+document
+.getElementById("search")
+.addEventListener("keyup",(e)=>{
+
+const search =
+e.target.value.toLowerCase();
+
+const filtered =
+transactions.filter(item =>
+
+item.description
+.toLowerCase()
+.includes(search)
+
+);
+
+renderTransactions(filtered);
+
+});
+
+
+/* FILTER */
+
+document
+.getElementById("filter")
+.addEventListener("change",(e)=>{
+
+const value =
+e.target.value;
+
+if(value === "all"){
+
+renderTransactions(transactions);
+
+return;
+}
+
+const filtered =
+transactions.filter(item =>
+
+item.type === value
+
+);
+
+renderTransactions(filtered);
+
+});
+
+
+/* EXPORT CSV */
+
+document
+.getElementById("exportBtn")
+.addEventListener("click",()=>{
+
+let csv =
+"Date,Description,Type,Amount,Status\n";
+
+transactions.forEach(item => {
+
+csv +=
+
+`${item.date},
+${item.description},
+${item.type},
+${item.amount},
+${item.status}\n`;
+
+});
+
+const blob =
+new Blob([csv],{
+type:"text/csv"
+});
+
+const url =
+URL.createObjectURL(blob);
+
+const a =
+document.createElement("a");
+
+a.href = url;
+
+a.download =
+"pixus-transactions.csv";
+
+a.click();
+
+URL.revokeObjectURL(url);
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixus Bank | Personal Banking</title>
+
+    <link rel="stylesheet" href="css/personal-banking.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>Personal Banking</h1>
+
+        <p>
+            Banking solutions designed for your everyday needs.
+        </p>
+
+    </section>
+
+    <!-- ACCOUNT TYPES -->
+
+    <section class="accounts">
+
+        <div class="account-card">
+
+            <h2>Savings Account</h2>
+
+            <p>
+                Save securely while earning interest.
+            </p>
+
+            <ul>
+                <li>Competitive interest rates</li>
+                <li>Online banking access</li>
+                <li>Free debit card</li>
+            </ul>
+
+            <button>Apply Now</button>
+
+        </div>
+
+        <div class="account-card">
+
+            <h2>Current Account</h2>
+
+            <p>
+                Flexible banking for daily transactions.
+            </p>
+
+            <ul>
+                <li>Unlimited transfers</li>
+                <li>Cheque book access</li>
+                <li>Business-friendly</li>
+            </ul>
+
+            <button>Apply Now</button>
+
+        </div>
+
+        <div class="account-card">
+
+            <h2>Student Account</h2>
+
+            <p>
+                Banking built for students.
+            </p>
+
+            <ul>
+                <li>No monthly fees</li>
+                <li>Mobile banking</li>
+                <li>Instant alerts</li>
+            </ul>
+
+            <button>Apply Now</button>
+
+        </div>
+
+        <div class="account-card">
+
+            <h2>Fixed Deposit</h2>
+
+            <p>
+                Grow your money with fixed returns.
+            </p>
+
+            <ul>
+                <li>Guaranteed returns</li>
+                <li>Flexible terms</li>
+                <li>High interest rates</li>
+            </ul>
+
+            <button>Apply Now</button>
+
+        </div>
+
+    </section>
+
+    <!-- BENEFITS -->
+
+    <section class="benefits">
+
+        <h2>Why Choose Pixus Bank?</h2>
+
+        <div class="benefit-grid">
+
+            <div class="benefit">
+                <h3>24/7 Banking</h3>
+                <p>Access your account anytime.</p>
+            </div>
+
+            <div class="benefit">
+                <h3>Fast Transfers</h3>
+                <p>Instant local transfers.</p>
+            </div>
+
+            <div class="benefit">
+                <h3>Secure Banking</h3>
+                <p>Advanced security systems.</p>
+            </div>
+
+            <div class="benefit">
+                <h3>Mobile App</h3>
+                <p>Bank from anywhere.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SAVINGS CALCULATOR -->
+
+    <section class="calculator">
+
+        <h2>Savings Calculator</h2>
+
+        <input
+        type="number"
+        id="deposit"
+        placeholder="Deposit Amount">
+
+        <input
+        type="number"
+        id="years"
+        placeholder="Years">
+
+        <button id="calculateBtn">
+            Calculate
+        </button>
+
+        <h3 id="result">
+            Future Value: ₦0
+        </h3>
+
+    </section>
+
+    <!-- FAQ -->
+
+    <section class="faq">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+
+            <button class="faq-btn">
+                How do I open an account?
+            </button>
+
+            <div class="faq-answer">
+                Visit any branch or register online.
+            </div>
+
+        </div>
+
+        <div class="faq-item">
+
+            <button class="faq-btn">
+                Is online banking secure?
+            </button>
+
+            <div class="faq-answer">
+                Yes, Pixus Bank uses advanced security.
+            </div>
+
+        </div>
+
+        <div class="faq-item">
+
+            <button class="faq-btn">
+                How long does account approval take?
+            </button>
+
+            <div class="faq-answer">
+                Usually within 24 hours.
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+<style>
+    :root{
+    --primary:#081F5C;
+    --secondary:#1D4ED8;
+    --accent:#60A5FA;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:
+    radial-gradient(circle at top left,#1D4ED8,transparent 30%),
+    radial-gradient(circle at bottom right,#60A5FA,transparent 30%),
+    #020617;
+
+    color:white;
+
+    padding:30px;
+}
+
+.container{
+    max-width:1300px;
+    margin:auto;
+}
+
+/* HERO */
+
+.hero{
+
+    text-align:center;
+
+    padding:80px 20px;
+
+    margin-bottom:50px;
+}
+
+.hero h1{
+
+    font-size:3rem;
+
+    margin-bottom:15px;
+
+    color:var(--accent);
+}
+
+.hero p{
+
+    color:#cbd5e1;
+
+    font-size:1.1rem;
+}
+
+/* ACCOUNTS */
+
+.accounts{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+    margin-bottom:60px;
+}
+
+.account-card{
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.12);
+
+    border-radius:25px;
+
+    padding:25px;
+
+    transition:.3s;
+}
+
+.account-card:hover{
+
+    transform:
+    translateY(-10px);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.3);
+}
+
+.account-card h2{
+
+    color:var(--accent);
+
+    margin-bottom:15px;
+}
+
+.account-card p{
+
+    margin-bottom:15px;
+
+    color:#cbd5e1;
+}
+
+.account-card ul{
+
+    margin-bottom:20px;
+
+    padding-left:20px;
+}
+
+.account-card li{
+
+    margin-bottom:10px;
+}
+
+.account-card button{
+
+    width:100%;
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    color:white;
+
+    font-weight:600;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--secondary),
+    var(--accent));
+}
+
+/* BENEFITS */
+
+.benefits{
+
+    margin-bottom:60px;
+}
+
+.benefits h2{
+
+    text-align:center;
+
+    margin-bottom:30px;
+}
+
+.benefit-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.benefit{
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.12);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    text-align:center;
+}
+
+.benefit h3{
+
+    color:var(--accent);
+
+    margin-bottom:10px;
+}
+
+/* CALCULATOR */
+
+.calculator{
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.12);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    margin-bottom:60px;
+}
+
+.calculator h2{
+
+    margin-bottom:20px;
+}
+
+.calculator input{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    margin-bottom:15px;
+}
+
+.calculator button{
+
+    width:100%;
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    color:white;
+
+    margin-bottom:20px;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--secondary),
+    var(--accent));
+}
+
+.calculator h3{
+
+    color:var(--accent);
+}
+
+/* FAQ */
+
+.faq{
+
+    margin-bottom:50px;
+}
+
+.faq h2{
+
+    text-align:center;
+
+    margin-bottom:30px;
+}
+
+.faq-item{
+
+    margin-bottom:15px;
+
+    overflow:hidden;
+
+    border-radius:15px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid rgba(255,255,255,.1);
+}
+
+.faq-btn{
+
+    width:100%;
+
+    border:none;
+
+    cursor:pointer;
+
+    text-align:left;
+
+    padding:20px;
+
+    color:white;
+
+    font-size:1rem;
+
+    background:none;
+}
+
+.faq-answer{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+    color:#cbd5e1;
+
+    padding:0 20px;
+}
+
+.faq-answer.show{
+
+    max-height:200px;
+
+    padding:0 20px 20px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .hero h1{
+
+        font-size:2.2rem;
+    }
+
+    .accounts{
+
+        grid-template-columns:1fr;
+    }
+
+    .benefit-grid{
+
+        grid-template-columns:1fr;
+    }
+}
+</style>
+<script>
+    /* APPLY BUTTONS */
+
+const applyButtons =
+document.querySelectorAll(
+".account-card button"
+);
+
+applyButtons.forEach(button=>{
+
+    button.addEventListener(
+    "click",
+    ()=>{
+
+        alert(
+        "Application submitted successfully!"
+        );
+
+    });
+
+});
+
+
+/* SAVINGS CALCULATOR */
+
+const calculateBtn =
+document.getElementById(
+"calculateBtn"
+);
+
+calculateBtn.addEventListener(
+"click",
+()=>{
+
+    const deposit =
+    Number(
+    document.getElementById(
+    "deposit"
+    ).value
+    );
+
+    const years =
+    Number(
+    document.getElementById(
+    "years"
+    ).value
+    );
+
+    if(
+        !deposit ||
+        !years
+    ){
+
+        alert(
+        "Please fill all fields"
+        );
+
+        return;
+    }
+
+    const rate = 0.08;
+
+    const futureValue =
+
+    deposit *
+
+    Math.pow(
+    1 + rate,
+    years
+    );
+
+    document.getElementById(
+    "result"
+    ).textContent =
+
+    "Future Value: ₦" +
+
+    futureValue
+    .toLocaleString(
+    undefined,
+    {
+        maximumFractionDigits:2
+    });
+
+});
+
+
+/* FAQ ACCORDION */
+
+const faqButtons =
+document.querySelectorAll(
+".faq-btn"
+);
+
+faqButtons.forEach(button=>{
+
+    button.addEventListener(
+    "click",
+    ()=>{
+
+        const answer =
+
+        button.nextElementSibling;
+
+        answer.classList.toggle(
+        "show"
+        );
+
+    });
+
+});
+
+
+/* PAGE ANIMATION */
+
+const cards =
+document.querySelectorAll(
+".account-card,.benefit"
+);
+
+cards.forEach(
+(card,index)=>{
+
+    card.style.opacity="0";
+
+    card.style.transform=
+    "translateY(30px)";
+
+    setTimeout(()=>{
+
+        card.style.transition=
+        ".6s ease";
+
+        card.style.opacity="1";
+
+        card.style.transform=
+        "translateY(0)";
+
+    },index*150);
+
+});
+</script>
+
+</body>
+</html>

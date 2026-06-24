@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Pius Ashade</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- HEADER (same everywhere) -->
+<nav class="navbar">
+    <div class="logo">Pius.dev</div>
+
+    <ul class="nav-links">
+        <li><a href="HomePro.html">Home</a></li>
+        <li><a href="AboutPro.html">About</a></li>
+        <li><a href="Projects.html">Projects</a></li>
+        <li><a href="Skills.html">Skills</a></li>
+        <li><a href="Contact1.html">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+
+    <div class="contact-header">
+        <h1>Contact Me</h1>
+        <p>Let’s connect — I’m open to internships, projects, and collaboration.</p>
+    </div>
+
+    <div class="contact-container">
+
+        <!-- LEFT INFO -->
+        <div class="contact-info">
+
+            <div class="info-box">
+                <h3>Email</h3>
+                <p>pius@example.com</p>
+            </div>
+
+            <div class="info-box">
+                <h3>GitHub</h3>
+                <p>github.com/yourusername</p>
+            </div>
+
+            <div class="info-box">
+                <h3>LinkedIn</h3>
+                <p>linkedin.com/in/yourprofile</p>
+            </div>
+
+        </div>
+
+        <!-- FORM -->
+        <form class="contact-form">
+
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <textarea placeholder="Your Message" rows="6" required></textarea>
+
+            <button type="submit">Send Message</button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Pius Ashade. All Rights Reserved.</p>
+</footer>
+<style>
+    /* ===== CONTACT PAGE (DEEP VIBE STYLE) ===== */
+
+.contact-section{
+    padding:120px 10% 80px;
+    background:#070B1A;
+    min-height:100vh;
+}
+
+.contact-header{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.contact-header h1{
+    font-size:3rem;
+    color:#22D3EE;
+    text-shadow:0 0 15px rgba(34,211,238,0.4);
+}
+
+.contact-header p{
+    color:#cbd5e1;
+    margin-top:10px;
+    font-size:1.1rem;
+}
+
+/* LAYOUT */
+
+.contact-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+/* INFO BOX */
+
+.contact-info .info-box{
+    background:rgba(15,22,48,0.8);
+    border:1px solid rgba(167,139,250,0.2);
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:15px;
+    transition:0.3s;
+}
+
+.contact-info .info-box:hover{
+    transform:translateY(-5px);
+    border-color:#22D3EE;
+}
+
+.contact-info h3{
+    color:#A78BFA;
+    margin-bottom:8px;
+}
+
+.contact-info p{
+    color:#E5E7EB;
+}
+
+/* FORM */
+
+.contact-form{
+    background:rgba(15,22,48,0.8);
+    padding:25px;
+    border-radius:15px;
+    border:1px solid rgba(34,211,238,0.15);
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:8px;
+    background:#0F1630;
+    color:white;
+    outline:none;
+    border:1px solid rgba(167,139,250,0.2);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color:#22D3EE;
+}
+
+/* BUTTON */
+
+.contact-form button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#22D3EE;
+    color:#070B1A;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.contact-form button:hover{
+    transform:scale(1.03);
+}
+
+/* FOOTER */
+
+footer{
+    background:#0F1630;
+    text-align:center;
+    padding:20px;
+    color:#cbd5e1;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:18px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:rgba(7,11,26,0.7);
+    backdrop-filter: blur(12px);
+    border-bottom:1px solid rgba(34,211,238,0.15);
+
+    z-index:1000;
+}
+
+/* LOGO */
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#22D3EE;
+    text-shadow:0 0 10px rgba(34,211,238,0.5);
+    letter-spacing:1px;
+}
+/* MENU */
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:95px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#E5E7EB;
+    font-size:15px;
+    transition:0.3s;
+    position:relative;
+}
+
+/* hover glow effect */
+nav ul li a:hover{
+    color:#22D3EE;
+}
+
+/* animated underline */
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0%;
+    height:2px;
+    background:#A78BFA;
+    transition:0.3s;
+}
+
+nav ul li a:hover::after{
+    width:50%;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:768px){
+    nav{
+        flex-direction:column;
+        gap:25px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:25px;
+    }
+}
+</style>
+</body>
+</html>

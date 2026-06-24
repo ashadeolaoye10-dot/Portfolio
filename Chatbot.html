@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+/* BODY */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, rgba(15,32,39,0.95), rgba(44,83,100,0.9));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* HEADER */
+header.put {
+    width: 400px;
+    padding: 20px;
+    background: linear-gradient(to bottom, rgba(74,0,224,0.9), rgba(142,45,226,0.9));
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+}
+
+header.put button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(to right, rgba(142,14,0,0.9), rgba(255,102,0,0.9));
+    color: white;
+    cursor: pointer;
+}
+
+/* CHAT CONTAINER */
+.chat-container {
+    width: 400px;
+    height: 600px;
+    display: none;
+    flex-direction: column;
+    background: linear-gradient(to bottom, rgba(0,78,146,0.9), rgba(0,4,40,0.95));
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* CHAT DISPLAY */
+.chat-display {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* MESSAGES */
+.user-message {
+    align-self: flex-end;
+    background: rgba(74,0,224,0.9);
+    color: white;
+    padding: 10px;
+    border-radius: 15px 15px 0 15px;
+    max-width: 70%;
+}
+
+.bot-message {
+    align-self: flex-start;
+    background: rgba(200,200,200,0.8);
+    color: black;
+    padding: 10px;
+    border-radius: 15px 15px 15px 0;
+    max-width: 70%;
+}
+
+/* INPUT AREA */
+.chat-input-area {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+.chat-input-area input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+}
+
+.chat-input-area button {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background: orange;
+    color: white;
+    cursor: pointer;
+}
+</style>
+
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="put">
+    <h2>The Piusical ChatAi</h2>
+    <button id="enterBtn">Enter</button>
+</header>
+
+<!-- CHAT -->
+<div class="chat-container">
+    <div class="chat-display"></div>
+
+    <div class="chat-input-area">
+        <input type="text" id="userInput" placeholder="Chat with me">
+        <button id="sendBtn">Send</button>
+    </div>
+</div>
+
+<script>
+// SELECT ELEMENTS
+const enterBtn = document.getElementById("enterBtn");
+const chatContainer = document.querySelector(".chat-container");
+const header = document.querySelector("header.put");
+const userInput = document.getElementById("userInput");
+const sendBtn = document.getElementById("sendBtn");
+const chatDisplay = document.querySelector(".chat-display");
+
+// SHOW CHAT
+enterBtn.addEventListener("click", () => {
+    chatContainer.style.display = "flex";
+    header.style.display = "none";
+});
+
+// ADD MESSAGE FUNCTION
+function addMessage(text, type) {
+    const msg = document.createElement("div");
+    msg.textContent = text;
+
+    if(type === "user") {
+        msg.classList.add("user-message");
+    } else {
+        msg.classList.add("bot-message");
+    }
+
+    chatDisplay.appendChild(msg);
+    chatDisplay.scrollTop = chatDisplay.scrollHeight;
+}
+
+// BOT LOGIC
+function botReply(message) {
+    message = message.toLowerCase();
+
+    if(message.includes("hello") || message.includes("hi")) {
+        return "Hi there 👋 Welcome to Piusical chatAi";
+    }else if(message.includes("goodmorning") || message.includes("goodafternoon") || message.includes("goodevening") || message.includes("goodnight")){
+        return "GoodDay Ready to chat?";
+    }else if(message.includes("i'm good") || message.includes("i'm doing great")|| message.includes("i'm cool")){
+        return "That's nice to hear,how can i help you today"
+    }else if(message.includes("yes i am")){
+        return "great what should we talk about 😎"
+    }else if (message.includes("money")){
+        return "little advise go get a job and you'll get the money"
+    }else if(message.includes("tell me a joke")){
+        return "Why do Programmers hate nature? Too many bugs 🐛😂"
+    }else if(message.includes("are you human")){
+        return "Nope 😎 I’m smarter… just kidding, I’m a bot!"
+    }else if(message.includes("how are you")) {
+        return "I'm doing great 😄,what about you";
+    }else if(message.includes("can you speak pigin english")){
+        return "haha!!😄 you dey whine me nhi i sabi nah😄"
+    }else if(message.includes("your name")) {
+        return "I'm Piusical ChatAi 🤖";
+    } else if (message.includes("how old are you")) {
+        return "Funny Question😄,i don't have an age im just an Ai created by the GOAT Piusical";
+
+    }else {
+        return "I don't understand that yet...";
+    }
+}
+
+// SEND MESSAGE
+function sendMessage() {
+    const text = userInput.value.trim();
+    if(text === "") return;
+
+    addMessage(text, "user");
+    userInput.value = "";
+
+    setTimeout(() => {
+        const reply = botReply(text);
+        addMessage(reply, "bot");
+    }, 500);
+}
+
+// EVENTS
+sendBtn.addEventListener("click", sendMessage);
+
+userInput.addEventListener("keypress", (e) => {
+    if(e.key === "Enter") {
+        sendMessage();
+    }
+});
+</script>
+</body>
+</html>

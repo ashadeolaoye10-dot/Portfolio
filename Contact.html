@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixus Bank | Contact Us</title>
+
+<link rel="stylesheet" href="css/contact.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>Contact Pixus Bank</h1>
+
+        <p>
+            We'd love to hear from you.
+        </p>
+
+    </section>
+
+    <!-- CONTACT GRID -->
+
+    <section class="contact-grid">
+
+        <!-- FORM -->
+
+        <div class="contact-card">
+
+            <h2>Send Us a Message</h2>
+
+            <form id="contactForm">
+
+                <input
+                type="text"
+                id="name"
+                placeholder="Full Name">
+
+                <input
+                type="email"
+                id="email"
+                placeholder="Email Address">
+
+                <input
+                type="text"
+                id="subject"
+                placeholder="Subject">
+
+                <textarea
+                id="message"
+                placeholder="Your Message"></textarea>
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- INFO -->
+
+        <div class="contact-card">
+
+            <h2>Contact Information</h2>
+
+            <div class="info">
+
+                <h3>📞 Phone</h3>
+                <p>+234 8104081241 PIXUS BANK</p>
+
+                <h3>📧 Email</h3>
+                <p>support@pixusbank.com</p>
+
+                <h3>📍 Head Office</h3>
+                <p>Lagos, Nigeria</p>
+
+                <h3>🕒 Support Hours</h3>
+                <p>24/7 Customer Support</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- OFFICE LOCATIONS -->
+
+    <section class="locations">
+
+        <h2>Our Locations</h2>
+
+        <div class="location-grid">
+
+            <div class="location-card">
+                <h3>Lagos</h3>
+                <p>Victoria Island Branch</p>
+            </div>
+
+            <div class="location-card">
+                <h3>Abuja</h3>
+                <p>Central Business District</p>
+            </div>
+
+            <div class="location-card">
+                <h3>Port Harcourt</h3>
+                <p>GRA Branch</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MAP PLACEHOLDER -->
+
+    <section class="map">
+
+        <h2>Find Us</h2>
+
+        <div class="map-box">
+
+            Interactive Map Coming Soon
+
+        </div>
+
+    </section>
+
+    <!-- SOCIALS -->
+
+    <section class="socials">
+
+        <h2>Connect With Us</h2>
+
+        <div class="social-grid">
+
+            <a href="#">Facebook</a>
+
+            <a href="#">Instagram</a>
+
+            <a href="#">X (Twitter)</a>
+
+            <a href="#">LinkedIn</a>
+
+        </div>
+
+    </section>
+
+</div>
+<style>
+    :root{
+    --primary:#081F5C;
+    --secondary:#1D4ED8;
+    --accent:#60A5FA;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:
+    radial-gradient(circle at top left,#1D4ED8,transparent 30%),
+    radial-gradient(circle at bottom right,#60A5FA,transparent 30%),
+    #020617;
+
+    color:white;
+
+    padding:30px;
+}
+
+.container{
+    max-width:1300px;
+    margin:auto;
+}
+
+.hero{
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:3rem;
+    color:var(--accent);
+}
+
+.hero p{
+    margin-top:10px;
+    color:#cbd5e1;
+}
+
+/* CONTACT GRID */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(350px,1fr));
+
+    gap:25px;
+
+    margin-bottom:60px;
+}
+
+.contact-card{
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.12);
+
+    border-radius:25px;
+
+    padding:30px;
+}
+
+.contact-card h2{
+    margin-bottom:20px;
+}
+
+.contact-card input,
+.contact-card textarea{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    margin-bottom:15px;
+}
+
+.contact-card textarea{
+
+    height:150px;
+
+    resize:none;
+}
+
+.contact-card button{
+
+    width:100%;
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--secondary),
+    var(--accent));
+}
+
+.info h3{
+    margin-top:15px;
+    color:var(--accent);
+}
+
+/* LOCATIONS */
+
+.locations{
+
+    margin-bottom:60px;
+}
+
+.locations h2{
+
+    text-align:center;
+
+    margin-bottom:25px;
+}
+
+.location-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.location-card{
+
+    padding:25px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid rgba(255,255,255,.12);
+}
+
+.location-card h3{
+
+    color:var(--accent);
+
+    margin-bottom:10px;
+}
+
+/* MAP */
+
+.map{
+
+    margin-bottom:60px;
+}
+
+.map h2{
+
+    text-align:center;
+
+    margin-bottom:25px;
+}
+
+.map-box{
+
+    height:300px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:25px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid rgba(255,255,255,.12);
+}
+
+/* SOCIALS */
+
+.socials{
+
+    margin-bottom:60px;
+}
+
+.socials h2{
+
+    text-align:center;
+
+    margin-bottom:25px;
+}
+
+.social-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(200px,1fr));
+
+    gap:20px;
+}
+
+.social-grid a{
+
+    text-decoration:none;
+
+    text-align:center;
+
+    color:white;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--secondary),
+    var(--accent));
+}
+</style>
+
+<script>
+const form =
+document.getElementById(
+"contactForm"
+);
+
+form.addEventListener(
+"submit",
+(e)=>{
+
+    e.preventDefault();
+
+    const name =
+    document.getElementById(
+    "name"
+    ).value;
+
+    const email =
+    document.getElementById(
+    "email"
+    ).value;
+
+    const subject =
+    document.getElementById(
+    "subject"
+    ).value;
+
+    const message =
+    document.getElementById(
+    "message"
+    ).value;
+
+    if(
+        name === "" ||
+        email === "" ||
+        subject === "" ||
+        message === ""
+    ){
+
+        alert(
+        "Please fill all fields"
+        );
+
+        return;
+    }
+
+    alert(
+    "Message sent successfully!"
+    );
+
+    form.reset();
+
+});
+</script>
+
+</body>
+</html>

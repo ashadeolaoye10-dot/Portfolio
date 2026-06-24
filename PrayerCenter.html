@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FaithSpace | Prayer Center</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+.hero{
+    background:linear-gradient(rgba(8,28,58,.85),rgba(8,28,58,.85));
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+.stats{
+    background:#081c3a;
+    color:white;
+    padding:25px;
+    border-radius:20px;
+    display:flex;
+    justify-content:space-around;
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.stats h2{
+    color:gold;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card h3{
+    color:#081c3a;
+    margin-bottom:10px;
+}
+
+.actions{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.actions button{
+    flex:1;
+    border:none;
+    padding:10px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.save-btn{
+    background:gold;
+}
+
+.read-btn{
+    background:#081c3a;
+    color:white;
+}
+
+.prayer-content{
+    display:none;
+    margin-top:15px;
+    padding-top:15px;
+    border-top:1px solid #ddd;
+    line-height:1.8;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+    color:#333;
+}
+
+nav{
+    background:#081c3a;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    color:gold;
+    font-size:1.8rem;
+    font-weight:bold;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:gold;
+}
+
+footer{
+    background:#081c3a;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:60px;
+}
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        justify-content:center;
+    }
+
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2rem;
+}
+
+.stats{
+    flex-direction:column;
+    gap:20px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">FaithSpace</div>
+
+    <ul>
+        <li><a href="Homedevo.html">Home</a></li>
+        <li><a href="devotionals.html">Devotionals</a></li>
+        <li><a href="PrayerCenter.html">Prayer Center</a></li>
+        <li><a href="ScriptureLiberary.html">Scripture Library</a></li>
+        <li><a href="WorshipCenter.html">Worship Center</a></li>
+        <li><a href="Dashboard-Devo.html">Dashboard</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h1>Prayer Center</h1>
+    <p>Strengthen your relationship with God through prayer.</p>
+</section>
+
+<div class="container">
+
+    <div class="stats">
+
+        <div>
+            <h2 id="savedPrayers">0</h2>
+            <p>Saved Prayers</p>
+        </div>
+
+        <div>
+            <h2 id="openedPrayers">0</h2>
+            <p>Prayers Read</p>
+        </div>
+
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>☀ Morning Prayer</h3>
+
+            <p>Begin your day with God's guidance and strength.</p>
+
+            <div class="actions">
+                <button class="save-btn">❤️ Save</button>
+                <button class="read-btn">🙏 Pray</button>
+            </div>
+
+            <div class="prayer-content">
+                Heavenly Father, thank You for the gift of today.
+                Guide my thoughts, words and actions.
+                Give me wisdom, strength and peace.
+                Help me honor You in all I do.
+                In Jesus' name, Amen.
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h3>🌙 Evening Prayer</h3>
+
+            <p>End your day with gratitude and reflection.</p>
+
+            <div class="actions">
+                <button class="save-btn">❤️ Save</button>
+                <button class="read-btn">🙏 Pray</button>
+            </div>
+
+            <div class="prayer-content">
+                Lord, thank You for carrying me through today.
+                Forgive my mistakes and renew my heart.
+                Grant me peaceful rest tonight.
+                In Jesus' name, Amen.
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h3>🙌 Thanksgiving Prayer</h3>
+
+            <p>Give thanks for God's goodness and mercy.</p>
+
+            <div class="actions">
+                <button class="save-btn">❤️ Save</button>
+                <button class="read-btn">🙏 Pray</button>
+            </div>
+
+            <div class="prayer-content">
+                Father, I thank You for Your provision,
+                protection and faithfulness.
+                May my heart remain grateful in every season.
+                Amen.
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h3>❤️ Healing Prayer</h3>
+
+            <p>Seek God's healing and restoration.</p>
+
+            <div class="actions">
+                <button class="save-btn">❤️ Save</button>
+                <button class="read-btn">🙏 Pray</button>
+            </div>
+
+            <div class="prayer-content">
+                Lord, touch every area of my life that needs healing.
+                Bring restoration, peace and strength.
+                Let Your healing power flow through me.
+                Amen.
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h3>🛡 Protection Prayer</h3>
+
+            <p>Ask God for protection over your life.</p>
+
+            <div class="actions">
+                <button class="save-btn">❤️ Save</button>
+                <button class="read-btn">🙏 Pray</button>
+            </div>
+
+            <div class="prayer-content">
+                Heavenly Father, surround me with Your protection.
+                Keep me safe from harm and guide my steps.
+                Let Your presence go before me.
+                Amen.
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h3>💡 Guidance Prayer</h3>
+
+            <p>Ask God for wisdom and direction.</p>
+
+            <div class="actions">
+                <button class="save-btn">❤️ Save</button>
+                <button class="read-btn">🙏 Pray</button>
+            </div>
+
+            <div class="prayer-content">
+                Lord, direct my paths and help me make wise decisions.
+                Reveal Your will and purpose for my life.
+                Lead me in righteousness.
+                Amen.
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 FaithSpace | Prayer Center
+</footer>
+
+<script>
+
+function updatePrayerStats(){
+
+    const saved =
+    JSON.parse(localStorage.getItem("savedPrayers")) || [];
+
+    const opened =
+    JSON.parse(localStorage.getItem("openedPrayers")) || [];
+
+    document.getElementById("savedPrayers").textContent =
+    saved.length;
+
+    document.getElementById("openedPrayers").textContent =
+    opened.length;
+}
+
+document.querySelectorAll(".save-btn")
+.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        const title =
+        button.closest(".card")
+        .querySelector("h3")
+        .innerText;
+
+        let saved =
+        JSON.parse(localStorage.getItem("savedPrayers"))
+        || [];
+
+        if(!saved.includes(title)){
+
+            saved.push(title);
+
+            localStorage.setItem(
+                "savedPrayers",
+                JSON.stringify(saved)
+            );
+
+            updatePrayerStats();
+        }
+
+    });
+
+});
+
+document.querySelectorAll(".read-btn")
+.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        const content =
+        button.parentElement.nextElementSibling;
+
+        content.style.display =
+        content.style.display === "block"
+        ? "none"
+        : "block";
+
+        const title =
+        button.closest(".card")
+        .querySelector("h3")
+        .innerText;
+
+        let opened =
+        JSON.parse(localStorage.getItem("openedPrayers"))
+        || [];
+
+        if(!opened.includes(title)){
+
+            opened.push(title);
+
+            localStorage.setItem(
+                "openedPrayers",
+                JSON.stringify(opened)
+            );
+
+            updatePrayerStats();
+        }
+
+    });
+
+});
+
+updatePrayerStats();
+
+</script>
+
+</body>
+</html>

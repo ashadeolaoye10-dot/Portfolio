@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixus Bank | Business Banking</title>
+
+    <link rel="stylesheet" href="css/business-banking.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+    <section class="hero">
+
+        <h1>Business Banking</h1>
+
+        <p>
+            Powerful financial solutions for startups, SMEs and enterprises.
+        </p>
+
+    </section>
+
+    <section class="services">
+
+        <div class="service-card">
+            <h2>Corporate Account</h2>
+            <p>Manage business finances with ease.</p>
+            <button>Apply Now</button>
+        </div>
+
+        <div class="service-card">
+            <h2>SME Banking</h2>
+            <p>Flexible banking for growing businesses.</p>
+            <button>Apply Now</button>
+        </div>
+
+        <div class="service-card">
+            <h2>Payroll Services</h2>
+            <p>Pay staff quickly and securely.</p>
+            <button>Apply Now</button>
+        </div>
+
+        <div class="service-card">
+            <h2>Business Loans</h2>
+            <p>Funding solutions to grow your company.</p>
+            <button>Apply Now</button>
+        </div>
+
+    </section>
+
+    <section class="benefits">
+
+        <h2>Business Benefits</h2>
+
+        <div class="benefit-grid">
+
+            <div class="benefit">
+                <h3>Fast Payments</h3>
+                <p>Process transactions instantly.</p>
+            </div>
+
+            <div class="benefit">
+                <h3>Dedicated Support</h3>
+                <p>Business banking specialists.</p>
+            </div>
+
+            <div class="benefit">
+                <h3>Secure Banking</h3>
+                <p>Enterprise-grade security.</p>
+            </div>
+
+            <div class="benefit">
+                <h3>Global Reach</h3>
+                <p>International banking services.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="calculator">
+
+        <h2>Revenue Projection Calculator</h2>
+
+        <input
+        type="number"
+        id="monthlyRevenue"
+        placeholder="Monthly Revenue">
+
+        <input
+        type="number"
+        id="months"
+        placeholder="Number of Months">
+
+        <button id="calculateRevenue">
+            Calculate Projection
+        </button>
+
+        <h3 id="projectionResult">
+            Projected Revenue: ₦0
+        </h3>
+
+    </section>
+
+    <section class="faq">
+
+        <h2>Business Banking FAQs</h2>
+
+        <div class="faq-item">
+
+            <button class="faq-btn">
+                How do I open a business account?
+            </button>
+
+            <div class="faq-answer">
+                Submit your business registration documents and complete the application process.
+            </div>
+
+        </div>
+
+        <div class="faq-item">
+
+            <button class="faq-btn">
+                Can I get a business loan?
+            </button>
+
+            <div class="faq-answer">
+                Yes, eligible businesses can apply for various loan products.
+            </div>
+
+        </div>
+
+        <div class="faq-item">
+
+            <button class="faq-btn">
+                Is online business banking available?
+            </button>
+
+            <div class="faq-answer">
+                Yes, 24/7 online banking is available for all business customers.
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+<style>
+    :root{
+    --primary:#081F5C;
+    --secondary:#1D4ED8;
+    --accent:#60A5FA;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:
+    radial-gradient(circle at top left,#1D4ED8,transparent 30%),
+    radial-gradient(circle at bottom right,#60A5FA,transparent 30%),
+    #020617;
+
+    color:white;
+    padding:30px;
+}
+
+.container{
+    max-width:1300px;
+    margin:auto;
+}
+
+.hero{
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:3rem;
+    color:var(--accent);
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:#cbd5e1;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:20px;
+    margin-bottom:50px;
+}
+
+.service-card,
+.benefit,
+.calculator,
+.faq-item{
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.12);
+
+    border-radius:25px;
+}
+
+.service-card{
+    padding:25px;
+}
+
+.service-card h2{
+    color:var(--accent);
+    margin-bottom:15px;
+}
+
+.service-card p{
+    margin-bottom:20px;
+    color:#cbd5e1;
+}
+
+.service-card button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    color:white;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--secondary),
+    var(--accent));
+}
+
+.benefits{
+    margin-bottom:50px;
+}
+
+.benefits h2{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.benefit-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.benefit{
+    padding:25px;
+    text-align:center;
+}
+
+.calculator{
+    padding:30px;
+    margin:50px 0;
+}
+
+.calculator h2{
+    margin-bottom:20px;
+}
+
+.calculator input{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    margin-bottom:15px;
+}
+
+.calculator button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    color:white;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--secondary),
+    var(--accent));
+}
+
+.calculator h3{
+    margin-top:20px;
+    color:var(--accent);
+}
+
+.faq h2{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.faq-item{
+    margin-bottom:15px;
+    overflow:hidden;
+}
+
+.faq-btn{
+    width:100%;
+    padding:20px;
+    border:none;
+    background:none;
+    color:white;
+    text-align:left;
+    cursor:pointer;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:.3s;
+    padding:0 20px;
+    color:#cbd5e1;
+}
+
+.faq-answer.show{
+    max-height:200px;
+    padding:0 20px 20px;
+}
+</style>
+
+<script>
+    /* APPLY BUTTONS */
+
+document
+.querySelectorAll(".service-card button")
+.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        alert(
+        "Business banking application submitted!"
+        );
+
+    });
+
+});
+
+
+/* REVENUE CALCULATOR */
+
+document
+.getElementById("calculateRevenue")
+.addEventListener("click",()=>{
+
+    const revenue =
+    Number(
+    document.getElementById(
+    "monthlyRevenue"
+    ).value
+    );
+
+    const months =
+    Number(
+    document.getElementById(
+    "months"
+    ).value
+    );
+
+    if(!revenue || !months){
+
+        alert(
+        "Please fill all fields"
+        );
+
+        return;
+    }
+
+    const projection =
+    revenue * months;
+
+    document.getElementById(
+    "projectionResult"
+    ).textContent =
+
+    "Projected Revenue: ₦" +
+
+    projection.toLocaleString();
+
+});
+
+
+/* FAQ */
+
+document
+.querySelectorAll(".faq-btn")
+.forEach(button=>{
+
+    button.addEventListener(
+    "click",
+    ()=>{
+
+        button.nextElementSibling
+        .classList.toggle("show");
+
+    });
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FaithSpace | Scripture Library</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+    color:#333;
+}
+
+/* HEADER */
+nav{
+    background:#081c3a;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    color:gold;
+    font-size:1.8rem;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    gap:20px;
+    list-style:none;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+nav a:hover{
+    color:gold;
+}
+
+/* HERO */
+.hero{
+    background:linear-gradient(rgba(8,28,58,.85),rgba(8,28,58,.85));
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+/* CONTENT */
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+.stats{
+    background:#081c3a;
+    color:white;
+    padding:25px;
+    border-radius:20px;
+    display:flex;
+    justify-content:space-around;
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.stats h2{
+    color:gold;
+}
+
+.search-box input{
+    width:100%;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:1rem;
+}
+
+.filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:25px 0;
+}
+
+.filter-btn{
+    padding:10px 18px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    background:#ddd;
+}
+
+.filter-btn.active{
+    background:gold;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.topic{
+    display:inline-block;
+    background:gold;
+    padding:6px 12px;
+    border-radius:20px;
+    margin-bottom:10px;
+    font-size:.8rem;
+    font-weight:bold;
+}
+
+.reference{
+    color:#081c3a;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.save-btn{
+    margin-top:15px;
+    border:none;
+    background:#081c3a;
+    color:white;
+    padding:10px 15px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+    background:#081c3a;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:60px;
+}
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+    .stats{
+        flex-direction:column;
+        gap:20px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">FaithSpace</div>
+
+    <ul>
+        <li><a href="Homedevo.html">Home</a></li>
+        <li><a href="devotionals.html">Devotionals</a></li>
+        <li><a href="PrayerCenter.html">Prayer Center</a></li>
+        <li><a href="ScriptureLiberary.html">Scripture Library</a></li>
+        <li><a href="WorshipCenter.html">Worship Center</a></li>
+        <li><a href="DashboardDevo.html">Dashboard</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h1>Scripture Library</h1>
+    <p>Search, read and save your favorite Bible verses.</p>
+</section>
+
+<div class="container">
+
+    <div class="stats">
+        <div>
+            <h2 id="savedVerses">0</h2>
+            <p>Saved Verses</p>
+        </div>
+
+        <div>
+            <h2>66</h2>
+            <p>Bible Books</p>
+        </div>
+    </div>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search scriptures...">
+    </div>
+
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Faith">Faith</button>
+        <button class="filter-btn" data-filter="Hope">Hope</button>
+        <button class="filter-btn" data-filter="Wisdom">Wisdom</button>
+        <button class="filter-btn" data-filter="Love">Love</button>
+        <button class="filter-btn" data-filter="Strength">Strength</button>
+    </div>
+
+    <div class="grid">
+
+        <div class="card" data-topic="Faith">
+            <span class="topic">Faith</span>
+            <h3>Walk By Faith</h3>
+            <p class="reference">2 Corinthians 5:7</p>
+            <p>For we walk by faith, not by sight.</p>
+            <button class="save-btn">❤️ Save Verse</button>
+        </div>
+
+        <div class="card" data-topic="Faith">
+            <span class="topic">Faith</span>
+            <h3>Faith Defined</h3>
+            <p class="reference">Hebrews 11:1</p>
+            <p>Faith is confidence in what we hope for.</p>
+            <button class="save-btn">❤️ Save Verse</button>
+        </div>
+
+        <div class="card" data-topic="Hope">
+            <span class="topic">Hope</span>
+            <h3>God Of Hope</h3>
+            <p class="reference">Romans 15:13</p>
+            <p>May the God of hope fill you with joy and peace.</p>
+            <button class="save-btn">❤️ Save Verse</button>
+        </div>
+
+        <div class="card" data-topic="Wisdom">
+            <span class="topic">Wisdom</span>
+            <h3>Ask For Wisdom</h3>
+            <p class="reference">James 1:5</p>
+            <p>If any of you lacks wisdom, ask God.</p>
+            <button class="save-btn">❤️ Save Verse</button>
+        </div>
+
+        <div class="card" data-topic="Love">
+            <span class="topic">Love</span>
+            <h3>God's Love</h3>
+            <p class="reference">John 3:16</p>
+            <p>For God so loved the world that He gave His Son.</p>
+            <button class="save-btn">❤️ Save Verse</button>
+        </div>
+
+        <div class="card" data-topic="Love">
+            <span class="topic">Love</span>
+            <h3>Love Is Kind</h3>
+            <p class="reference">1 Corinthians 13:4</p>
+            <p>Love is patient, love is kind.</p>
+            <button class="save-btn">❤️ Save Verse</button>
+        </div>
+
+        <div class="card" data-topic="Strength">
+            <span class="topic">Strength</span>
+            <h3>Renewed Strength</h3>
+            <p class="reference">Isaiah 40:31</p>
+            <p>Those who hope in the Lord will renew their strength.</p>
+            <button class="save-btn">❤️ Save Verse</button>
+        </div>
+
+        <div class="card" data-topic="Strength">
+            <span class="topic">Strength</span>
+            <h3>Christ Strengthens Me</h3>
+            <p class="reference">Philippians 4:13</p>
+            <p>I can do all things through Christ.</p>
+            <button class="save-btn">❤️ Save Verse</button>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 FaithSpace | Scripture Library
+</footer>
+
+<script>
+
+const cards = document.querySelectorAll(".card");
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup",()=>{
+
+    const value = searchInput.value.toLowerCase();
+
+    cards.forEach(card=>{
+
+        card.style.display =
+        card.innerText.toLowerCase().includes(value)
+        ? "block"
+        : "none";
+
+    });
+
+});
+
+document.querySelectorAll(".filter-btn").forEach(btn=>{
+
+    btn.addEventListener("click",()=>{
+
+        document.querySelectorAll(".filter-btn")
+        .forEach(button=>button.classList.remove("active"));
+
+        btn.classList.add("active");
+
+        const topic = btn.dataset.filter;
+
+        cards.forEach(card=>{
+
+            if(topic==="all"){
+
+                card.style.display="block";
+
+            }else{
+
+                card.style.display =
+                card.dataset.topic===topic
+                ? "block"
+                : "none";
+
+            }
+
+        });
+
+    });
+
+});
+
+function updateVerseCount(){
+
+    const saved =
+    JSON.parse(localStorage.getItem("savedVerses"))
+    || [];
+
+    document.getElementById("savedVerses")
+    .textContent = saved.length;
+
+}
+
+document.querySelectorAll(".save-btn")
+.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        const verse =
+        button.closest(".card")
+        .querySelector(".reference")
+        .innerText;
+
+        let saved =
+        JSON.parse(localStorage.getItem("savedVerses"))
+        || [];
+
+        if(!saved.includes(verse)){
+
+            saved.push(verse);
+
+            localStorage.setItem(
+                "savedVerses",
+                JSON.stringify(saved)
+            );
+
+            updateVerseCount();
+        }
+
+    });
+
+});
+
+updateVerseCount();
+
+</script>
+
+</body>
+</html>

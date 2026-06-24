@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixus Bank | Transfer Money</title>
+
+    <link rel="stylesheet" href="css/transfer.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="transfer-card">
+
+        <h1>Transfer Money</h1>
+
+        <p>Send money securely and instantly.</p>
+
+        <form id="transferForm">
+
+            <div class="input-group">
+                <label>Recipient Name</label>
+                <input type="text" id="recipient">
+            </div>
+
+            <div class="input-group">
+                <label>Account Number</label>
+                <input type="text" id="accountNumber">
+            </div>
+
+            <div class="input-group">
+                <label>Bank Name</label>
+                <select id="bank">
+                    <option value="">Select Bank</option>
+                    <option>Pixus Bank</option>
+                    <option>Access Bank</option>
+                    <option>GTBank</option>
+                    <option>First Bank</option>
+                    <option>UBA</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Amount</label>
+                <input type="number" id="amount">
+            </div>
+
+            <div class="input-group">
+                <label>Narration</label>
+                <textarea id="narration"></textarea>
+            </div>
+
+            <button type="submit">
+                Continue
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- CONFIRMATION MODAL -->
+
+<div class="modal" id="modal">
+
+    <div class="modal-content">
+
+        <h2>Confirm Transfer</h2>
+
+        <div id="summary"></div>
+
+        <button id="confirmTransfer">
+            Confirm Transfer
+        </button>
+
+        <button id="cancelTransfer">
+            Cancel
+        </button>
+
+    </div>
+
+</div>
+<style>
+    :root{
+    --primary:#081F5C;
+    --secondary:#1D4ED8;
+    --accent:#60A5FA;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    radial-gradient(circle at top left,#1D4ED8,transparent 30%),
+    radial-gradient(circle at bottom right,#60A5FA,transparent 30%),
+    #020617;
+
+    padding:30px;
+}
+
+.transfer-card{
+
+    width:100%;
+    max-width:700px;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    backdrop-filter:blur(20px);
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    color:white;
+}
+
+.transfer-card h1{
+    margin-bottom:10px;
+}
+
+.transfer-card p{
+    margin-bottom:30px;
+    color:#cbd5e1;
+}
+
+.input-group{
+    margin-bottom:18px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:8px;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+}
+
+textarea{
+    resize:none;
+    height:120px;
+}
+
+button{
+
+    width:100%;
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--secondary),
+        var(--accent)
+    );
+}
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.7);
+}
+
+.modal-content{
+
+    width:90%;
+
+    max-width:500px;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:white;
+
+    color:#0f172a;
+}
+
+.modal-content h2{
+    margin-bottom:20px;
+}
+
+.modal-content button{
+    margin-top:15px;
+}
+</style>
+
+<script>
+    const form =
+document.getElementById("transferForm");
+
+const modal =
+document.getElementById("modal");
+
+const summary =
+document.getElementById("summary");
+
+const confirmTransfer =
+document.getElementById(
+"confirmTransfer"
+);
+
+const cancelTransfer =
+document.getElementById(
+"cancelTransfer"
+);
+
+form.addEventListener("submit",(e)=>{
+
+    e.preventDefault();
+
+    const recipient =
+    document.getElementById(
+    "recipient"
+    ).value;
+
+    const account =
+    document.getElementById(
+    "accountNumber"
+    ).value;
+
+    const bank =
+    document.getElementById(
+    "bank"
+    ).value;
+
+    const amount =
+    document.getElementById(
+    "amount"
+    ).value;
+
+    const narration =
+    document.getElementById(
+    "narration"
+    ).value;
+
+    if(
+        recipient === "" ||
+        account === "" ||
+        bank === "" ||
+        amount === ""
+    ){
+
+        alert(
+        "Please fill all fields"
+        );
+
+        return;
+    }
+
+    summary.innerHTML = `
+        <p><b>Recipient:</b> ${recipient}</p>
+        <p><b>Account:</b> ${account}</p>
+        <p><b>Bank:</b> ${bank}</p>
+        <p><b>Amount:</b> ₦${amount}</p>
+        <p><b>Narration:</b> ${narration}</p>
+    `;
+
+    modal.style.display = "flex";
+
+});
+
+cancelTransfer.addEventListener(
+"click",
+() => {
+
+    modal.style.display = "none";
+
+});
+
+confirmTransfer.addEventListener(
+"click",
+() => {
+
+    modal.style.display = "none";
+
+    alert(
+    "Transfer Successful!"
+    );
+
+    form.reset();
+
+});
+</script>
+
+</body>
+</html>

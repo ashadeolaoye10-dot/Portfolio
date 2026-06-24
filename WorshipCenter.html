@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FaithSpace | Worship Center</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+    color:#333;
+}
+
+/* HEADER */
+
+nav{
+    background:#081c3a;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    color:gold;
+    font-size:1.8rem;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    gap:20px;
+    list-style:none;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+nav a:hover{
+    color:gold;
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(rgba(8,28,58,.88),rgba(8,28,58,.88));
+    color:white;
+    text-align:center;
+    padding:90px 20px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+/* CONTENT */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+.player{
+    background:#081c3a;
+    color:white;
+    padding:30px;
+    border-radius:25px;
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.player h2{
+    margin-bottom:10px;
+}
+
+.player p{
+    color:#ddd;
+    margin-bottom:20px;
+}
+
+.controls{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.controls button{
+    border:none;
+    padding:12px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.play-btn{
+    background:gold;
+}
+
+.stop-btn{
+    background:white;
+}
+
+.next-btn{
+    background:#1e3a8a;
+    color:white;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.song-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.song-card:hover{
+    transform:translateY(-6px);
+}
+
+.song-card h3{
+    color:#081c3a;
+    margin-bottom:10px;
+}
+
+.song-card p{
+    margin-bottom:15px;
+}
+
+.song-card button{
+    background:#081c3a;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.stats{
+    background:#081c3a;
+    color:white;
+    padding:25px;
+    border-radius:20px;
+    display:flex;
+    justify-content:space-around;
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.stats h2{
+    color:gold;
+}
+
+/* FOOTER */
+
+footer{
+    background:#081c3a;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:60px;
+}
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+    .stats{
+        flex-direction:column;
+        gap:20px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+
+    <div class="logo">FaithSpace</div>
+
+    <ul>
+        <li><a href="Homedevo.html">Home</a></li>
+        <li><a href="devotionals.html">Devotionals</a></li>
+        <li><a href="PrayerCenter.html">Prayer Center</a></li>
+        <li><a href="ScriptureLiberary.html">Scripture Library</a></li>
+        <li><a href="WorshipCenter.html">Worship Center</a></li>
+        <li><a href="DashboardDevo.html">Dashboard</a></li>
+    </ul>
+
+</nav>
+
+<section class="hero">
+
+    <h1>Worship Center</h1>
+    <p>Listen to worship songs while spending time with God.</p>
+
+</section>
+
+<div class="container">
+
+    <div class="stats">
+
+        <div>
+            <h2 id="songsPlayed">0</h2>
+            <p>Songs Played</p>
+        </div>
+
+        <div>
+            <h2>4</h2>
+            <p>Playlist Songs</p>
+        </div>
+
+    </div>
+
+    <div class="player">
+
+        <h2 id="songTitle">FaithSpace Worship Playlist</h2>
+
+        <p>Use the controls below to worship.</p>
+
+        <audio id="audio">
+            <source src="assets/audio/worship1.mp3" type="audio/mpeg">
+        </audio>
+
+        <div class="controls">
+
+            <button class="play-btn" onclick="playSong()">
+                ▶ Play
+            </button>
+
+            <button class="stop-btn" onclick="pauseSong()">
+                ⏸ Pause
+            </button>
+
+            <button class="next-btn" onclick="nextSong()">
+                ⏭ Next
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="grid">
+
+        <div class="song-card">
+            <h3>Worship Song 1</h3>
+            <p>Main worship track.</p>
+            <button onclick="loadSong(0)">
+                Play Song
+            </button>
+        </div>
+
+        <div class="song-card">
+            <h3>Worship Song 2</h3>
+            <p>Prayer atmosphere worship.</p>
+            <button onclick="loadSong(1)">
+                Play Song
+            </button>
+        </div>
+
+        <div class="song-card">
+            <h3>Worship Song 3</h3>
+            <p>Quiet devotional worship.</p>
+            <button onclick="loadSong(2)">
+                Play Song
+            </button>
+        </div>
+
+        <div class="song-card">
+            <h3>Worship Song 4</h3>
+            <p>Faith-building worship.</p>
+            <button onclick="loadSong(3)">
+                Play Song
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 FaithSpace | Worship Center
+</footer>
+
+<script>
+
+const audio = document.getElementById("audio");
+
+const title = document.getElementById("songTitle");
+
+const playlist = [
+    "assets/audio/worship1.mp3",
+    "assets/audio/worship2.mp3",
+    "assets/audio/worship3.mp3",
+    "assets/audio/worship4.mp3"
+];
+
+let currentSong = 0;
+
+function updateCount(){
+
+    let count =
+    Number(localStorage.getItem("songsPlayed")) || 0;
+
+    document.getElementById("songsPlayed")
+    .textContent = count;
+}
+
+function increaseCount(){
+
+    let count =
+    Number(localStorage.getItem("songsPlayed")) || 0;
+
+    count++;
+
+    localStorage.setItem(
+        "songsPlayed",
+        count
+    );
+
+    updateCount();
+}
+
+function playSong(){
+
+    audio.play();
+
+}
+
+function pauseSong(){
+
+    audio.pause();
+
+}
+
+function nextSong(){
+
+    currentSong++;
+
+    if(currentSong >= playlist.length){
+
+        currentSong = 0;
+
+    }
+
+    audio.src = playlist[currentSong];
+
+    title.textContent =
+    "Playing Song " + (currentSong + 1);
+
+    audio.play();
+
+    increaseCount();
+
+}
+
+function loadSong(index){
+
+    currentSong = index;
+
+    audio.src = playlist[index];
+
+    title.textContent =
+    "Playing Song " + (index + 1);
+
+    audio.play();
+
+    increaseCount();
+
+}
+
+audio.addEventListener("ended",()=>{
+
+    nextSong();
+
+});
+
+updateCount();
+
+</script>
+
+</body>
+</html>

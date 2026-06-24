@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div class="container">
+
+    <div class="header">
+
+        <div class="logo">
+            Piusovo<span class="!">!</span>
+        </div>
+
+        <div class="close-btn">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+    </div>
+    <div class="content">
+
+        <h1 class="content1"><a href="Food.html">Welcome</a></h1>
+
+        <p class="subtitle">Continue with one of the following options</p>
+
+        <div class="input-wrapper">
+
+            <div class="input-box">
+
+                <label>Prefix</label>
+                <div class="input-field">
+                    <div class="prefix">
+                        NGN +234
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </div>
+            <div class="input-box">
+                <label>Phone number</label>
+                <div class="input-field">
+                    <input type="text" placeholder="Enter your phone number">
+                </div>
+        </div>
+    </div>
+    <p class="policy">This site is protected by reCAPTCHA and the Google<span>Privacy Policy</span> and <span>Terms of Service</span>apply</p>
+    <div class="bottom-btn"> 
+
+        <a href="#" class="whatsapp-btn" id="whatsappBtn">Continue with whatsapp</a>
+
+    </div>
+
+    <div class="divider">
+        or with
+   </div>
+   <button class="btn social-btn">
+    <i class="fa-brands fa-google google"></i>
+    Google
+   </button>
+   <button class="btn social-btn">
+    <i class="fa-brands fa-facebook facebook"></i>
+    Facebook
+   </button>
+   <button class="btn social-btn">
+    <i class="fa-regular fa-envelope email"></i>
+    Email
+   </button>
+   </div>
+   </div>
+   <style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        font-family:sans-serif;
+    }
+    body{
+        background: #f5f5f5;
+    }
+    .container{
+        max-width:500px;
+        margin: auto;
+        min-height:100vh;
+        background:#fff;
+    }
+    .header{
+        display:flex;
+        justify-content:space-between;
+        align-items: center;
+        padding: 25px;
+        border-bottom:1px solid #eee;
+    }
+    .logo{
+        font-size:60px;
+        font-weight:700;
+        color:#00a082;
+    }
+    .logo span{
+        color:#ffc244;
+    }
+    .close-btn{
+        width:70px;
+        height:70px;
+        background: #f2f2f2;
+        border-radius:50%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:35px;
+        cursor: pointer;
+        transition:0.3s;
+    }
+    .close-btn:hover{
+        transform:rotate(90deg);
+        background:#e6e6e6;
+    }
+    .content{
+        padding:40px 30px;
+    }
+    .content1 a{
+        color:black;
+        text-decoration:none;
+
+    }
+    h1{
+        font-size:65px;
+        text-align:center;
+        margin-bottom:20px;
+        font-weight:700;
+    }
+    .subtitle{
+        text-align: center;
+        color:#444;
+        font-size:24px;
+        margin-bottom:50px;
+    }
+    .input-wrapper{
+        display:flex;
+        gap:20px;
+        margin-bottom:40px;
+    }
+    .input-box{
+        flex:1;
+    }
+    .input-box label{
+        display: block;
+        margin-bottom:12px;
+        font-size:18px;
+        font-weight:600;
+        color:#555;
+    }
+    .input-field{
+        height:90px;
+        border:2px solid #ddd;
+        border-radius:20px;
+        display:flex;
+        align-items: center;
+        justify-content:space-between;
+        padding:0 20px;
+        background:#fff;
+        transition:0.3s;
+    }
+    .input-field:hover{
+        border-color:#00a082;
+    }
+    .input-field input{
+        border:none;
+        outline:none;
+        font-size:24px;
+        width:100%;
+        background:transparent;
+    }
+    .prefix{
+        font-size:28px;
+        display: flex;
+        align-items: center;
+        gap:15px;
+    }
+    .policy{
+        font-size:18px;
+        line-height:1.7;
+        color:#444;
+        margin-bottom:40px;
+    }
+    .policy span{
+        color:#00795f;
+        font-weight:600;
+    }
+    .btn{
+        width:100%;
+        height:85px;
+        border:none;
+        border-radius:50px;
+        margin-bottom:25px;
+        font-size:28px;
+        font-weight:600;
+        cursor: pointer;
+        transition:0.3s;
+    }
+    .whatsapp{
+        background:#00795f;
+        color:whitesmoke;
+    }
+    .whatsapp:hover{
+        background:#00795f;
+        transform:scale(1.02);
+    }
+    .divider{
+        text-align: center;
+        color:#666;
+        font-size:26px;
+        margin:20px 0 30px;
+    }
+    .social-btn{
+        background:#fff;
+        border:2px solid #ddd;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:20px;
+    }
+    .social-btn:hover{
+        border-color:#00a082;
+        transform:translateY(-3px);
+    }
+    .social-btn i{
+        font-size:35px;
+    }
+    .google{
+        color:#ea4335;
+    }
+    .facebook{
+        color:#1877f2;
+    }
+    .email{
+        color:#333;
+    }
+    .bottom-btn{
+        margin-top:40px;
+    }
+    .whatsapp-btn{
+        width:100%;
+        height:75px;
+        background:#00856c;
+        color:whitesmoke;
+        text-decoration:none;
+        border-radius:50px;
+        display: flex;
+        align-items:center;
+        justify-content:center;
+        font-size:24px;
+        font-weight:500;
+        transition:0.3s;
+    }
+    .whatsapp-btn:hover{
+        background:#006d58;
+    }
+    @media(max-width:600px){
+        .logo{
+            font-size:45px;
+        }
+        .close-btn{
+            width:60px;
+            height:60px;
+            font-size:28px;
+        }
+        h1{
+            font-size:50px;
+        }
+        .subtitle{
+            font-size:20px;
+        }
+        .input-wrapper{
+            flex-direction:column;
+        }
+        .btn{
+            font-size:22px;
+        }
+    }
+   </style>
+   <script>
+    const closeBtn = document.querySelector(".close-btn");
+    closeBtn.addEventListener("Click",()=>{
+        closeBtn.style.transform="rotate(180deg) scale(0.9)";
+    setTimeout(()=> {
+        closeBtn.style.transform="rotate(0deg) sclae(1)";
+    }, 300);
+    });
+
+    const buttons = document.querySelectorAll(".btn");
+
+    buttons.forEach(button => {
+        button.addEventListener("Click",() => {
+            button.style.transform = "scale(0.96)";
+
+            setTimeout(() => {
+                button.style.transform = "scale(1)";
+            }, 150);
+        });
+    });
+document
+.getElementById("whatsappBtn")
+.addEventListener("click", function(e){
+
+    e.preventDefault();
+
+    let phone =
+    document.getElementById("phoneNumber").value;
+
+    if(phone === ""){
+        alert("Enter phone number");
+        return;
+    }
+
+    // THIS WORKS BETTER ON LAPTOP
+    window.open(
+      "https://web.whatsapp.com/send?phone=234" + phone,
+      "_blank"
+    );
+
+});
+   </script>
+</body>
+</html>

@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glovo • Food Delivery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #00a082;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://picsum.photos/id/1015/2000/1200');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .restaurant-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .restaurant-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .category-chip {
+            transition: all 0.2s ease;
+        }
+
+        .map-placeholder {
+            background: linear-gradient(45deg, #e5e7eb, #d1d5db);
+            background-size: 400% 400%;
+            animation: gradient 8s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #00a082;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .cart-item {
+            animation: slideIn 0.3s ease forwards;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- NAVBAR -->
+    <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-8">
+                    <div class="flex items-center gap-x-2">
+                        <div class="w-9 h-9 bg-emerald-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl">P</div>
+                        <span class="text-3xl font-bold tracking-tighter text-emerald-600">Plogo</span>
+                    </div>
+                    
+                    <!-- Location -->
+                    <div onclick="changeLocation()" class="flex items-center gap-x-2 cursor-pointer hover:bg-gray-100 px-4 py-2 rounded-3xl transition-colors">
+                        <i class="fa-solid fa-location-dot text-emerald-600"></i>
+                        <div>
+                            <p class="text-sm font-medium">Lagos, Nigeria</p>
+                            <p class="text-xs text-gray-500">Anthony Village • 15 mins</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                    </div>
+                </div>
+
+                <!-- Search -->
+                <div class="flex-1 max-w-xl mx-8">
+                    <div class="relative">
+                        <input 
+                            id="search-input"
+                            type="text" 
+                            placeholder="Search restaurants, dishes, or cuisines..." 
+                            class="w-full bg-gray-100 border border-gray-200 focus:border-emerald-500 focus:bg-white rounded-3xl py-3 px-6 pl-14 text-sm outline-none transition-all"
+                            onkeyup="handleSearch(event)"
+                        >
+                        <i class="fa-solid fa-magnifying-glass absolute left-6 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                </div>
+
+                <!-- Right side -->
+                <div class="flex items-center gap-x-8">
+                    <a href="#" onclick="showBusinessModal()" class="text-sm font-medium hover:text-emerald-600 transition-colors nav-link">For business</a>
+                    <a href="#" class="text-sm font-medium hover:text-emerald-600 transition-colors nav-link">Glovo Prime</a>
+                    
+                    <div class="flex items-center gap-x-6">
+                        <button onclick="toggleCart()" class="relative hover:text-emerald-600 transition-colors">
+                            <i class="fa-solid fa-shopping-bag text-2xl"></i>
+                            <span id="cart-count" class="absolute -top-1 -right-1 bg-emerald-600 text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                        </button>
+                        
+                        <div class="w-9 h-9 bg-gray-200 rounded-2xl overflow-hidden cursor-pointer">
+                            <img src="https://picsum.photos/id/64/128/128" alt="Profile" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero-bg h-[520px] flex items-center text-white relative">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h1 class="text-6xl font-bold mb-4 tracking-tight">What are you craving?</h1>
+            <p class="text-xl mb-10 text-white/90">Order from the best restaurants and shops with delivery in minutes</p>
+            
+            <div class="max-w-xl mx-auto">
+                <div class="bg-white rounded-3xl p-2 flex items-center shadow-2xl">
+                    <div class="flex-1 px-6">
+                        <div class="flex items-center gap-3 text-gray-900">
+                            <i class="fa-solid fa-motorcycle text-emerald-600"></i>
+                            <input id="hero-search" 
+                                   type="text" 
+                                   placeholder="Search for food or drinks..." 
+                                   class="flex-1 outline-none text-lg placeholder:text-gray-400">
+                        </div>
+                    </div>
+                    <button onclick="performSearch()" 
+                            class="bg-emerald-600 hover:bg-emerald-700 transition-colors text-white px-12 py-6 rounded-3xl font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Delivery time badge -->
+        <div class="absolute bottom-12 right-12 bg-white text-gray-900 rounded-3xl px-6 py-4 shadow-xl flex items-center gap-4">
+            <div class="text-center">
+                <div class="text-3xl font-bold text-emerald-600">15</div>
+                <div class="text-xs uppercase tracking-widest">min</div>
+            </div>
+            <div class="h-12 w-px bg-gray-200"></div>
+            <div>
+                <div class="font-medium">Delivery in</div>
+                <div class="text-sm text-gray-500">Anthony Village</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-6 py-8">
+        <!-- CATEGORIES -->
+        <div class="mb-12">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-semibold">Categories</h2>
+                <a href="#" class="text-emerald-600 text-sm font-medium flex items-center gap-1 hover:underline">
+                    See all <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4" id="categories">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- POPULAR RESTAURANTS -->
+        <div class="mb-16">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-semibold">Popular near you</h2>
+                <div class="flex items-center gap-2 text-sm">
+                    <button onclick="filterByRating()" class="px-5 py-2 border border-gray-300 rounded-3xl hover:bg-gray-100 transition-colors">4.5+</button>
+                    <button onclick="filterByFast()" class="px-5 py-2 border border-gray-300 rounded-3xl hover:bg-gray-100 transition-colors">Fast delivery</button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" id="restaurants-grid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- MAP SECTION -->
+        <div class="mb-16">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-semibold">Restaurants on the map</h2>
+                <button onclick="alert('Map view coming soon! 🚀')" 
+                        class="text-emerald-600 flex items-center gap-2 text-sm font-medium">
+                    <i class="fa-solid fa-map"></i>
+                    Open full map
+                </button>
+            </div>
+            
+            <div class="map-placeholder h-96 rounded-3xl relative overflow-hidden border border-gray-200 flex items-center justify-center">
+                <div class="text-center">
+                    <div class="w-24 h-24 mx-auto bg-white/80 backdrop-blur-md rounded-3xl flex items-center justify-center mb-6 shadow">
+                        <i class="fa-solid fa-map-pin text-5xl text-emerald-600"></i>
+                    </div>
+                    <p class="font-semibold text-lg">Interactive map would go here</p>
+                    <p class="text-gray-500 mt-1">Showing 87 restaurants in your area</p>
+                </div>
+                
+                <!-- Fake map pins -->
+                <div class="absolute top-1/3 left-1/4 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg animate-pulse">K</div>
+                <div class="absolute top-2/3 left-3/5 w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg animate-pulse">C</div>
+                <div class="absolute top-1/4 right-1/3 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg animate-pulse">P</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESTAURANT MODAL -->
+    <div id="restaurant-modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-[100]">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-hidden">
+            <div class="relative">
+                <img id="modal-image" src="https://picsum.photos/id/201/800/400" class="w-full h-64 object-cover">
+                <button onclick="closeModal()" 
+                        class="absolute top-4 right-4 bg-white w-10 h-10 rounded-2xl flex items-center justify-center shadow">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <div class="p-8">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h2 id="modal-name" class="text-3xl font-bold">Loading...</h2>
+                        <p id="modal-cuisine" class="text-emerald-600 font-medium">Cuisine • Rating</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="bg-emerald-100 text-emerald-700 px-4 py-1 rounded-3xl text-sm font-medium">30-40 min</div>
+                    </div>
+                </div>
+                
+                <div id="modal-menu" class="mt-10 space-y-8">
+                    <!-- JS populated -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CART SIDEBAR -->
+    <div id="cart-sidebar" class="hidden fixed right-0 top-0 h-full w-96 bg-white shadow-2xl z-[200] transform translate-x-full transition-transform duration-300">
+        <div class="p-6 h-full flex flex-col">
+            <div class="flex justify-between items-center pb-6 border-b">
+                <h2 class="text-2xl font-semibold">Your Cart</h2>
+                <button onclick="toggleCart()" class="text-gray-400 hover:text-gray-600">
+                    <i class="fa-solid fa-xmark text-2xl"></i>
+                </button>
+            </div>
+            
+            <div id="cart-items" class="flex-1 py-6 overflow-auto space-y-6">
+                <!-- JS populated -->
+            </div>
+            
+            <div class="pt-6 border-t">
+                <div class="flex justify-between text-sm mb-2">
+                    <span class="text-gray-500">Subtotal</span>
+                    <span id="cart-subtotal" class="font-medium">₦0</span>
+                </div>
+                <div class="flex justify-between text-sm mb-6">
+                    <span class="text-gray-500">Delivery fee</span>
+                    <span class="font-medium text-emerald-600">₦800</span>
+                </div>
+                
+                <div class="flex justify-between items-center text-xl font-bold mb-8">
+                    <span>Total</span>
+                    <span id="cart-total">₦0</span>
+                </div>
+                
+                <button onclick="checkout()" 
+                        class="w-full bg-emerald-600 hover:bg-emerald-700 transition-colors text-white py-6 rounded-3xl font-semibold text-lg">
+                    Proceed to checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white/80 py-16">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-10">
+            <div>
+                <div class="flex items-center gap-x-2 mb-6">
+                    <div class="w-8 h-8 bg-emerald-600 rounded-2xl flex items-center justify-center text-white font-bold">P</div>
+                    <span class="text-3xl font-bold tracking-tighter text-white">Plogo</span>
+                </div>
+                <p class="text-sm">Fast delivery from your favorite local spots.</p>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-4 text-white">Company</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white">About us</a></li>
+                    <li><a href="#" class="hover:text-white">Careers</a></li>
+                    <li><a href="#" class="hover:text-white">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-4 text-white">Explore</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white">Restaurants</a></li>
+                    <li><a href="#" class="hover:text-white">Groceries</a></li>
+                    <li><a href="#" class="hover:text-white">Pharmacy</a></li>
+                    <li><a href="#" class="hover:text-white">Glovo Prime</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-4 text-white">Get the app</h4>
+                <div class="flex gap-3">
+                    <button class="bg-white/10 hover:bg-white/20 transition-colors px-5 py-3 rounded-2xl text-sm">App Store</button>
+                    <button class="bg-white/10 hover:bg-white/20 transition-colors px-5 py-3 rounded-2xl text-sm">Play Store</button>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-xs mt-16 text-white/50">
+            © 2026 Plogo Clone Demo • Built for demonstration
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script already included
+        
+        // Sample data
+        const categories = [
+            { name: "Pizza", icon: "🍕" },
+            { name: "Burger", icon: "🍔" },
+            { name: "Sushi", icon: "🍣" },
+            { name: "Chicken", icon: "🍗" },
+            { name: "Asian", icon: "🥡" },
+            { name: "Dessert", icon: "🍰" },
+            { name: "Coffee", icon: "☕" },
+            { name: "Groceries", icon: "🛒" }
+        ];
+
+        const restaurants = [
+            {
+                id: 1,
+                name: "Papa John's",
+                cuisine: "Pizza • Italian",
+                rating: 4.7,
+                time: "20-30",
+                fee: 650,
+                image: "https://picsum.photos/id/201/400/300",
+                popular: "Pepperoni Feast"
+            },
+            {
+                id: 2,
+                name: "KFC Nigeria",
+                cuisine: "Chicken • Fast Food",
+                rating: 4.4,
+                time: "25-35",
+                fee: 800,
+                image: "https://picsum.photos/id/292/400/300",
+                popular: "Bucket Meal"
+            },
+            {
+                id: 3,
+                name: "The Place",
+                cuisine: "Nigerian • Continental",
+                rating: 4.8,
+                time: "30-40",
+                fee: 700,
+                image: "https://picsum.photos/id/431/400/300",
+                popular: "Jollof Rice"
+            },
+            {
+                id: 4,
+                name: "Sushi Express",
+                cuisine: "Japanese • Sushi",
+                rating: 4.9,
+                time: "15-25",
+                fee: 1200,
+                image: "https://picsum.photos/id/870/400/300",
+                popular: "California Roll"
+            }
+        ];
+
+        let cart = [];
+
+        // Render categories
+        function renderCategories() {
+            const container = document.getElementById('categories');
+            container.innerHTML = '';
+            
+            categories.forEach(cat => {
+                const div = document.createElement('div');
+                div.className = `category-chip bg-white border border-gray-200 hover:border-emerald-300 rounded-3xl p-6 text-center cursor-pointer`;
+                div.innerHTML = `
+                    <div class="text-5xl mb-3">${cat.icon}</div>
+                    <p class="font-medium">${cat.name}</p>
+                `;
+                div.onclick = () => filterByCategory(cat.name);
+                container.appendChild(div);
+            });
+        }
+
+        // Render restaurants
+        function renderRestaurants(filteredRestaurants = restaurants) {
+            const container = document.getElementById('restaurants-grid');
+            container.innerHTML = '';
+            
+            filteredRestaurants.forEach(restaurant => {
+                const card = document.createElement('div');
+                card.className = `restaurant-card bg-white border border-gray-100 rounded-3xl overflow-hidden cursor-pointer`;
+                card.innerHTML = `
+                    <div class="relative">
+                        <img src="${restaurant.image}" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4 bg-white px-3 py-1 rounded-3xl text-xs font-semibold shadow flex items-center gap-1">
+                            <span>${restaurant.rating}</span>
+                            <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-semibold text-lg">${restaurant.name}</h3>
+                        <p class="text-gray-500 text-sm">${restaurant.cuisine}</p>
+                        <div class="flex items-center justify-between mt-4 text-sm">
+                            <div class="flex items-center gap-1">
+                                <i class="fa-solid fa-clock text-emerald-500"></i>
+                                <span>${restaurant.time} min</span>
+                            </div>
+                            <div class="text-emerald-600 font-medium">₦${restaurant.fee} fee</div>
+                        </div>
+                        <div onclick="addToCartQuick(${restaurant.id}); event.stopImmediatePropagation();" 
+                             class="mt-4 text-xs bg-emerald-50 hover:bg-emerald-100 transition-colors text-emerald-700 px-5 py-2.5 rounded-3xl inline-flex items-center gap-2">
+                            <i class="fa-solid fa-plus"></i>
+                            <span>Quick add ${restaurant.popular}</span>
+                        </div>
+                    </div>
+                `;
+                card.onclick = () => showRestaurantModal(restaurant);
+                container.appendChild(card);
+            });
+        }
+
+        // Show restaurant modal
+        function showRestaurantModal(restaurant) {
+            document.getElementById('restaurant-modal').classList.remove('hidden');
+            document.getElementById('modal-image').src = restaurant.image;
+            document.getElementById('modal-name').textContent = restaurant.name;
+            document.getElementById('modal-cuisine').innerHTML = `
+                ${restaurant.cuisine} • 
+                <span class="text-yellow-500">${restaurant.rating} ★</span>
+            `;
+            
+            const menuContainer = document.getElementById('modal-menu');
+            menuContainer.innerHTML = `
+                <div class="space-y-6">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="font-medium">${restaurant.popular}</p>
+                            <p class="text-sm text-gray-500">Classic favorite</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-semibold">₦3,200</p>
+                            <button onclick="addToCartFromModal(${restaurant.id})" 
+                                    class="mt-2 text-xs bg-emerald-600 text-white px-6 py-2 rounded-3xl">Add to cart</button>
+                        </div>
+                    </div>
+                    <div class="border-t pt-6">
+                        <p class="text-sm font-medium text-gray-400 mb-4">MORE DISHES</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-gray-50 p-4 rounded-2xl">
+                                <p class="font-medium">Margherita Pizza</p>
+                                <p class="text-emerald-600 text-sm">₦2,800</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-2xl">
+                                <p class="font-medium">Garlic Bread</p>
+                                <p class="text-emerald-600 text-sm">₦1,500</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function closeModal() {
+            document.getElementById('restaurant-modal').classList.add('hidden');
+        }
+
+        // Cart functions
+        function addToCartQuick(id) {
+            const restaurant = restaurants.find(r => r.id === id);
+            if (!restaurant) return;
+            
+            cart.push({
+                id: Date.now(),
+                name: restaurant.popular,
+                price: 3200,
+                restaurant: restaurant.name
+            });
+            
+            updateCart();
+            showToast(`${restaurant.popular} added to cart!`);
+        }
+
+        function addToCartFromModal(id) {
+            const restaurant = restaurants.find(r => r.id === id);
+            if (!restaurant) return;
+            
+            cart.push({
+                id: Date.now(),
+                name: restaurant.popular,
+                price: 3200,
+                restaurant: restaurant.name
+            });
+            
+            updateCart();
+            showToast("Item added successfully");
+        }
+
+        function updateCart() {
+            const container = document.getElementById('cart-items');
+            container.innerHTML = '';
+            
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="h-full flex flex-col items-center justify-center text-center">
+                        <i class="fa-solid fa-bag-shopping text-6xl text-gray-200 mb-6"></i>
+                        <p class="font-medium text-gray-400">Your cart is empty</p>
+                    </div>
+                `;
+                document.getElementById('cart-subtotal').textContent = '₦0';
+                document.getElementById('cart-total').textContent = '₦800';
+                return;
+            }
+            
+            let subtotal = 0;
+            
+            cart.forEach((item, index) => {
+                subtotal += item.price;
+                
+                const div = document.createElement('div');
+                div.className = 'cart-item flex gap-4';
+                div.innerHTML = `
+                    <div class="flex-1">
+                        <p class="font-medium">${item.name}</p>
+                        <p class="text-xs text-gray-500">${item.restaurant}</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="font-semibold">₦${item.price}</p>
+                        <button onclick="removeFromCart(${index})" class="text-red-500 text-xs mt-1 hover:underline">Remove</button>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+            
+            document.getElementById('cart-subtotal').textContent = `₦${subtotal}`;
+            document.getElementById('cart-total').textContent = `₦${subtotal + 800}`;
+            document.getElementById('cart-count').textContent = cart.length;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function toggleCart() {
+            const sidebar = document.getElementById('cart-sidebar');
+            sidebar.classList.toggle('hidden');
+            setTimeout(() => {
+                sidebar.classList.toggle('translate-x-full');
+            }, 10);
+        }
+
+        function checkout() {
+            if (cart.length === 0) return;
+            alert("🎉 Thank you! This is a demo. Your order has been placed.");
+            cart = [];
+            updateCart();
+            toggleCart();
+        }
+
+        // Toast notification
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'fixed bottom-6 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-sm px-8 py-4 rounded-3xl shadow-2xl flex items-center gap-3 z-[300]';
+            toast.innerHTML = `
+                ${message}
+                <i class="fa-solid fa-check text-emerald-400"></i>
+            `;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.transition = 'all 0.4s';
+                toast.style.opacity = '0';
+                toast.style.transform = 'translate(-50%, 20px)';
+                setTimeout(() => toast.remove(), 400);
+            }, 2800);
+        }
+
+        // Search functionality
+        function handleSearch(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        }
+
+        function performSearch() {
+            const query = document.getElementById('search-input').value.toLowerCase().trim();
+            if (!query) return;
+            
+            const filtered = restaurants.filter(r => 
+                r.name.toLowerCase().includes(query) || 
+                r.cuisine.toLowerCase().includes(query)
+            );
+            
+            if (filtered.length > 0) {
+                renderRestaurants(filtered);
+                window.scrollTo({ top: 800, behavior: 'smooth' });
+            } else {
+                showToast("No results found. Try another search.");
+            }
+        }
+
+        function filterByCategory(category) {
+            const filtered = restaurants.filter(r => r.cuisine.toLowerCase().includes(category.toLowerCase()));
+            renderRestaurants(filtered.length > 0 ? filtered : restaurants);
+            showToast(`Showing ${category} options`);
+        }
+
+        function filterByRating() {
+            const filtered = restaurants.filter(r => r.rating >= 4.5);
+            renderRestaurants(filtered);
+        }
+
+        function filterByFast() {
+            const filtered = restaurants.filter(r => parseInt(r.time) < 30);
+            renderRestaurants(filtered);
+        }
+
+        function changeLocation() {
+            const locations = ["Lagos, Nigeria", "Abuja", "Port Harcourt", "Ibadan"];
+            const random = locations[Math.floor(Math.random() * locations.length)];
+            alert(`Location changed to: ${random} (demo)`);
+        }
+
+        function showBusinessModal() {
+            alert("🚀 Glovo for Business\n\nThis would show a B2B dashboard in the real app.");
+        }
+
+        // Initialize everything
+        function init() {
+            renderCategories();
+            renderRestaurants();
+            
+            // Keyboard shortcut for cart
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    const modal = document.getElementById('restaurant-modal');
+                    if (!modal.classList.contains('hidden')) {
+                        closeModal();
+                    } else {
+                        const cartSidebar = document.getElementById('cart-sidebar');
+                        if (!cartSidebar.classList.contains('hidden')) {
+                            toggleCart();
+                        }
+                    }
+                }
+            });
+            
+            // Demo: add one item to cart
+            setTimeout(() => {
+                cart.push({
+                    id: 999,
+                    name: "Pepperoni Feast",
+                    price: 3200,
+                    restaurant: "Papa John's"
+                });
+                updateCart();
+            }, 1800);
+            
+            console.log('%c✅ Glovo frontend clone initialized successfully!', 'color: #00a082; font-size: 14px; font-weight: 600;');
+        }
+
+        // Start the app
+        window.onload = init;
+    </script>
+</body>
+</html>

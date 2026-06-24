@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixus Bank | Profile</title>
+
+    <link rel="stylesheet" href="css/profile.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- PROFILE HEADER -->
+
+    <section class="profile-header">
+
+        <div class="avatar-container">
+        <img
+        src="images/default-avatar.png"
+        id="avatarImage"
+        class="avatar-image"
+        alt="Avatar">
+        <input
+        type="file"
+        id="avatarInput"
+        accept="image/*"
+        hidden>
+
+    <button id="uploadAvatarBtn">
+        Upload Photo
+    </button>
+
+</div>
+
+        <h1>John Doe</h1>
+
+        <p>Premium Customer</p>
+
+        <button id="editProfileBtn">
+            Edit Profile
+        </button>
+
+    </section>
+
+    <!-- PROFILE GRID -->
+
+    <section class="profile-grid">
+
+        <div class="card">
+
+            <h2>Personal Information</h2>
+
+            <div class="info-item">
+                <strong>Full Name:</strong>
+                <span id="displayName">
+                    John Doe
+                </span>
+            </div>
+
+            <div class="info-item">
+                <strong>Email:</strong>
+                <span id="displayEmail">
+                    johndoe@email.com
+                </span>
+            </div>
+
+            <div class="info-item">
+                <strong>Phone:</strong>
+                <span id="displayPhone">
+                    +234 801 234 5678
+                </span>
+            </div>
+
+            <div class="info-item">
+                <strong>Address:</strong>
+                <span id="displayAddress">
+                    Lagos, Nigeria
+                </span>
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Account Information</h2>
+
+            <div class="info-item">
+                <strong>Account Number:</strong>
+                <span>1234567890</span>
+            </div>
+
+            <div class="info-item">
+                <strong>Account Type:</strong>
+                <span>Savings</span>
+            </div>
+
+            <div class="info-item">
+                <strong>Status:</strong>
+                <span class="active">
+                    Active
+                </span>
+            </div>
+
+            <div class="info-item">
+                <strong>KYC:</strong>
+                <span class="active">
+                    Verified
+                </span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SECURITY -->
+
+    <section class="security">
+
+        <div class="card">
+
+            <h2>Security Settings</h2>
+
+            <button class="security-btn">
+                Change Password
+            </button>
+
+            <button class="security-btn">
+                Enable 2FA
+            </button>
+
+            <button class="security-btn">
+                Login Activity
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- RECENT ACTIVITY -->
+
+    <section class="activity">
+
+        <div class="card">
+
+            <h2>Recent Activity</h2>
+
+            <ul>
+
+                <li>
+                    Transfer of ₦50,000 completed
+                </li>
+
+                <li>
+                    Loan application submitted
+                </li>
+
+                <li>
+                    Debit card activated
+                </li>
+
+                <li>
+                    Profile updated
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+</div>
+
+<!-- EDIT MODAL -->
+
+<div class="modal" id="modal">
+
+    <div class="modal-content">
+
+        <h2>Edit Profile</h2>
+
+        <input
+        type="text"
+        id="nameInput"
+        placeholder="Full Name">
+
+        <input
+        type="email"
+        id="emailInput"
+        placeholder="Email">
+
+        <input
+        type="text"
+        id="phoneInput"
+        placeholder="Phone Number">
+
+        <input
+        type="text"
+        id="addressInput"
+        placeholder="Address">
+
+        <button id="saveBtn">
+            Save Changes
+        </button>
+
+        <button id="closeBtn">
+            Close
+        </button>
+
+    </div>
+
+</div>
+<style>
+    :root{
+    --primary:#081F5C;
+    --secondary:#1D4ED8;
+    --accent:#60A5FA;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:
+    radial-gradient(circle at top left,#1D4ED8,transparent 30%),
+    radial-gradient(circle at bottom right,#60A5FA,transparent 30%),
+    #020617;
+
+    color:white;
+    padding:30px;
+}
+
+.avatar-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+}
+
+.avatar-image{
+
+    width:140px;
+
+    height:140px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:4px solid #60A5FA;
+
+    margin-bottom:15px;
+}
+
+#uploadAvatarBtn{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    135deg,
+    #1D4ED8,
+    #60A5FA);
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.profile-header{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.avatar{
+    width:120px;
+    height:120px;
+
+    margin:auto auto 20px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:2rem;
+    font-weight:700;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--secondary),
+    var(--accent));
+}
+
+.profile-header button{
+    margin-top:15px;
+
+    border:none;
+    cursor:pointer;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--secondary),
+    var(--accent));
+}
+
+.profile-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(350px,1fr));
+
+    gap:25px;
+
+    margin-bottom:30px;
+}
+
+.card{
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.12);
+
+    border-radius:25px;
+
+    padding:25px;
+}
+
+.card h2{
+    margin-bottom:20px;
+}
+
+.info-item{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:15px;
+}
+
+.active{
+    color:#22c55e;
+}
+
+.security-btn{
+    width:100%;
+
+    margin-bottom:12px;
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--secondary),
+    var(--accent));
+}
+
+.activity ul{
+    padding-left:20px;
+}
+
+.activity li{
+    margin-bottom:12px;
+}
+
+/* MODAL */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    background:
+    rgba(0,0,0,.7);
+}
+
+.modal-content{
+    width:90%;
+    max-width:500px;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    background:#0f172a;
+}
+
+.modal-content input{
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    border:none;
+
+    border-radius:12px;
+}
+
+.modal-content button{
+    width:100%;
+
+    margin-bottom:10px;
+
+    padding:14px;
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:12px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--secondary),
+    var(--accent));
+}
+</style>
+<script>
+const modal =
+document.getElementById("modal");
+
+const editBtn =
+document.getElementById(
+"editProfileBtn"
+);
+
+const closeBtn =
+document.getElementById(
+"closeBtn"
+);
+
+const saveBtn =
+document.getElementById(
+"saveBtn"
+);
+
+/* OPEN MODAL */
+
+editBtn.addEventListener(
+"click",
+()=>{
+
+    modal.style.display =
+    "flex";
+
+});
+
+/* CLOSE MODAL */
+
+closeBtn.addEventListener(
+"click",
+()=>{
+
+    modal.style.display =
+    "none";
+
+});
+
+/* SAVE PROFILE */
+
+saveBtn.addEventListener(
+"click",
+()=>{
+
+    const name =
+    document.getElementById(
+    "nameInput"
+    ).value;
+
+    const email =
+    document.getElementById(
+    "emailInput"
+    ).value;
+
+    const phone =
+    document.getElementById(
+    "phoneInput"
+    ).value;
+
+    const address =
+    document.getElementById(
+    "addressInput"
+    ).value;
+
+    if(name){
+        document.getElementById(
+        "displayName"
+        ).textContent = name;
+    }
+
+    if(email){
+        document.getElementById(
+        "displayEmail"
+        ).textContent = email;
+    }
+
+    if(phone){
+        document.getElementById(
+        "displayPhone"
+        ).textContent = phone;
+    }
+
+    if(address){
+        document.getElementById(
+        "displayAddress"
+        ).textContent = address;
+    }
+
+    alert(
+    "Profile Updated Successfully!"
+    );
+
+    modal.style.display =
+    "none";
+
+});
+const avatarInput =
+document.getElementById(
+"avatarInput"
+);
+
+const avatarImage =
+document.getElementById(
+"avatarImage"
+);
+
+const uploadAvatarBtn =
+document.getElementById(
+"uploadAvatarBtn"
+);
+
+uploadAvatarBtn.addEventListener(
+"click",
+()=>{
+
+    avatarInput.click();
+
+});
+
+avatarInput.addEventListener(
+"change",
+()=>{
+
+    const file =
+    avatarInput.files[0];
+
+    if(!file) return;
+
+    const reader =
+    new FileReader();
+
+    reader.onload =
+    function(e){
+
+        avatarImage.src =
+        e.target.result;
+
+        localStorage.setItem(
+        "pixusAvatar",
+        e.target.result
+        );
+
+    };
+
+    reader.readAsDataURL(
+    file
+    );
+
+});
+
+window.addEventListener(
+"load",
+()=>{
+
+    const savedAvatar =
+    localStorage.getItem(
+    "pixusAvatar"
+    );
+
+    if(savedAvatar){
+
+        avatarImage.src =
+        savedAvatar;
+    }
+
+});
+</script>
+
+</body>
+</html>

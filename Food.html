@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery UI</title>
+</head>
+<body>
+    <!-- ADD THIS RIGHT AFTER <body> -->
+    <div class="container">
+
+        <!--NAVBAR-->
+        <div class="top">
+
+            <div class="menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="logo">Piusovo<span>!</span>
+            </div>
+            <button class="logo-btn1">
+                <a href="Login glovo.html" class="login-btn">Login</a>
+            </button>
+
+        </div>
+        <!--Location-->
+        <div class="location">
+            <span>
+                <i class="fa-solid fa-location-dot"></i>
+                Abuja
+            </span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <!--Title-->
+        <h1>Food</h1>
+        <!--CATEGORIES-->
+        <div class="categories">
+            <div class="cat">
+                <a href="Chicken.html" class="cat-box">🍗</a>
+                <p>Chicken</p>
+            </div>
+            <div class="cat">
+            <a href="Rice.html" class="cat-box">🍛</a>
+                <p>Jollof</p>
+        </div>
+         <div class="cat">
+            <a href="Pasta.html" class="cat-box">🍝</a>
+                <p>Pasta</p>
+        </div>
+         <div class="cat">
+            <div class="cat-box">🍕</div>
+                <p>Pizza</p>
+        </div>
+         <div class="cat">
+            <a href="burger.html" class="cat-box">🍔</a>
+                <p>Burger</p>
+        </div>
+    </div>
+    <!--Filters-->
+    <div class="filters">
+        <div class="filter active">
+            Pizza ✕
+        </div>
+        <div class="filter">
+            Sort by ▼
+        </div>
+        <div class="filter">
+           👑 Top Related
+        </div>
+    </div>
+    <!--Main CARD-->
+    <div class="card">
+        <div class="img-box">
+            <div class="discount">
+                -40% some items
+            </div>
+            <img src="image.jpeg" alt="pizza">
+        </div>
+        <div class="card-content">
+            <h2>Dodo Pizza</h2>
+            <div class="details">
+                <div class="badge">Free Delivery</div>
+                <span>👍93%</span>
+                <span>(194)</span>
+            </div>
+        </div>
+    </div>
+    <!--Second Card-->
+    <div class="small-card">
+        <img src="istockphoto-1442604433-1024x1024.jpg" alt="food">
+        <div class="small-content">
+            <h3>African Meal</h3>
+            <p>Delicious local dishes</p>
+            
+            <br>
+
+            <div class="rating">⭐4.8 Rating
+
+            </div>
+        </div>
+    </div>
+    <div class="small-card">
+        <img src="images (11).jpeg" alt="food">
+        <div class="small-content">
+            <h3>Jollof Mealicon</h3>
+            <p>Delicious local dishes</p>
+            
+            <br>
+
+            <div class="rating">⭐4.9 Rating
+
+            </div>
+        </div>
+    </div>
+    <section class="footer">
+        <div class="curve"></div>
+        <div class="footer-content">
+            <div class="footer-logo">
+                Piusovo<span>!</span>
+            </div>
+            <div class="footer-links">
+                <div class="footer-box">
+                    <h2>Let's do it together</h2>
+                    <p>Careers</p>
+                    <p>Piusovo for Partners</p>
+                    <p>Couriers</p>
+                    <p>Piusovo Business</p>
+                </div>
+                <div class="footer-box">
+                    <h2>Links of interest</h2>
+                    <p>About us</p>
+                    <p>FAQ</p>
+                    <p>Piusovo Prime</p>
+                    <p>Blog</p>
+                    <p>Contact us</p>
+                    <p>Security</p>
+                    <p>Log in</p>
+                </div>
+                <div class="footer-box1">
+                    <h2>Follow us</h2>
+                    <p>Instagram</p>
+                    <p>TikTok</p>
+                </div>
+                <!--Google Play-->
+                <div class="store-btn">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play Store">
+                </div>
+                <!--Section 3-->
+                <div class="footer-box">
+                    <p>Terms & Conditions</p>
+                    <p>Privacy Policy</p>
+                    <p>Cookies Policy</p>
+                    <p>Compliance</p>
+                    <p>Configure the cookies</p>
+                    <p>Digital Services Act</p>
+                    <p>European Accessibility Act</p>
+                </div>
+                <div class="footer-box">
+                    <h2>Breakfast</h2>
+                    <p>Burger</p>
+                    <p>Healthy</p>
+                    <p>Indian</p>
+                    <p>Nigerian</p>
+                    <p>Pasteries</p>
+                    <p>Pizza</p>
+                    <p>Sushi</p>
+                    <p>All categories</p>
+                </div>
+                <div class="footer box2">
+                <select required>
+                <option value="">English</option>
+                <option>Espanol</option>
+                <option>italino</option>
+                <option>Euskara</option>
+                <option>Hrvatski</option>
+                <option>Polski</option>
+                <option>Romana</option>
+            </select></div>
+            </div>
+        </div>
+    </section>
+    <style>
+        *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      background:#f4f4f4;
+      color:#111;
+    }
+
+    .container{
+      width:100%;
+      max-width:500px;
+      margin:auto;
+    }
+
+    /* NAVBAR */
+
+    .top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px;
+    }
+
+    .menu{
+      width:50px;
+      height:50px;
+      background:#fff;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:22px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .logo{
+      font-size:40px;
+      font-weight:700;
+      color:#00a082;
+    }
+
+    .logo span{
+      color:#ffc244;
+    }
+    
+    .login-btn{
+      background:#00a082;
+      color:white;
+      border:none;
+      padding:12px 25px;
+      border-radius:30px;
+      font-size:18px;
+      font-weight:600;
+      cursor:pointer;
+      display:flex;
+      transition:0.3s;
+      text-decoration:none;
+    }
+    .login-btn:hover{
+      background:#00856C;
+      transform:scale(1.05);
+    }
+    /* LOCATION */
+
+    .location{
+      width:170px;
+      background:white;
+      padding:15px 18px;
+      border-radius:20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin:0 20px 30px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .location i{
+      color:#00a082;
+    }
+
+    /* TITLE */
+
+    h1{
+      font-size:55px;
+      margin:0 20px 25px;
+    }
+
+    /* CATEGORIES */
+
+    .categories{
+      display:flex;
+      gap:18px;
+      overflow-x:auto;
+      padding:0 20px;
+      margin-bottom:25px;
+      scroll-behavior: smooth;
+    }
+    .categories
+
+    .categories::-webkit-scrollbar{
+      display:none;
+    }
+
+    .cat{
+      text-align:center;
+      min-width:90px;
+      flex-shrink:0;
+    }
+
+    .cat-box{
+      width:80px;
+      height:80px;
+      border-radius:50%;
+      background:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:auto;
+      font-size:35px;
+      box-shadow:0 3px 10px rgba(0,0,0,0.08);
+      text-decoration: none;
+      color:black;
+    }
+
+    .cat p{
+      margin-top:10px;
+      font-weight:500;
+    }
+
+    /* FILTERS */
+
+    .filters{
+      display:flex;
+      gap:15px;
+      overflow-x:auto;
+      padding:0 20px;
+      margin-bottom:30px;
+    }
+
+    .filters::-webkit-scrollbar{
+      display:none;
+    }
+
+    .filter{
+      background:white;
+      padding:12px 20px;
+      border-radius:30px;
+      white-space:nowrap;
+      font-weight:500;
+      box-shadow:0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .active{
+      background:#ffc244;
+    }
+
+    /* MAIN CARD */
+
+    .card{
+      background:white;
+      border-radius:25px;
+      overflow:hidden;
+      margin:0 20px 30px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .img-box{
+      position:relative;
+    }
+
+    .discount{
+      position:absolute;
+      background:#ffc244;
+      padding:8px 15px;
+      border-radius:12px;
+      font-weight:600;
+      top:15px;
+      left:15px;
+    }
+
+    .card-content{
+      padding:18px;
+    }
+
+    .card h2{
+      margin-bottom:10px;
+      font-size:30px;
+    }
+
+    .details{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      color:#666;
+      font-size:15px;
+      flex-wrap:wrap;
+    }
+
+    .badge{
+      background:#fff4d6;
+      color:#d58d00;
+      padding:8px 12px;
+      border-radius:10px;
+      font-weight:600;
+    }
+
+    /* SMALL CARD */
+
+    .small-card{
+      display:flex;
+      background:white;
+      border-radius:20px;
+      overflow:hidden;
+      margin:0 20px 20px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.07);
+    }
+
+    .small-card img{
+      width:130px;
+      object-fit:cover;
+    }
+
+    .small-content{
+      padding:15px;
+    }
+
+    .small-content h3{
+      margin-bottom:10px;
+      font-size:24px;
+    }
+
+    .rating{
+      color:orange;
+      font-weight:600;
+    }
+
+    /* FOOTER */
+
+    .footer{
+      background:#111115;
+      margin-top:50px;
+      position:relative;
+      overflow:hidden;
+      padding-top:120px;
+      padding-bottom:60px;
+    }
+
+    .curve{
+      position:absolute;
+      top:-140px;
+      left:-10%;
+      width:120%;
+      height:250px;
+      background:#f4f4f4;
+      border-radius:50%;
+    }
+
+    .footer-content{
+      position:relative;
+      z-index:2;
+      padding:0 30px;
+    }
+
+    .footer-logo{
+      font-size:60px;
+      font-weight:700;
+      color:#00a082;
+      margin-bottom:50px;
+    }
+
+    .footer-logo span{
+      color:#ffc244;
+    }
+
+    .footer-links{
+      display:flex;
+      flex-direction:column;
+      gap:60px;
+    }
+
+    .footer-box{
+      margin-bottom:40px;
+    }
+
+    .footer-box h2{
+      color:white;
+      font-size:38px;
+      margin-bottom:30px;
+    }
+
+    .footer-box p{
+      color:#d6d6d6;
+      font-size:28px;
+      margin-bottom:28px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .footer-box p:hover{
+      color:#00a082;
+      transform:translateX(5px);
+    }
+
+    /* GOOGLE PLAY BUTTON */
+
+    .store-btn{
+      margin:40px 0;
+    }
+
+    .store-btn img{
+      width:220px;
+    }
+    /* ADD THIS TO THE END OF YOUR CSS */
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width:768px){
+
+  h1{
+    font-size:45px;
+  }
+
+  .footer-box h2{
+    font-size:30px;
+  }
+
+  .footer-box p{
+    font-size:22px;
+  }
+
+  .footer-logo{
+    font-size:50px;
+  }
+
+}
+
+@media(max-width:500px){
+
+  .top{
+    gap:10px;
+  }
+
+  .logo{
+    font-size:32px;
+  }
+
+  .login-btn{
+    padding:10px 18px;
+    font-size:14px;
+  }
+
+  h1{
+    font-size:38px;
+  }
+
+  .card h2{
+    font-size:24px;
+  }
+
+  .small-content h3{
+    font-size:20px;
+  }
+
+  .footer-box h2{
+    font-size:26px;
+  }
+
+  .footer-box p{
+    font-size:18px;
+  }
+
+  .footer-logo{
+    font-size:42px;
+  }
+
+  .store-btn img{
+    width:180px;
+  }
+
+}
+
+/* SMOOTH ANIMATIONS */
+
+.cat,
+.filter,
+.card,
+.small-card,
+.login-btn,
+.footer-box p,
+.menu{
+  transition:0.3s ease;
+}
+
+.filter:hover{
+  transform:translateY(-3px);
+}
+
+.login-btn:hover{
+  transform:scale(1.05);
+}
+
+.menu:hover{
+  transform:rotate(90deg);
+}
+
+.card:hover,
+.small-card:hover{
+  box-shadow:0 12px 25px rgba(0,0,0,0.15);
+}
+/* ADD THIS TO CSS */
+
+.sidebar{
+    position:fixed;
+    top:0;
+    left:-250px;
+    width:250px;
+    height:100vh;
+    background:#111;
+    z-index:999;
+    padding:40px 25px;
+    transition:0.4s;
+}
+
+.sidebar.active{
+    left:0;
+}
+
+.sidebar h2{
+    color:#fff;
+    margin-bottom:40px;
+    font-size:35px;
+}
+
+.sidebar a{
+    display:block;
+    color:#d6d6d6;
+    text-decoration:none;
+    margin-bottom:25px;
+    font-size:22px;
+    transition:0.3s;
+}
+
+.sidebar a:hover{
+    color:#00a082;
+    transform:translateX(10px);
+}
+
+/* SEARCH */
+
+.search-box{
+    margin:0 20px 30px;
+    background:#fff;
+    border-radius:18px;
+    padding:14px 18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.06);
+}
+
+.search-box input{
+    border:none;
+    outline:none;
+    width:100%;
+    font-size:16px;
+}
+
+/* TOAST */
+
+.toast{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    background:#00a082;
+    color:white;
+    padding:15px 25px;
+    border-radius:15px;
+    font-weight:600;
+    opacity:0;
+    pointer-events:none;
+    transition:0.4s;
+    z-index:9999;
+}
+
+.toast.show{
+    opacity:1;
+    pointer-events:auto;
+}
+</style>
+<!-- REPLACE YOUR OLD SCRIPT WITH THIS -->
+
+<script>
+
+  // SIDEBAR
+
+  const menuBtn = document.querySelector(".menu");
+  const sidebar = document.querySelector(".sidebar");
+
+  menuBtn.addEventListener("click", () => {
+
+      sidebar.classList.toggle("active");
+
+      if(sidebar.classList.contains("active")){
+          menuBtn.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
+      }else{
+          menuBtn.innerHTML = `<i class="fa-solid fa-bars"></i>`;
+      }
+
+  });
+
+
+  // LOGIN BUTTON
+
+  const loginBtn = document.querySelector(".login-btn");
+
+  loginBtn.addEventListener("click", () => {
+
+      if(loginBtn.innerText === "Login"){
+
+          loginBtn.innerText = "Welcome";
+          loginBtn.style.background = "#111";
+
+          showToast("Login Successful");
+
+      }else{
+
+          loginBtn.innerText = "Login";
+          loginBtn.style.background = "#00a082";
+
+      }
+
+  });
+
+
+  // CATEGORY ACTIVE
+
+  const cats = document.querySelectorAll(".cat");
+
+  cats.forEach(cat => {
+
+      cat.addEventListener("click", () => {
+
+          cats.forEach(c => {
+              c.querySelector(".cat-box").style.background = "#fff";
+          });
+
+          cat.querySelector(".cat-box").style.background = "#ffc244";
+
+          showToast(cat.innerText + " Selected");
+
+      });
+
+  });
+
+
+  // FILTER BUTTONS
+
+  const filters = document.querySelectorAll(".filter");
+
+  filters.forEach(filter => {
+
+      filter.addEventListener("click", () => {
+
+          filters.forEach(btn => {
+              btn.classList.remove("active");
+          });
+
+          filter.classList.add("active");
+
+      });
+
+  });
+
+
+  // CARD CLICK
+
+  const cards = document.querySelectorAll(".card, .small-card");
+
+  cards.forEach(card => {
+
+      card.addEventListener("click", () => {
+
+          card.style.transform = "scale(0.97)";
+
+          setTimeout(() => {
+              card.style.transform = "scale(1)";
+          }, 150);
+
+          showToast("Restaurant Opened");
+
+      });
+
+  });
+
+
+  // SEARCH FILTER
+
+  const searchInput = document.getElementById("searchInput");
+
+  searchInput.addEventListener("keyup", () => {
+
+      let value = searchInput.value.toLowerCase();
+
+      cards.forEach(card => {
+
+          if(card.innerText.toLowerCase().includes(value)){
+              card.style.display = "block";
+          }else{
+              card.style.display = "none";
+          }
+
+      });
+
+  });
+
+
+  // TOAST FUNCTION
+
+  const toast = document.getElementById("toast");
+
+  function showToast(message){
+
+      toast.innerText = message;
+
+      toast.classList.add("show");
+
+      setTimeout(() => {
+          toast.classList.remove("show");
+      }, 2000);
+
+  }
+
+
+  // AUTO CARD ANIMATION
+
+  setInterval(() => {
+
+      const mainCard = document.querySelector(".card");
+
+      mainCard.style.transform = "translateY(-8px)";
+
+      setTimeout(() => {
+          mainCard.style.transform = "translateY(0px)";
+      }, 500);
+
+  }, 3000);
+
+</script>
+</body>
+</html>

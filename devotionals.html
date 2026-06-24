@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FaithSpace | Devotionals</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.hero{
+    background: linear-gradient(rgba(8,28,58,.85), rgba(8,28,58,.85));
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+.search-box input{
+    width:100%;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:1rem;
+}
+
+.filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:20px 0 30px;
+}
+
+.filter-btn{
+    padding:10px 18px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    background:#ddd;
+}
+
+.filter-btn.active{
+    background:gold;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.category{
+    display:inline-block;
+    background:gold;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:.8rem;
+    margin-bottom:10px;
+}
+
+.scripture{
+    color:#081c3a;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.actions{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+.actions button{
+    flex:1;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.save-btn{
+    background:gold;
+}
+
+.read-btn{
+    background:#081c3a;
+    color:white;
+}
+
+.content{
+    display:none;
+    margin-top:15px;
+    padding-top:15px;
+    border-top:1px solid #ddd;
+    line-height:1.7;
+}
+
+.stats{
+    background:#081c3a;
+    color:white;
+    padding:25px;
+    border-radius:20px;
+    margin-bottom:30px;
+    display:flex;
+    justify-content:space-around;
+    text-align:center;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+    color:#333;
+}
+
+nav{
+    background:#081c3a;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    color:gold;
+    font-size:1.8rem;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    gap:20px;
+    list-style:none;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:gold;
+}
+
+footer{
+    background:#081c3a;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:60px;
+}
+
+@media(max-width:768px){
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        justify-content:center;
+    }
+}
+
+.stats h2{
+    color:gold;
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:2rem;
+    }
+
+    .stats{
+        flex-direction:column;
+        gap:20px;
+    }
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">FaithSpace</div>
+
+    <ul>
+        <li><a href="Homedevo.html">Home</a></li>
+        <li><a href="devotionals.html">Devotionals</a></li>
+        <li><a href="PrayerCenter.html">Prayer Center</a></li>
+        <li><a href="scripture-library.html">Scripture Library</a></li>
+        <li><a href="worship-center.html">Worship Center</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h1>Daily Devotionals</h1>
+    <p>Grow in faith through God's Word every day.</p>
+</section>
+
+<div class="container">
+
+    <div class="stats">
+        <div>
+            <h2 id="savedCount">0</h2>
+            <p>Saved</p>
+        </div>
+
+        <div>
+            <h2 id="readCount">0</h2>
+            <p>Read</p>
+        </div>
+    </div>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search devotionals...">
+    </div>
+
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Faith">Faith</button>
+        <button class="filter-btn" data-filter="Prayer">Prayer</button>
+        <button class="filter-btn" data-filter="Hope">Hope</button>
+        <button class="filter-btn" data-filter="Wisdom">Wisdom</button>
+        <button class="filter-btn" data-filter="Strength">Strength</button>
+    </div>
+
+    <div class="grid">
+
+        <div class="card" data-category="Faith">
+            <span class="category">Faith</span>
+            <h3>Walking By Faith</h3>
+            <p class="scripture">2 Corinthians 5:7</p>
+            <p>Trust God even when the road ahead seems uncertain.</p>
+
+            <div class="actions">
+                <button class="save-btn">❤️ Save</button>
+                <button class="read-btn">📖 Read</button>
+            </div>
+
+            <div class="content">
+                Walking by faith means trusting God beyond what you can currently see. His plans are greater than your understanding.
+            </div>
+        </div>
+
+        <div class="card" data-category="Prayer">
+            <span class="category">Prayer</span>
+            <h3>Power Of Prayer</h3>
+            <p class="scripture">James 5:16</p>
+            <p>Prayer connects us directly to God's heart.</p>
+
+            <div class="actions">
+                <button class="save-btn">❤️ Save</button>
+                <button class="read-btn">📖 Read</button>
+            </div>
+
+            <div class="content">
+                Prayer is more than asking for things. It is fellowship with God and a source of strength and wisdom.
+            </div>
+        </div>
+
+        <div class="card" data-category="Hope">
+            <span class="category">Hope</span>
+            <h3>Hope In Difficult Times</h3>
+            <p class="scripture">Romans 15:13</p>
+            <p>God remains faithful through every season.</p>
+
+            <div class="actions">
+                <button class="save-btn">❤️ Save</button>
+                <button class="read-btn">📖 Read</button>
+            </div>
+
+            <div class="content">
+                Hope is built on God's character. Even when situations change, His promises remain secure.
+            </div>
+        </div>
+
+        <div class="card" data-category="Wisdom">
+            <span class="category">Wisdom</span>
+            <h3>Wisdom For Daily Living</h3>
+            <p class="scripture">James 1:5</p>
+            <p>Ask God for wisdom and direction.</p>
+
+            <div class="actions">
+                <button class="save-btn">❤️ Save</button>
+                <button class="read-btn">📖 Read</button>
+            </div>
+
+            <div class="content">
+                God's wisdom helps you make decisions that align with His purpose and bring lasting peace.
+            </div>
+        </div>
+
+        <div class="card" data-category="Strength">
+            <span class="category">Strength</span>
+            <h3>Strength Through Trials</h3>
+            <p class="scripture">Isaiah 40:31</p>
+            <p>God renews the strength of those who trust Him.</p>
+
+            <div class="actions">
+                <button class="save-btn">❤️ Save</button>
+                <button class="read-btn">📖 Read</button>
+            </div>
+
+            <div class="content">
+                Difficult seasons can become opportunities for spiritual growth when you rely on God's strength.
+            </div>
+        </div>
+
+        <div class="card" data-category="Faith">
+            <span class="category">Faith</span>
+            <h3>Trusting God's Timing</h3>
+            <p class="scripture">Ecclesiastes 3:11</p>
+            <p>God's timing is always perfect.</p>
+
+            <div class="actions">
+                <button class="save-btn">❤️ Save</button>
+                <button class="read-btn">📖 Read</button>
+            </div>
+
+            <div class="content">
+                Waiting is not wasted when God is working behind the scenes for your good.
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 FaithSpace
+</footer>
+
+<script>
+const cards = document.querySelectorAll(".card");
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", () => {
+    const value = searchInput.value.toLowerCase();
+
+    cards.forEach(card => {
+        card.style.display =
+        card.innerText.toLowerCase().includes(value)
+        ? "block"
+        : "none";
+    });
+});
+
+document.querySelectorAll(".filter-btn").forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        document.querySelectorAll(".filter-btn")
+        .forEach(b => b.classList.remove("active"));
+
+        btn.classList.add("active");
+
+        const category = btn.dataset.filter;
+
+        cards.forEach(card => {
+
+            if(category === "all"){
+                card.style.display = "block";
+            }else{
+                card.style.display =
+                card.dataset.category === category
+                ? "block"
+                : "none";
+            }
+
+        });
+
+    });
+
+});
+
+document.querySelectorAll(".read-btn").forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        const content =
+        btn.parentElement.nextElementSibling;
+
+        content.style.display =
+        content.style.display === "block"
+        ? "none"
+        : "block";
+
+        let reads =
+        JSON.parse(localStorage.getItem("readDevotionals"))
+        || [];
+
+        const title =
+        btn.closest(".card").querySelector("h3").innerText;
+
+        if(!reads.includes(title)){
+            reads.push(title);
+
+            localStorage.setItem(
+                "readDevotionals",
+                JSON.stringify(reads)
+            );
+
+            updateStats();
+        }
+
+    });
+
+});
+
+document.querySelectorAll(".save-btn").forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        const title =
+        btn.closest(".card").querySelector("h3").innerText;
+
+        let saved =
+        JSON.parse(localStorage.getItem("savedDevotionals"))
+        || [];
+
+        if(!saved.includes(title)){
+
+            saved.push(title);
+
+            localStorage.setItem(
+                "savedDevotionals",
+                JSON.stringify(saved)
+            );
+
+            updateStats();
+        }
+
+    });
+
+});
+
+function updateStats(){
+
+    const saved =
+    JSON.parse(localStorage.getItem("savedDevotionals"))
+    || [];
+
+    const reads =
+    JSON.parse(localStorage.getItem("readDevotionals"))
+    || [];
+
+    document.getElementById("savedCount").textContent =
+    saved.length;
+
+    document.getElementById("readCount").textContent =
+    reads.length;
+}
+
+updateStats();
+</script>
+
+</body>
+</html>

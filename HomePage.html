@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixus Bank - Banking Beyond Limits</title>
+
+    <link rel="stylesheet" href="css/home.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="loader">
+
+    <h1>PIXUS BANK</h1>
+
+    <div class="spinner"></div>
+
+</div>
+
+<div id="main-content">
+
+    <!-- Your Home Page Content Here -->
+
+
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">PIXUS BANK</div>
+
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="Personal-banking.html">Personal Banking</a>
+            <a href="business-banking.html">Business Banking</a>
+            <a href="CardPage.html">Cards</a>
+            <a href="LoanPage.html">Loans</a>
+            <a href="Contact.html">Contact</a>
+            <a href="Profile.html">Profile</a>
+            <a href="DashboardPage.html">Dashboard</a>
+            <a href="Settings.html">Settings</a>
+        </nav>
+
+        <div class="nav-buttons">
+            <button><a href="LoginPage.html" class="login-btn">Login</a></button>
+            <button class="open-btn">Open Account</button>
+        </div>
+
+        <div class="menu-btn">
+            ☰
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-left">
+            <h1>Banking Beyond Limits</h1>
+
+            <p>
+                Experience modern banking with speed,
+                security and innovation.
+            </p>
+
+            <div class="hero-buttons">
+                <button>Open Account</button>
+                <button>Watch Demo</button>
+            </div>
+        </div>
+
+        <div class="hero-right">
+
+            <div class="dashboard-card">
+
+                <h3>Account Balance</h3>
+
+                <h2 id="balance">₦0</h2>
+
+                <div class="transactions">
+                    <p>Salary Credit + ₦500,000</p>
+                    <p>Netflix - ₦4,500</p>
+                    <p>Airtime - ₦2,000</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+
+        <div class="stat-box">
+            <h2 class="counter" data-target="2500000">0</h2>
+            <p>Customers</p>
+        </div>
+
+        <div class="stat-box">
+            <h2 class="counter" data-target="50000000">0</h2>
+            <p>Transactions</p>
+        </div>
+
+        <div class="stat-box">
+            <h2 class="counter" data-target="250">0</h2>
+            <p>Branches</p>
+        </div>
+
+        <div class="stat-box">
+            <h2 class="counter" data-target="15">0</h2>
+            <p>Countries</p>
+        </div>
+
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services">
+
+        <h2>Our Services</h2>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+                <h3>Savings Account</h3>
+                <p>Grow your money securely.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Current Account</h3>
+                <p>Bank smarter every day.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Business Banking</h3>
+                <p>Tools for growing businesses.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Virtual Cards</h3>
+                <p>Secure online payments.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Loans</h3>
+                <p>Flexible loan solutions.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Investments</h3>
+                <p>Build long-term wealth.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- EXCHANGE RATES -->
+    <section class="exchange">
+
+        <h2>Live Exchange Rates</h2>
+
+        <div class="rates">
+
+            <div class="rate-card">
+                <h3>USD</h3>
+                <p id="usd">₦1600</p>
+            </div>
+
+            <div class="rate-card">
+                <h3>GBP</h3>
+                <p id="gbp">₦2100</p>
+            </div>
+
+            <div class="rate-card">
+                <h3>EUR</h3>
+                <p id="eur">₦1800</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- LOAN CALCULATOR -->
+    <section class="loan">
+
+        <h2>Loan Calculator</h2>
+
+        <input type="number" id="amount" placeholder="Loan Amount">
+
+        <input type="number" id="months" placeholder="Duration in Months">
+
+        <button id="calculate">Calculate</button>
+
+        <h3 id="result">Monthly Payment: ₦0</h3>
+
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+
+        <h2>What Our Customers Say</h2>
+
+        <div class="testimonial-box">
+
+            <p id="testimonial-text">
+                Pixus Bank changed the way I manage money.
+            </p>
+
+        </div>
+        <div
+        class="page-transition"
+        id="pageTransition">
+        </div>
+
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                How do I open an account?
+            </button>
+
+            <div class="faq-answer">
+                Register online in minutes.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Is Pixus Bank secure?
+            </button>
+
+            <div class="faq-answer">
+                Yes, we use advanced security.
+            </div>
+        </div>
+
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+
+        <h2>Subscribe</h2>
+
+        <input type="email"
+               id="email"
+               placeholder="Enter Email">
+
+        <button id="subscribe">
+            Subscribe
+        </button>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div>
+            <h3>Pixus Bank</h3>
+            <p>Banking Beyond Limits</p>
+        </div>
+
+        <div>
+            <h3>
+               <a href="About.html" class="tun">Company</a>
+            </h3>
+            <p>About</p>
+            <p>Careers</p>
+        </div>
+
+        <div>
+            <h3>
+            <a href="Contact.html" class="tun">Support</a>
+            </h3>
+            <p>Contact</p>
+            <p>Help Center</p>
+        </div>
+
+    </footer>
+    </div>
+    <style>
+        /* ==========================
+   PIXUS BANK HOME PAGE
+========================== */
+
+:root{
+    --primary:#081F5C;
+    --secondary:#1D4ED8;
+    --accent:#60A5FA;
+    --white:#ffffff;
+    --light:#F8FAFC;
+    --dark:#0F172A;
+    --glass:rgba(255,255,255,.08);
+    --border:rgba(255,255,255,.15);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:
+    radial-gradient(circle at top left,#1D4ED8 0%,transparent 25%),
+    radial-gradient(circle at bottom right,#60A5FA 0%,transparent 25%),
+    #020617;
+    color:var(--white);
+    overflow-x:hidden;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(15px);
+    background:rgba(2,6,23,.55);
+    border-bottom:1px solid var(--border);
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.6rem;
+    font-weight:800;
+    letter-spacing:2px;
+    color:var(--accent);
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+    font-weight:500;
+}
+
+.nav-links a:hover{
+    color:var(--accent);
+}
+
+.nav-buttons{
+    display:flex;
+    gap:10px;
+    
+}
+
+.login-btn,
+.open-btn{
+    border:none;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.login-btn{
+    padding:10px 20px;
+    border-radius:10px;
+    background:transparent;
+    background-color:rgba(2,6,23,.55);
+    color:white;
+    border: solid rgba(255,255,255,.2);
+    text-decoration:none;
+    
+}
+
+.open-btn{
+    padding:10px 22px;
+    border-radius:10px;
+    color:white;
+    background:linear-gradient(
+        135deg,
+        var(--secondary),
+        var(--accent)
+    );
+}
+
+.login-btn:hover,
+.open-btn:hover{
+    transform:translateY(-3px);
+}
+
+.menu-btn{
+    display:none;
+    font-size:2rem;
+    cursor:pointer;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+    padding:140px 8% 80px;
+}
+
+.hero-left{
+    flex:1;
+}
+
+.hero-left h1{
+    font-size:4rem;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero-left p{
+    max-width:550px;
+    line-height:1.8;
+    color:#d1d5db;
+    margin-bottom:30px;
+}
+
+.page-transition{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#020617;
+
+    z-index:9999;
+
+    pointer-events:none;
+
+    opacity:0;
+
+    transition:.5s;
+}
+
+.page-transition.active{
+
+    opacity:1;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+}
+
+.hero-buttons button{
+    border:none;
+    cursor:pointer;
+    padding:15px 25px;
+    border-radius:12px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.hero-buttons button:first-child{
+    background:linear-gradient(
+        135deg,
+        var(--secondary),
+        var(--accent)
+    );
+    color:white;
+}
+
+.hero-buttons button:last-child{
+    background:transparent;
+    color:white;
+    border:1px solid rgba(255,255,255,.25);
+}
+
+.hero-buttons button:hover{
+    transform:translateY(-4px);
+}
+
+.hero-right{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.dashboard-card{
+    width:420px;
+    padding:35px;
+    border-radius:24px;
+    background:var(--glass);
+    backdrop-filter:blur(20px);
+    border:1px solid var(--border);
+    box-shadow:
+    0 10px 50px rgba(29,78,216,.3);
+    animation:floatCard 4s ease-in-out infinite;
+}
+
+.dashboard-card h2{
+    font-size:2.5rem;
+    margin:20px 0;
+    color:var(--accent);
+}
+
+.transactions p{
+    padding:12px;
+    margin:10px 0;
+    border-radius:10px;
+    background:rgba(255,255,255,.06);
+}
+
+@keyframes floatCard{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+/* ==========================
+   STATS
+========================== */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    padding:80px 8%;
+}
+
+.stat-box{
+    text-align:center;
+    padding:35px;
+    border-radius:20px;
+    background:var(--glass);
+    backdrop-filter:blur(15px);
+    border:1px solid var(--border);
+}
+
+.stat-box h2{
+    color:var(--accent);
+    font-size:2.2rem;
+    margin-bottom:10px;
+}
+
+/* ==========================
+   SERVICES
+========================== */
+
+.services{
+    padding:100px 8%;
+}
+
+.services h2{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:2.5rem;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.service-card{
+    padding:30px;
+    border-radius:20px;
+    background:var(--glass);
+    backdrop-filter:blur(20px);
+    border:1px solid var(--border);
+    transition:.35s;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 40px rgba(96,165,250,.25);
+}
+
+.service-card h3{
+    margin-bottom:15px;
+    color:var(--accent);
+}
+
+/* ==========================
+   EXCHANGE
+========================== */
+
+.exchange{
+    padding:100px 8%;
+    text-align:center;
+}
+
+.exchange h2{
+    margin-bottom:40px;
+}
+
+.rates{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.rate-card{
+    min-width:220px;
+    padding:30px;
+    border-radius:20px;
+    background:var(--glass);
+    border:1px solid var(--border);
+}
+
+.rate-card p{
+    margin-top:15px;
+    font-size:2rem;
+    color:var(--accent);
+}
+
+/* ==========================
+   LOAN
+========================== */
+
+.loan{
+    padding:100px 8%;
+    text-align:center;
+}
+
+.loan h2{
+    margin-bottom:30px;
+}
+
+.loan input{
+    width:100%;
+    max-width:400px;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    margin:10px auto;
+    display:block;
+}
+
+.loan button{
+    margin-top:15px;
+    border:none;
+    cursor:pointer;
+    padding:14px 25px;
+    border-radius:12px;
+    color:white;
+    background:linear-gradient(
+        135deg,
+        var(--secondary),
+        var(--accent)
+    );
+}
+
+#result{
+    margin-top:25px;
+}
+
+/* ==========================
+   TESTIMONIALS
+========================== */
+
+.testimonials{
+    padding:100px 8%;
+    text-align:center;
+}
+
+.testimonial-box{
+    max-width:700px;
+    margin:auto;
+    padding:35px;
+    border-radius:20px;
+    background:var(--glass);
+    border:1px solid var(--border);
+}
+
+#testimonial-text{
+    font-size:1.2rem;
+    line-height:1.8;
+}
+
+/* ==========================
+   FAQ
+========================== */
+
+.faq{
+    padding:100px 8%;
+}
+
+.faq h2{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.faq-item{
+    margin-bottom:15px;
+}
+
+.faq-question{
+    width:100%;
+    text-align:left;
+    padding:20px;
+    border:none;
+    cursor:pointer;
+    color:white;
+    font-size:1rem;
+    border-radius:12px;
+    background:rgba(255,255,255,.08);
+}
+
+.faq-answer{
+    display:none;
+    padding:20px;
+    color:#d1d5db;
+}
+
+/* ==========================
+   NEWSLETTER
+========================== */
+
+.newsletter{
+    text-align:center;
+    padding:100px 8%;
+}
+
+.newsletter input{
+    width:100%;
+    max-width:500px;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    margin:20px auto;
+    display:block;
+}
+
+.newsletter button{
+    padding:15px 25px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    color:white;
+    background:linear-gradient(
+        135deg,
+        var(--secondary),
+        var(--accent)
+    );
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+    padding:60px 8%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+    border-top:1px solid rgba(255,255,255,.08);
+    background:rgba(0,0,0,.25);
+}
+
+footer h3{
+    margin-bottom:15px;
+    color:var(--accent);
+    
+}
+
+.tun{
+    text-decoration: none;
+    color:var(--accent);
+}
+
+footer p{
+    margin:8px 0;
+    color:#cbd5e1;
+}
+
+.header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: #081F5C;
+
+    padding: 15px;
+}
+
+.nav-links{
+    display: flex;
+    gap: 25px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    white-space: nowrap;
+
+    padding: 10px 0;
+
+    scrollbar-width: thin;
+}
+
+.nav-links a{
+    flex-shrink: 0;
+
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#loader{
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: #020617;
+
+    z-index: 9999;
+}
+
+#main-content{
+    display: none;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:992px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero-left h1{
+        font-size:3rem;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:768px){
+
+    .nav-links,
+    .nav-buttons{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .hero-left h1{
+        font-size:2.4rem;
+    }
+
+    .dashboard-card{
+        width:100%;
+    }
+}
+    </style>
+
+    <script>
+        /* ==========================
+   PIXUS BANK HOME.JS
+========================== */
+
+/* BALANCE ANIMATION */
+
+const balanceElement = document.getElementById("balance");
+
+let currentBalance = 0;
+const targetBalance = 1250000;
+
+const balanceInterval = setInterval(() => {
+
+    currentBalance += 10000;
+
+    balanceElement.textContent =
+        "₦" + currentBalance.toLocaleString();
+
+    if (currentBalance >= targetBalance) {
+
+        balanceElement.textContent =
+            "₦" + targetBalance.toLocaleString();
+
+        clearInterval(balanceInterval);
+    }
+
+}, 15);
+
+
+/* ==========================
+   STATS COUNTER
+========================== */
+
+const counters =
+document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+
+    const updateCounter = () => {
+
+        const target =
+        +counter.getAttribute("data-target");
+
+        const count =
+        +counter.innerText;
+
+        const increment =
+        target / 200;
+
+        if (count < target) {
+
+            counter.innerText =
+            Math.ceil(count + increment);
+
+            setTimeout(updateCounter, 10);
+
+        } else {
+
+            counter.innerText =
+            target.toLocaleString() + "+";
+
+        }
+
+    };
+
+    updateCounter();
+
+});
+
+
+/* ==========================
+   TESTIMONIAL SLIDER
+========================== */
+
+const testimonials = [
+
+    "Pixus Bank changed the way I manage my finances.",
+
+    "Transfers are incredibly fast and secure.",
+
+    "The mobile experience is smooth and modern.",
+
+    "I opened my account in less than five minutes.",
+
+    "Best digital banking experience I've ever had."
+
+];
+
+const testimonialText =
+document.getElementById("testimonial-text");
+
+let testimonialIndex = 0;
+
+setInterval(() => {
+
+    testimonialIndex++;
+
+    if (testimonialIndex >= testimonials.length) {
+
+        testimonialIndex = 0;
+
+    }
+
+    testimonialText.textContent =
+    testimonials[testimonialIndex];
+
+}, 4000);
+
+
+/* ==========================
+   FAQ ACCORDION
+========================== */
+
+const faqButtons =
+document.querySelectorAll(".faq-question");
+
+faqButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const answer =
+        button.nextElementSibling;
+
+        if (
+            answer.style.display === "block"
+        ) {
+
+            answer.style.display = "none";
+
+        } else {
+
+            answer.style.display = "block";
+
+        }
+
+    });
+
+});
+
+
+/* ==========================
+   LOAN CALCULATOR
+========================== */
+
+const calculateButton =
+document.getElementById("calculate");
+
+calculateButton.addEventListener("click", () => {
+
+    const amount =
+    Number(document.getElementById("amount").value);
+
+    const months =
+    Number(document.getElementById("months").value);
+
+    const result =
+    document.getElementById("result");
+
+    if (!amount || !months) {
+
+        result.textContent =
+        "Please enter valid values";
+
+        return;
+    }
+
+    const monthly =
+    (amount * 1.12) / months;
+
+    result.textContent =
+    "Monthly Payment: ₦" +
+    monthly.toFixed(2);
+
+});
+
+
+/* ==========================
+   NEWSLETTER
+========================== */
+
+const subscribeButton =
+document.getElementById("subscribe");
+
+subscribeButton.addEventListener("click", () => {
+
+    const email =
+    document.getElementById("email").value;
+
+    const emailPattern =
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (emailPattern.test(email)) {
+
+        alert(
+            "Successfully subscribed!"
+        );
+
+    } else {
+
+        alert(
+            "Please enter a valid email."
+        );
+
+    }
+
+});
+
+
+/* ==========================
+   EXCHANGE RATE SIMULATOR
+========================== */
+
+const usd =
+document.getElementById("usd");
+
+const gbp =
+document.getElementById("gbp");
+
+const eur =
+document.getElementById("eur");
+
+function updateRates() {
+
+    usd.textContent =
+    "₦" + (1600 +
+    Math.floor(Math.random() * 20));
+
+    gbp.textContent =
+    "₦" + (2100 +
+    Math.floor(Math.random() * 20));
+
+    eur.textContent =
+    "₦" + (1800 +
+    Math.floor(Math.random() * 20));
+
+}
+
+setInterval(updateRates, 5000);
+
+
+/* ==========================
+   SCROLL REVEAL
+========================== */
+
+const revealElements =
+document.querySelectorAll(
+
+    ".service-card, .stat-box, .rate-card"
+
+);
+
+const revealOnScroll = () => {
+
+    revealElements.forEach(element => {
+
+        const position =
+        element.getBoundingClientRect().top;
+
+        const screenPosition =
+        window.innerHeight - 100;
+
+        if (position < screenPosition) {
+
+            element.style.opacity = "1";
+
+            element.style.transform =
+            "translateY(0)";
+
+        }
+
+    });
+
+};
+
+revealElements.forEach(element => {
+
+    element.style.opacity = "0";
+
+    element.style.transform =
+    "translateY(50px)";
+
+    element.style.transition =
+    "all 0.6s ease";
+
+});
+
+window.addEventListener(
+    "scroll",
+    revealOnScroll
+);
+
+revealOnScroll();
+
+
+/* ==========================
+   MOBILE MENU
+========================== */
+
+const menuButton =
+document.querySelector(".menu-btn");
+
+const navLinks =
+document.querySelector(".nav-links");
+
+menuButton.addEventListener("click", () => {
+
+    if (
+        navLinks.style.display === "flex"
+    ) {
+
+        navLinks.style.display = "none";
+
+    } else {
+
+        navLinks.style.display = "flex";
+
+        navLinks.style.flexDirection =
+        "column";
+
+        navLinks.style.position =
+        "absolute";
+
+        navLinks.style.top = "80px";
+
+        navLinks.style.right = "20px";
+
+        navLinks.style.padding = "20px";
+
+        navLinks.style.borderRadius =
+        "15px";
+
+        navLinks.style.background =
+        "#081F5C";
+
+    }
+
+});
+
+
+/* ==========================
+   NAVBAR SCROLL EFFECT
+========================== */
+
+window.addEventListener("scroll", () => {
+
+    const navbar =
+    document.querySelector(".navbar");
+
+    if (window.scrollY > 50) {
+
+        navbar.style.background =
+        "rgba(2,6,23,0.95)";
+
+    } else {
+
+        navbar.style.background =
+        "rgba(2,6,23,0.55)";
+
+    }
+
+});
+
+const transition =
+document.getElementById(
+"pageTransition"
+);
+
+document
+.querySelectorAll("a")
+.forEach(link=>{
+
+    link.addEventListener(
+    "click",
+    function(e){
+
+        const href =
+        this.getAttribute(
+        "href"
+        );
+
+        if(
+            href &&
+            !href.startsWith("#")
+        ){
+
+            e.preventDefault();
+
+            transition.classList.add(
+            "active"
+            );
+
+            setTimeout(()=>{
+
+                window.location =
+                href;
+
+            },500);
+
+        }
+
+    });
+
+});
+
+window.addEventListener(
+"load",
+()=>{
+
+    transition.classList.remove(
+    "active"
+    );
+
+});
+const nav =
+document.querySelector(".nav-links");
+
+let direction = 1;
+
+setInterval(() => {
+
+    nav.scrollLeft += direction;
+
+    if(
+        nav.scrollLeft + nav.clientWidth >= nav.scrollWidth
+    ){
+        direction = -1;
+    }
+
+    if(nav.scrollLeft <= 0){
+        direction = 1;
+    }
+
+}, 20);
+
+window.addEventListener(
+"load",
+()=>{
+
+    setTimeout(()=>{
+
+        document.getElementById(
+        "loader"
+        ).style.display = "none";
+
+        document.getElementById(
+        "main-content"
+        ).style.display = "block";
+
+    },3000);
+
+});
+    </script>
+
+</body>
+</html>

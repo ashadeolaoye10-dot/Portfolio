@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixus Bank | Settings</title>
+
+    <link rel="stylesheet" href="css/settings.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+    <section class="header">
+
+        <h1>Settings</h1>
+
+        <p>
+            Customize your Pixus Bank experience.
+        </p>
+
+    </section>
+
+    <!-- APPEARANCE -->
+
+    <section class="settings-card">
+
+        <h2>Appearance</h2>
+
+        <div class="setting-row">
+
+            <span>Dark Mode</span>
+
+            <label class="switch">
+
+                <input type="checkbox" id="darkMode">
+
+                <span class="slider"></span>
+
+            </label>
+
+        </div>
+
+    </section>
+
+    <!-- NOTIFICATIONS -->
+
+    <section class="settings-card">
+
+        <h2>Notifications</h2>
+
+        <div class="setting-row">
+
+            <span>Email Alerts</span>
+
+            <input type="checkbox" id="emailAlerts" checked>
+
+        </div>
+
+        <div class="setting-row">
+
+            <span>SMS Alerts</span>
+
+            <input type="checkbox" id="smsAlerts" checked>
+
+        </div>
+
+        <div class="setting-row">
+
+            <span>Push Notifications</span>
+
+            <input type="checkbox" id="pushAlerts">
+
+        </div>
+
+    </section>
+
+    <!-- SECURITY -->
+
+    <section class="settings-card">
+
+        <h2>Security</h2>
+
+        <div class="setting-row">
+
+            <span>Two-Factor Authentication</span>
+
+            <input type="checkbox" id="twoFactor">
+
+        </div>
+
+        <div class="setting-row">
+
+            <span>Login Alerts</span>
+
+            <input type="checkbox" id="loginAlerts" checked>
+
+        </div>
+
+    </section>
+
+    <!-- LANGUAGE -->
+
+    <section class="settings-card">
+
+        <h2>Language</h2>
+
+        <select id="language">
+
+            <option>English</option>
+
+            <option>French</option>
+
+            <option>Spanish</option>
+
+            <option>German</option>
+
+        </select>
+
+    </section>
+
+    <!-- CURRENCY -->
+
+    <section class="settings-card">
+
+        <h2>Currency</h2>
+
+        <select id="currency">
+
+            <option>NGN (₦)</option>
+
+            <option>USD ($)</option>
+
+            <option>EUR (€)</option>
+
+            <option>GBP (£)</option>
+
+        </select>
+
+    </section>
+
+    <button id="saveSettings">
+        Save Settings
+    </button>
+
+</div>
+<style>
+:root{
+    --primary:#081F5C;
+    --secondary:#1D4ED8;
+    --accent:#60A5FA;
+    --bg:#020617;
+}
+
+body.light{
+    --bg:#f8fafc;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:
+    radial-gradient(circle at top left,#1D4ED8,transparent 30%),
+    radial-gradient(circle at bottom right,#60A5FA,transparent 30%),
+    var(--bg);
+
+    color:white;
+
+    padding:30px;
+
+    min-height:100vh;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.header h1{
+    color:var(--accent);
+    margin-bottom:10px;
+}
+
+.settings-card{
+
+    margin-bottom:25px;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.12);
+}
+
+.settings-card h2{
+    margin-bottom:20px;
+}
+
+.setting-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:15px;
+}
+
+.settings-card select{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+}
+
+#saveSettings{
+
+    width:100%;
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:16px;
+
+    border-radius:12px;
+
+    color:white;
+
+    font-size:1rem;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--secondary),
+    var(--accent));
+}
+
+/* SWITCH */
+
+.switch{
+    position:relative;
+    width:60px;
+    height:30px;
+}
+
+.switch input{
+    opacity:0;
+}
+
+.slider{
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:30px;
+
+    background:#64748b;
+
+    cursor:pointer;
+}
+
+.slider::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:24px;
+    height:24px;
+
+    left:3px;
+    top:3px;
+
+    border-radius:50%;
+
+    background:white;
+
+    transition:.3s;
+}
+
+.switch input:checked + .slider{
+    background:#22c55e;
+}
+
+.switch input:checked + .slider::before{
+    transform:translateX(30px);
+}
+</style>
+<script>
+const saveButton =
+document.getElementById(
+"saveSettings"
+);
+
+const darkMode =
+document.getElementById(
+"darkMode"
+);
+
+/* LOAD SETTINGS */
+
+window.addEventListener(
+"load",
+()=>{
+
+    const savedTheme =
+    localStorage.getItem(
+    "pixusTheme"
+    );
+
+    if(savedTheme === "light"){
+
+        document.body
+        .classList.add("light");
+
+        darkMode.checked = false;
+
+    }else{
+
+        darkMode.checked = true;
+
+    }
+
+});
+
+/* DARK MODE */
+
+darkMode.addEventListener(
+"change",
+()=>{
+
+    if(darkMode.checked){
+
+        document.body
+        .classList.remove("light");
+
+    }else{
+
+        document.body
+        .classList.add("light");
+
+    }
+
+});
+
+/* SAVE SETTINGS */
+
+saveButton.addEventListener(
+"click",
+()=>{
+
+    const theme =
+
+    darkMode.checked
+    ? "dark"
+    : "light";
+
+    localStorage.setItem(
+    "pixusTheme",
+    theme
+    );
+
+    localStorage.setItem(
+    "emailAlerts",
+    document.getElementById(
+    "emailAlerts"
+    ).checked
+    );
+
+    localStorage.setItem(
+    "smsAlerts",
+    document.getElementById(
+    "smsAlerts"
+    ).checked
+    );
+
+    localStorage.setItem(
+    "pushAlerts",
+    document.getElementById(
+    "pushAlerts"
+    ).checked
+    );
+
+    localStorage.setItem(
+    "twoFactor",
+    document.getElementById(
+    "twoFactor"
+    ).checked
+    );
+
+    localStorage.setItem(
+    "language",
+    document.getElementById(
+    "language"
+    ).value
+    );
+
+    localStorage.setItem(
+    "currency",
+    document.getElementById(
+    "currency"
+    ).value
+    );
+
+    alert(
+    "Settings Saved Successfully!"
+    );
+
+});
+</script>
+
+</body>
+</html>

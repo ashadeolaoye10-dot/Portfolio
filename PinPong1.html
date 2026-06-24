@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PiusPongo</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- SPLASH SCREEN -->
+  <div id="splash">
+
+    <img src="file_00000000704c7243856b0dd783b72889.png" id="bg">
+
+    <div id="loading">
+
+      <div class="spinner"></div>
+
+      <h1>PiusPongo</h1>
+
+    </div>
+
+  </div>
+
+  <!-- GAME -->
+  <canvas id="gameCanvas"></canvas>
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    background:black;
+    font-family:Arial;
+}
+
+/* SPLASH */
+
+#splash{
+    position:fixed;
+    width:100%;
+    height:100vh;
+}
+
+#bg{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* LOADING */
+
+#loading{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,0.5);
+
+    opacity:0;
+
+    transition:1s;
+}
+
+#loading.show{
+    opacity:1;
+}
+
+.spinner{
+    width:80px;
+    height:80px;
+
+    border:8px solid white;
+    border-top:8px solid cyan;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+}
+
+h1{
+    color:white;
+    margin-top:20px;
+    font-size:40px;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+/* GAME */
+
+canvas{
+    display:none;
+    background:black;
+}
+</style>
+
+<script>
+    
+</script>
+
+</body>
+</html>

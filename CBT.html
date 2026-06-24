@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0F172A;
+  font-family: Arial, sans-serif;
+  color: #F1F5F9;
+}
+
+/* ===== APP ===== */
+.app {
+  width: 90%;
+  max-width: 500px;
+}
+
+/* ===== SECTIONS ===== */
+#login-section, #exam-section, #result-section {
+  background-color: #1E293B;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* ===== HIDDEN ===== */
+.hidden {
+  display: none;
+}
+
+/* ===== HEADINGS ===== */
+h1, h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* ===== INPUT ===== */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #334155;
+  background: #020617;
+  color: white;
+}
+
+/* ===== QUESTIONS ===== */
+.question {
+  display: none;
+}
+
+.question.active {
+  display: block;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* ===== BUTTONS ===== */
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #3B82F6;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2563EB;
+}
+
+/* ===== TIMER ===== */
+#timer {
+  text-align: center;
+  margin: 10px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- LOGIN -->
+  <div id="login-section">
+    <h1>CBT Exam System</h1>
+    <input type="text" placeholder="Enter your name" required>
+    <button id="start-btn">Start Exam</button>
+  </div>
+
+  <!-- EXAM -->
+  <div id="exam-section" class="hidden">
+
+    <div class="question">
+      <h2>1. What is Java mainly used for?</h2>
+      <label><input type="radio" name="q1" value="A"> A. Styling web pages</label>
+      <label><input type="radio" name="q1" value="B"> B. Building applications</label>
+      <label><input type="radio" name="q1" value="C"> C. Designing graphics</label>
+      <label><input type="radio" name="q1" value="D"> D. Managing databases</label>
+    </div>
+
+    <div class="question">
+      <h2>2. Which keyword is used to declare a variable in JavaScript?</h2>
+      <label><input type="radio" name="q2" value="A"> A. var</label>
+      <label><input type="radio" name="q2" value="B"> B. int</label>
+      <label><input type="radio" name="q2" value="C"> C. string</label>
+      <label><input type="radio" name="q2" value="D"> D. define</label>
+    </div>
+
+    <div class="question">
+      <h2>3. What does HTML stand for?</h2>
+      <label><input type="radio" name="q3" value="A"> A. Hyper Tool Markup Language</label>
+      <label><input type="radio" name="q3" value="B"> B. Hyper Text Markup Language</label>
+      <label><input type="radio" name="q3" value="C"> C. High Text Machine Language</label>
+      <label><input type="radio" name="q3" value="D"> D. Hyperlink Text Management Language</label>
+    </div>
+
+    <div class="question">
+      <h2>4. What does CSS stand for?</h2>
+      <label><input type="radio" name="q4" value="A"> A. Creative Style Sheets</label>
+      <label><input type="radio" name="q4" value="B"> B. Cascading Style Sheets</label>
+      <label><input type="radio" name="q4" value="C"> C. Computer Style Sheets</label>
+      <label><input type="radio" name="q4" value="D"> D. Colorful Style Sheets</label>
+    </div>
+
+    <div class="question">
+      <h2>5. What is React mainly used for?</h2>
+      <label><input type="radio" name="q5" value="A"> A. Database management</label>
+      <label><input type="radio" name="q5" value="B"> B. Building user interfaces</label>
+      <label><input type="radio" name="q5" value="C"> C. Styling websites</label>
+      <label><input type="radio" name="q5" value="D"> D. Writing backend code</label>
+    </div>
+
+    <p id="timer">Time Left: 10:00</p>
+
+    <button id="next-btn">Next</button>
+    <button id="submit-btn">Submit</button>
+
+  </div>
+
+  <!-- RESULT -->
+  <div id="result-section" class="hidden">
+    <h2>Your Score</h2>
+    <p id="score-display"></p>
+  </div>
+
+</div>
+
+<script>
+// SELECT ELEMENTS
+const loginSection = document.getElementById("login-section");
+const examSection = document.getElementById("exam-section");
+const resultSection = document.getElementById("result-section");
+
+const startBtn = document.getElementById("start-btn");
+const nextBtn = document.getElementById("next-btn");
+const submitBtn = document.getElementById("submit-btn");
+const scoreDisplay = document.getElementById("score-display");
+
+const questions = document.querySelectorAll(".question");
+
+let currentQuestion = 0;
+
+// START
+startBtn.addEventListener("click", () => {
+  loginSection.classList.add("hidden");
+  examSection.classList.remove("hidden");
+  questions[currentQuestion].classList.add("active");
+});
+
+// NEXT BUTTON
+nextBtn.addEventListener("click", () => {
+  questions[currentQuestion].classList.remove("active");
+  currentQuestion++;
+
+  if (currentQuestion < questions.length) {
+    questions[currentQuestion].classList.add("active");
+  } else {
+    submitBtn.click();
+  }
+});
+
+// SUBMIT
+submitBtn.addEventListener("click", () => {
+  let score = 0;
+
+  const answers = {
+    q1: "B",
+    q2: "A",
+    q3: "B",
+    q4: "B",
+    q5: "B"
+  };
+
+  for (let key in answers) {
+    const selected = document.querySelector(`input[name="${key}"]:checked`);
+    if (selected && selected.value === answers[key]) {
+      score++;
+    }
+  }
+
+  examSection.classList.add("hidden");
+  resultSection.classList.remove("hidden");
+
+  scoreDisplay.textContent = `You scored: ${score}/5`;
+});
+
+// TIMER
+let time = 600;
+const timer = document.getElementById("timer");
+
+const countdown = setInterval(() => {
+  let min = Math.floor(time / 60);
+  let sec = time % 60;
+  sec = sec < 10 ? "0" + sec : sec;
+
+  timer.textContent = `Time Left: ${min}:${sec}`;
+
+  time--;
+
+  if (time < 60) {
+    timer.style.color = "red";
+  }
+
+  if (time < 0) {
+    clearInterval(countdown);
+    submitBtn.click();
+  }
+}, 1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Portal</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Result Portal</h1>
+        <div class="input-section">
+            <input type="text"name="name" id="studentId" placeholder="Enter your matric Number">
+            <button class="check-btn">Check Result</button>
+            <div class="Student-info">
+                <h2>Student infomation</h2>
+                <p>
+                    <strong>Name: </strong>
+                    <span id="name">-</span>
+                </p>
+                <p>
+                    <strong>Department: </strong>
+                    <span id="department">-</span>
+                </p>
+                <p>
+                    <strong>Scores: </strong>
+                    <span id="scores">-</span>
+                </p>
+                <p>
+                    <strong>GPA: </strong>
+                    <span id="gpa">-</span>
+                </p>
+                <p>
+                    <strong>Grade: </strong>
+                    <span id="grade">-</span>
+                </p>
+                <h3>Courses</h3>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Score</th>
+                        <th>Grade</th>
+                    </tr>
+                    </thead>
+                    <tbody id="courseTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background:rgba(147,197,253,0.3);
+            display:flex;
+            justify-self:center;
+            padding:40px;
+        }
+        .container{
+            width:800px;
+            background-color:antiquewhite;
+            border-radius:10px;
+        }
+        h1{
+            text-align:center;
+            margin-bottom:30px;
+        }
+        .input-section{
+            display:flex;
+            gap:10px;
+            margin-bottom:30px;
+        }
+        input{
+            flex:1;
+            padding:12px;
+            font-size:16px;
+        }
+        button{
+            padding:12px 20px;
+            border:none;
+            background:black;
+            color:white;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: blue;
+            color:red;
+            opacity:0.4;
+        }
+        .Student-info{
+            margin-top:20px;
+        }
+        .Student-info p{
+            margin:10px 0;
+        }
+        table{
+            width:100%;
+            border-collapse: collapse;
+            margin-top:20px;
+        }
+        table th,table td{
+            border:1px solid #ccc;
+            padding:10px;
+            text-align: center;
+        }
+        table th{
+            background:#eee;
+        }
+    </style>
+</body>
+</html>
