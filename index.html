@@ -1,45 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pius Ashade Portfolio</title>
+
+<link rel="stylesheet" href="css/style.css">
+
 </head>
+
 <body>
-    <h1>Welcome to Pius Juicy</h1>
-    <p>Your one-stop solution for all things juicy!</p>
-    <div class="content">
-        <h2>About Us</h2>
-        <p>We are dedicated to providing the juiciest content and products for our customers. Our team works tirelessly to ensure that you get the best experience possible.</p>
-    </div>
-    <footer>
-        <p>&copy; 2023 Pius Juicy. All rights reserved.</p>
-    </footer>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        h1 {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .content {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: #fff;
-        }
-    </style>
+
+<nav>
+
+<div class="logo">Pius.dev</div>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="AboutPro.html">About</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="Skills.html">Skills</a></li>
+<li><a href="Contact1.html">Contact</a></li>
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div>
+
+<h1>Hello, I'm <span>Pius Ashade</span></h1>
+
+<h2 class="typing"></h2>
+
+<p>
+Passionate software engineering student
+building web applications using Java,
+HTML, CSS, JavaScript and MongoDB.
+</p>
+
+<a href="projects.html" class="btn">
+View Projects
+</a>
+
+</div>
+
+</section>
+
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+}
+
+/* Navbar */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#1e293b;
+    padding:20px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+.logo{
+    color:#38bdf8;
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* Hero Section */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.hero h1{
+    font-size:4rem;
+}
+
+.hero span{
+    color:#38bdf8;
+}
+
+.hero p{
+    margin:20px auto;
+    max-width:700px;
+    font-size:1.1rem;
+}
+
+.btn{
+    display:inline-block;
+    background:#38bdf8;
+    color:white;
+    padding:12px 30px;
+    border-radius:8px;
+    text-decoration:none;
+    margin-top:20px;
+}
+
+/* Sections */
+
+section{
+    padding:100px 10%;
+}
+
+.title{
+    text-align:center;
+    color:#38bdf8;
+    margin-bottom:40px;
+}
+
+.card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:20px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+/* Projects */
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+/* Skills */
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:20px;
+}
+
+.skill{
+    background:#1e293b;
+    padding:20px;
+    text-align:center;
+    border-radius:10px;
+}
+
+/* Contact */
+
+form{
+    max-width:600px;
+    margin:auto;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:8px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    background:#38bdf8;
+    border:none;
+    color:white;
+    cursor:pointer;
+    border-radius:8px;
+}
+
+footer{
+    background:#1e293b;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.5rem;
+}
+
+nav{
+    flex-direction:column;
+}
+
+nav ul{
+    margin-top:10px;
+}
+}
+</style>
+
+<script>
+const text = [
+    "Software Engineer",
+    "Java Developer",
+    "Frontend Developer",
+    "Problem Solver"
+];
+
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+(function type(){
+
+    if(count === text.length){
+        count = 0;
+    }
+
+    currentText = text[count];
+    letter = currentText.slice(0, ++index);
+
+    document.querySelector(".typing").textContent = letter;
+
+    if(letter.length === currentText.length){
+        count++;
+        index = 0;
+
+        setTimeout(type, 1200);
+    }
+    else{
+        setTimeout(type, 100);
+    }
+
+})();
+</script>
+
 </body>
 </html>
