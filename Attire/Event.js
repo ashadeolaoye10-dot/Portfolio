@@ -2,19 +2,20 @@
         MOBILE MENU TOGGLE
 =========================================*/
 
-const menuToggle = document.querySelector(".menu-toggle");
+const menuBtn = document.querySelector(".menu-btn");
 
 const navLinks = document.querySelector(".nav-links");
 
-if(menuToggle && navLinks){
+if(menuBtn && navLinks){
 
-    menuToggle.addEventListener("click",()=>{
+    menuBtn.addEventListener("click",()=>{
 
         navLinks.classList.toggle("active");
 
     });
 
 }
+
 
 /*=========================================
         CLOSE MENU ON LINK CLICK
@@ -202,6 +203,124 @@ festivalCards.forEach(card=>{
             card.style.transform = "";
 
         },150);
+
+    });
+
+});
+
+/*=========================================
+        TIMELINE ANIMATION
+=========================================*/
+
+const timelineItems = document.querySelectorAll(".timeline-item");
+
+const timelineItemsObserver = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity = "1";
+
+            entry.target.style.transform = "translateY(0)";
+
+            timelineItemsObserver.unobserve(entry.target);
+
+        }
+
+    });
+
+},{
+    threshold:0.2
+});
+
+timelineItems.forEach(item=>{
+
+    item.style.opacity = "0";
+
+    item.style.transform = "translateY(50px)";
+
+    item.style.transition = "all .8s ease";
+
+    timelineItemsObserver.observe(item);
+
+});
+
+/*=========================================
+        TIMELINE CARD EFFECT
+=========================================*/
+
+const timelineCards = document.querySelectorAll(".timeline-content");
+
+timelineCards.forEach(card=>{
+
+    card.addEventListener("mouseenter",()=>{
+
+        card.style.borderColor = "#D4AF37";
+
+    });
+
+    card.addEventListener("mouseleave",()=>{
+
+        card.style.borderColor = "rgba(212,175,55,.15)";
+
+    });
+
+});
+
+/*=========================================
+        CTA ANIMATION
+=========================================*/
+
+const ctaSection = document.querySelector(".cta-section");
+
+const ctaObserver = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity = "1";
+
+            entry.target.style.transform = "translateY(0)";
+
+        }
+
+    });
+
+},{
+    threshold:0.2
+});
+
+if(ctaSection){
+
+    ctaSection.style.opacity = "0";
+
+    ctaSection.style.transform = "translateY(50px)";
+
+    ctaSection.style.transition = "all .8s ease";
+
+    ctaObserver.observe(ctaSection);
+
+}
+
+/*=========================================
+        CTA BUTTON EFFECT
+=========================================*/
+
+const ctaButtons = document.querySelectorAll(".cta-btn");
+
+ctaButtons.forEach(button=>{
+
+    button.addEventListener("mouseenter",()=>{
+
+        button.style.transform = "translateY(-4px)";
+
+    });
+
+    button.addEventListener("mouseleave",()=>{
+
+        button.style.transform = "translateY(0)";
 
     });
 

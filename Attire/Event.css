@@ -46,89 +46,82 @@ ul{
                 NAVBAR
 =========================================*/
 
-header{
-
-    position:fixed;
-
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    z-index:1000;
-
-    background:rgba(5,5,5,.96);
-
-    border-bottom:1px solid rgba(212,175,55,.15);
-
-}
+/* =========================
+        NAVBAR
+========================= */
 
 nav{
-
-    max-width:1400px;
-
-    margin:auto;
-
-    padding:18px 6%;
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
+    padding:20px 6%;
+    background:#0b0b0b;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 .logo{
-
-    color:#fff;
-
-    font-size:1.9rem;
-
+    font-size:2rem;
     font-weight:700;
-
+    color:white;
 }
 
 .logo span{
-
     color:#D4AF37;
-
 }
 
 .nav-links{
-
     display:flex;
-
-    gap:35px;
-
+    gap:30px;
+    list-style:none;
 }
 
 .nav-links a{
-
-    color:#d8d8d8;
-
+    color:white;
+    text-decoration:none;
+    font-weight:500;
     transition:.3s;
-
 }
 
-.nav-links a:hover,
-
-.nav-links a.active{
-
+.nav-links a:hover{
     color:#D4AF37;
-
 }
 
-.menu-toggle{
-
+.menu-btn{
     display:none;
-
-    font-size:1.8rem;
-
-    color:#fff;
-
+    color:white;
+    font-size:2rem;
     cursor:pointer;
+}
+
+/* =========================
+        MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-links{
+        position:fixed;
+        top:80px;
+        right:-100%;
+        width:260px;
+        height:100vh;
+        background:#111;
+        flex-direction:column;
+        align-items:center;
+        padding-top:40px;
+        transition:.4s ease;
+        z-index:999;
+    }
+
+    .nav-links.active{
+        right:0;
+    }
 
 }
 
@@ -1138,6 +1131,543 @@ nav{
         font-size:14px;
 
         line-height:1.7;
+
+    }
+
+}
+
+/* EVENT SCHEDULE */
+
+.event-schedule{
+    padding:100px 6%;
+    background:#080808;
+}
+
+.timeline{
+    max-width:1000px;
+    margin:60px auto 0;
+    position:relative;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:25px;
+    top:0;
+    width:4px;
+    height:100%;
+    background:#D4AF37;
+}
+
+/* TIMELINE ITEMS */
+
+.timeline-item{
+    position:relative;
+    margin-bottom:40px;
+    padding-left:70px;
+}
+
+.timeline-item::before{
+    content:"";
+    position:absolute;
+    left:16px;
+    top:25px;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    background:#D4AF37;
+}
+
+.timeline-content{
+    background:#111;
+    padding:25px;
+    border-radius:15px;
+    border:1px solid rgba(212,175,55,.2);
+}
+
+.timeline-date{
+    color:#D4AF37;
+    font-weight:700;
+    display:block;
+    margin-bottom:10px;
+}
+
+.timeline-content h3{
+    color:#fff;
+    margin-bottom:15px;
+}
+
+.timeline-content p{
+    color:#ccc;
+    line-height:1.8;
+    margin-bottom:10px;
+}
+
+.timeline-content small{
+    color:#D4AF37;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .event-schedule{
+        padding:80px 20px;
+    }
+
+    .timeline-item{
+        padding-left:60px;
+    }
+
+    .timeline-content{
+        padding:20px;
+    }
+
+    .timeline-content h3{
+        font-size:1.3rem;
+    }
+}
+
+@media(max-width:480px){
+
+    .timeline::before{
+        left:18px;
+    }
+
+    .timeline-item{
+        padding-left:50px;
+    }
+
+    .timeline-item::before{
+        left:9px;
+        width:18px;
+        height:18px;
+    }
+
+    .timeline-content{
+        padding:18px;
+    }
+
+    .timeline-content h3{
+        font-size:1.1rem;
+    }
+
+    .timeline-content p{
+        font-size:14px;
+    }
+}
+
+
+/*=========================================
+          CALL TO ACTION
+=========================================*/
+
+.cta-section{
+
+    background:#0b0b0b;
+
+    padding:100px 6%;
+
+    text-align:center;
+
+}
+
+.cta-content{
+
+    max-width:800px;
+
+    margin:auto;
+
+}
+
+.cta-content span{
+
+    color:#D4AF37;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+.cta-content h2{
+
+    color:#fff;
+
+    font-size:3rem;
+
+    margin:20px 0;
+
+    line-height:1.3;
+
+}
+
+.cta-content p{
+
+    color:#cfcfcf;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+/*=========================================
+             BUTTONS
+=========================================*/
+
+.cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.cta-btn{
+
+    display:inline-block;
+
+    padding:14px 35px;
+
+    background:#D4AF37;
+
+    color:#111;
+
+    border:2px solid #D4AF37;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.cta-btn:hover{
+
+    background:transparent;
+
+    color:#D4AF37;
+
+}
+
+.secondary-btn{
+
+    background:transparent;
+
+    color:#D4AF37;
+
+}
+
+.secondary-btn:hover{
+
+    background:#D4AF37;
+
+    color:#111;
+
+}
+
+/*=========================================
+            RESPONSIVE
+=========================================*/
+
+@media(max-width:768px){
+
+    .cta-section{
+
+        padding:80px 20px;
+
+    }
+
+    .cta-content h2{
+
+        font-size:2.2rem;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .cta-content h2{
+
+        font-size:1.8rem;
+
+    }
+
+    .cta-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .cta-btn{
+
+        width:250px;
+
+        text-align:center;
+
+    }
+
+}
+
+/*=========================================
+                FOOTER
+=========================================*/
+
+.footer{
+
+    background:#050505;
+
+    padding:80px 6% 0;
+
+    border-top:1px solid rgba(212,175,55,.15);
+
+}
+
+.footer-container{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:50px;
+
+    max-width:1300px;
+
+    margin:auto;
+
+}
+
+/*=========================================
+            FOOTER LOGO
+=========================================*/
+
+.footer-logo h2{
+
+    color:#fff;
+
+    font-size:2rem;
+
+    margin-bottom:20px;
+
+}
+
+.footer-logo h2 span{
+
+    color:#D4AF37;
+
+}
+
+.footer-logo p{
+
+    color:#c8c8c8;
+
+    line-height:1.8;
+
+    max-width:400px;
+
+}
+
+/*=========================================
+            FOOTER LINKS
+=========================================*/
+
+.footer-links h3{
+
+    color:#D4AF37;
+
+    margin-bottom:20px;
+
+    font-size:1.2rem;
+
+}
+
+.footer-links ul{
+
+    list-style:none;
+
+}
+
+.footer-links ul li{
+
+    margin-bottom:12px;
+
+}
+
+/*=========================================
+            FOOTER LINKS
+=========================================*/
+
+.footer-links ul li a{
+
+    color:#c8c8c8;
+
+    transition:.3s ease;
+
+}
+
+.footer-links ul li a:hover{
+
+    color:#D4AF37;
+
+    padding-left:8px;
+
+}
+
+/*=========================================
+            FOOTER BOTTOM
+=========================================*/
+
+.footer-bottom{
+
+    margin-top:60px;
+
+    padding:25px 0;
+
+    text-align:center;
+
+    border-top:1px solid rgba(212,175,55,.15);
+
+}
+
+.footer-bottom p{
+
+    color:#bdbdbd;
+
+    font-size:14px;
+
+    letter-spacing:.5px;
+
+}
+
+/*=========================================
+            FOOTER EFFECTS
+=========================================*/
+
+.footer-logo h2{
+
+    transition:.3s ease;
+
+}
+
+.footer-logo h2:hover{
+
+    color:#D4AF37;
+
+}
+
+.footer-logo h2:hover span{
+
+    color:#fff;
+
+}
+
+
+/*=========================================
+        FOOTER RESPONSIVE
+=========================================*/
+
+@media (max-width:992px){
+
+    .footer-container{
+
+        grid-template-columns:1fr 1fr;
+
+        gap:40px;
+
+    }
+
+    .footer-logo{
+
+        grid-column:1 / -1;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .footer{
+
+        padding:70px 20px 0;
+
+    }
+
+    .footer-container{
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+        text-align:center;
+
+    }
+
+    .footer-logo p{
+
+        margin:auto;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .footer{
+
+        padding:60px 15px 0;
+
+    }
+
+    .footer-logo h2{
+
+        font-size:1.7rem;
+
+    }
+
+    .footer-logo p{
+
+        font-size:14px;
+
+    }
+
+    .footer-links h3{
+
+        font-size:1.1rem;
+
+    }
+
+    .footer-links ul li a{
+
+        font-size:14px;
+
+    }
+
+    .footer-bottom{
+
+        margin-top:40px;
+
+        padding:20px 0;
+
+    }
+
+    .footer-bottom p{
+
+        font-size:13px;
 
     }
 
