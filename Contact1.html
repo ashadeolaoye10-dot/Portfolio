@@ -42,12 +42,12 @@
 
             <div class="info-box">
                 <h3>GitHub</h3>
-                <p>github.com/yourusername</p>
+                <p>github.com/ashadeolaoye10</p>
             </div>
 
             <div class="info-box">
                 <h3>LinkedIn</h3>
-                <p>linkedin.com/in/yourprofile</p>
+                <p>linkedin.com/in</p>
             </div>
 
         </div>
@@ -74,6 +74,17 @@
 </footer>
 <style>
     /* ===== CONTACT PAGE (DEEP VIBE STYLE) ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    overflow-x:hidden;
+}
 
 .contact-section{
     padding:120px 10% 80px;
@@ -214,9 +225,11 @@ nav{
 /* MENU */
 
 nav ul{
+    nav ul{
     display:flex;
     list-style:none;
-    gap:95px;
+    gap:50px;
+}
 }
 
 nav ul li a{
@@ -249,73 +262,91 @@ nav ul li a:hover::after{
 }
 
 /* MOBILE RESPONSIVE */
-@media (max-width: 768px) {
+/* MOBILE RESPONSIVE */
+@media (max-width:768px){
 
-    nav {
-        flex-direction: column;
-        padding: 15px;
-        gap: 15px;
+    /* NAVBAR */
+    nav{
+        padding:15px 5%;
+        flex-direction:column;
+        gap:15px;
     }
 
-    .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+    .logo{
+        font-size:2rem;
     }
 
-    .nav-links a {
-        font-size: 14px;
+    .nav-links{
+        width:100%;
+        display:flex;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:18px;
     }
 
-    h1 {
-        font-size: 2rem;
-        text-align: center;
+    .nav-links li a{
+        font-size:14px;
     }
 
-    h2 {
-        font-size: 1.8rem;
-        text-align: center;
+    /* CONTACT SECTION */
+    .contact-section{
+        padding:140px 20px 60px;
     }
 
-    p {
-        font-size: 14px;
-        text-align: center;
+    .contact-header h1{
+        font-size:3rem;
+        line-height:1.1;
     }
 
-    .projects-container {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding: 0 15px;
+    .contact-header p{
+        font-size:1rem;
+        padding:0 10px;
     }
 
-    .project-card {
-        width: 100%;
+    /* CONTACT GRID */
+    .contact-container{
+        grid-template-columns:1fr;
+        gap:20px;
     }
 
-    .project-card img {
-        width: 100%;
-        height: auto;
+    /* INFO BOXES */
+    .info-box{
+        text-align:center;
     }
 
-    section {
-        padding: 60px 20px;
+    .info-box h3{
+        font-size:1.1rem;
     }
 
-    .about-content {
-        flex-direction: column;
-        text-align: center;
+    .info-box p{
+        font-size:0.95rem;
+        word-break:break-word;
     }
 
-    .about-content img {
-        width: 200px;
-        margin: 0 auto;
+    /* FORM */
+    .contact-form{
+        padding:20px;
     }
 
-    .contact-container {
-        flex-direction: column;
-        text-align: center;
+    .contact-form input,
+    .contact-form textarea{
+        font-size:16px;
+    }
+
+    .contact-form button{
+        width:100%;
+    }
+
+    /* FOOTER */
+    footer{
+        padding:15px;
+        font-size:14px;
+    }
+
+    /* PREVENT WHITE SPACE */
+    html,
+    body{
+        overflow-x:hidden;
     }
 }
 </style>

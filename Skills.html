@@ -36,6 +36,7 @@
 
             <div class="skill-tags">
                 <span>HTML</span>
+                <span>React</span>
                 <span>CSS</span>
                 <span>JavaScript</span>
             </div>
@@ -47,7 +48,8 @@
 
             <div class="skill-tags">
                 <span>Java</span>
-                <span>Node.js (learning)</span>
+                <span>Spring boot(learning)</span>
+                <span>J-unit</span>
             </div>
         </div>
 
@@ -57,7 +59,6 @@
 
             <div class="skill-tags">
                 <span>MongoDB</span>
-                <span>MySQL (basic)</span>
             </div>
         </div>
 
@@ -66,9 +67,10 @@
             <p>Development tools I use daily</p>
 
             <div class="skill-tags">
-                <span>Git</span>
+                <span>Intellij</span>
                 <span>GitHub</span>
                 <span>VS Code</span>
+
             </div>
         </div>
 
@@ -78,7 +80,7 @@
 
             <div class="skill-tags">
                 <span>Problem Solving</span>
-                <span>UI Design</span>
+                <span>Graphics Design</span>
                 <span>Debugging</span>
             </div>
         </div>
@@ -92,7 +94,17 @@
 </footer>
 <style>
     /* ===== SKILLS PAGE (DEEP VIBE STYLE) ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
+html,
+body{
+    width:100%;
+    overflow-x:hidden;
+}
 .skills-section{
     padding:120px 10% 80px;
     background:#070B1A;
@@ -210,7 +222,7 @@ nav{
 nav ul{
     display:flex;
     list-style:none;
-    gap:95px;
+    gap:40px;
 }
 
 nav ul li a{
@@ -243,73 +255,88 @@ nav ul li a:hover::after{
 }
 
 /* MOBILE RESPONSIVE */
-@media (max-width: 768px) {
+/* =========================
+   MOBILE RESPONSIVE
+   ========================= */
 
-    nav {
-        flex-direction: column;
-        padding: 15px;
-        gap: 15px;
+@media (max-width:768px){
+
+    /* NAVBAR */
+    nav{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:15px 4%;
     }
 
-    .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+    .logo{
+        font-size:1.5rem;
     }
 
-    .nav-links a {
-        font-size: 14px;
+    nav ul{
+        display:flex;
+        flex-direction:row;
+        flex-wrap:nowrap;
+        gap:12px;
+        list-style:none;
     }
 
-    h1 {
-        font-size: 2rem;
-        text-align: center;
+    nav ul li a{
+        font-size:11px;
     }
 
-    h2 {
-        font-size: 1.8rem;
-        text-align: center;
+    /* SKILLS SECTION */
+    .skills-section{
+        padding:120px 20px 60px;
     }
 
-    p {
-        font-size: 14px;
-        text-align: center;
+    .skills-header h1{
+        font-size:2.6rem;
+        text-align:center;
     }
 
-    .projects-container {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding: 0 15px;
+    .skills-header p{
+        font-size:1rem;
+        text-align:center;
+        padding:0 10px;
     }
 
-    .project-card {
-        width: 100%;
+    /* GRID */
+    .skills-grid{
+        grid-template-columns:1fr;
+        gap:20px;
     }
 
-    .project-card img {
-        width: 100%;
-        height: auto;
+    /* CARD */
+    .skill-card{
+        width:100%;
+        padding:20px;
     }
 
-    section {
-        padding: 60px 20px;
+    .skill-card h2{
+        font-size:1.3rem;
     }
 
-    .about-content {
-        flex-direction: column;
-        text-align: center;
+    .skill-card p{
+        font-size:0.95rem;
+        line-height:1.6;
     }
 
-    .about-content img {
-        width: 200px;
-        margin: 0 auto;
+    /* TAGS */
+    .skill-tags{
+        justify-content:center;
     }
 
-    .contact-container {
-        flex-direction: column;
-        text-align: center;
+    .skill-tags span{
+        font-size:12px;
+        padding:6px 10px;
+    }
+
+    /* FOOTER */
+    footer{
+        text-align:center;
+        padding:15px;
+        font-size:14px;
     }
 }
 

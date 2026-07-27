@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Native Exhibit | Gallery</title>
+
+    <link rel="stylesheet" href="Gallery.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!--================ HEADER ================-->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+
+                <img src="Kente.jpeg" alt="Logo">
+
+                <div>
+
+                    <h2>Native<span>Exhibit</span></h2>
+
+                    <small>Celebrating Our Heritage</small>
+
+                </div>
+
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+
+                <li><a href="Exhibition.html">Home</a></li>
+
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+
+                <li><a href="Cultures.html">Cultures</a></li>
+
+                <li><a href="#">Events</a></li>
+
+                <li><a href="#">About</a></li>
+
+                <li><a href="#">Contact</a></li>
+
+            </ul>
+
+            <div class="nav-right">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <a href="#" class="explore-btn">
+
+                    Explore More
+
+                </a>
+
+                <div class="menu-btn" id="menuBtn">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!--================ HERO ================-->
+
+    <section class="gallery-hero">
+
+        <div class="hero-content">
+
+            <p class="breadcrumb">
+
+                🏠 Home /
+
+                <span>Gallery</span>
+
+            </p>
+
+            <h1>
+
+                Nigerian Native
+
+                <span>Attire Gallery</span>
+
+            </h1>
+
+            <p>
+
+                Explore the rich beauty of Nigeria's traditional clothing,
+                showcasing unique styles from different ethnic groups across the country.
+
+            </p>
+
+            <a href="#gallery" class="hero-btn">
+
+                Browse Collection ↓
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!--================ SEARCH FILTER ================-->
+
+    <section class="search-filter">
+
+        <div class="filter-container">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search Native Attire...">
+
+            <select id="tribeFilter">
+
+                <option value="all">All Tribes</option>
+
+                <option value="Yoruba">Yoruba</option>
+
+                <option value="Igbo">Igbo</option>
+
+                <option value="Hausa">Hausa</option>
+
+                <option value="Efik">Efik</option>
+
+                <option value="Kalabari">Kalabari</option>
+
+                <option value="Tiv">Tiv</option>
+
+            </select>
+
+            <select id="regionFilter">
+
+                <option value="all">All Regions</option>
+
+                <option value="South West">South West</option>
+
+                <option value="South East">South East</option>
+
+                <option value="South South">South South</option>
+
+                <option value="North West">North West</option>
+
+                <option value="North Central">North Central</option>
+
+            </select>
+
+            <select id="occasionFilter">
+
+                <option value="all">All Occasions</option>
+
+                <option value="Wedding">Wedding</option>
+
+                <option value="Festival">Festival</option>
+
+                <option value="Marriage">Marriage</option>
+
+                <option value="Coronation">Coronation</option>
+
+                <option value="Ceremony">Ceremony</option>
+
+                <option value="Durbar">Durbar</option>
+
+            </select>
+
+            <button id="resetBtn">
+
+                Reset Filters
+
+            </button>
+
+        </div>
+
+    </section>
+    <div class="modal" id="detailsModal">
+
+    <div class="modal-content">
+
+        <span class="close-btn" id="closeModal">&times;</span>
+
+        <img id="modalImage" src="" alt="">
+
+        <div class="modal-body">
+
+            <h2 id="modalTitle"></h2>
+
+            <p><strong>Tribe:</strong> <span id="modalTribe"></span></p>
+
+            <p><strong>Region:</strong> <span id="modalRegion"></span></p>
+
+            <p><strong>Occasion:</strong> <span id="modalOccasion"></span></p>
+
+            <p id="modalDescription"></p>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!--================ GALLERY ================-->
+
+    <section class="gallery-section" id="gallery">
+
+        <div class="gallery-heading">
+
+            <span>Traditional Collections</span>
+
+            <h2>Featured Native Attires</h2>
+
+            <p>
+
+                Explore beautiful Nigerian native outfits from different tribes.
+
+            </p>
+
+        </div>
+
+        <div class="gallery-stats" id="galleryStats">
+
+            Showing 1–4 of 8 Native Attires
+
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+
+            <!-- JavaScript will insert the gallery cards here -->
+
+        </div>
+
+        <div class="pagination">
+
+            <button id="prevPage">
+
+                ❮ Previous
+
+            </button>
+
+            <span id="pageNumber">
+
+                1
+
+            </span>
+
+            <button id="nextPage">
+
+                Next ❯
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!--=========================================
+            CULTURE SECTION
+==========================================-->
+
+<section class="culture-section" id="cultures">
+
+    <div class="section-title">
+
+        <span>Explore Nigeria</span>
+
+        <h2>Discover Our Rich Cultures</h2>
+
+        <p>
+            Nigeria is home to hundreds of ethnic groups, each blessed with
+            unique traditions, beautiful native attire and cultural heritage.
+        </p>
+
+    </div>
+
+    <div class="culture-grid">
+
+        <!-- Yoruba -->
+
+        <div class="culture-card">
+
+            <img src="7caf6c95-1649-4973-98c1-2c4b31385a1d.jpeg" style="height:400px; width: 400px; object-fit: cover; object-position:top;"
+                 alt="Yoruba">
+
+            <div class="culture-content">
+
+                <h3>Yoruba</h3>
+
+                <p>
+                    Famous for Agbada, Aso-Oke, Gele and colourful ceremonies.
+                </p>
+
+                <button class="culture-btn">
+                    Learn More
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Igbo -->
+
+        <div class="culture-card">
+
+            <img src="beauty queenn😍😍😍💋.jpeg" style="height:500px; width: 400px; object-fit: cover; object-position:top;"
+                 alt="Igbo">
+
+            <div class="culture-content">
+
+                <h3>Igbo</h3>
+
+                <p>
+                    Known for Isi Agu attire, red caps and rich cultural festivals.
+                </p>
+
+                <button class="culture-btn">
+                    Learn More
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Hausa -->
+
+        <div class="culture-card">
+
+            <img src="deUtdrvNdv3iWflDTAw6uX4A.jpeg" style="height:350px; width: 400px; object-fit: cover; object-position:top;"
+                 alt="Hausa">
+
+            <div class="culture-content">
+
+                <h3>Hausa</h3>
+
+                <p>
+                    Home of the elegant Babbar Riga and the colourful Durbar Festival.
+                </p>
+
+                <button class="culture-btn">
+                    Learn More
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Efik -->
+
+        <div class="culture-card">
+
+            <img src="Nigerian Ijaw Kalabari traditional wedding.jpeg" style="height:300px; width: 400px; object-fit: cover; object-position:top;"
+                 alt="Efik">
+
+            <div class="culture-content">
+
+                <h3>Efik</h3>
+
+                <p>
+                    Popular for beautifully embroidered wrappers and traditional beads.
+                </p>
+
+                <button class="culture-btn">
+                    Learn More
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Tiv -->
+
+        <div class="culture-card">
+
+            <img src="e9741904-69aa-4495-9fa2-d1d91f75077e.jpeg"
+                 alt="Tiv">
+
+            <div class="culture-content">
+
+                <h3>Tiv</h3>
+
+                <p>
+                    Recognized by the iconic black-and-white striped woven fabric.
+                </p>
+
+                <button class="culture-btn">
+                    Learn More
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Kalabari -->
+
+        <div class="culture-card">
+
+            <img src="Traditional  attire.jpeg" style="height:300px; width: 400px; object-fit: cover; object-position:top;"
+                 alt="Kalabari">
+
+            <div class="culture-content">
+
+                <h3>Kalabari</h3>
+
+                <p>
+                    Celebrated for George wrappers and elegant Niger Delta fashion.
+                </p>
+
+                <button class="culture-btn">
+                    Learn More
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--=========================================
+            FEATURED EVENTS
+==========================================-->
+
+<section class="events-section" id="events">
+
+    <div class="section-title">
+
+        <span>Upcoming Festivals</span>
+
+        <h2>Experience Nigerian Culture</h2>
+
+        <p>
+
+            Discover some of Nigeria's most celebrated cultural festivals where
+            traditional attire, music and dance come alive.
+
+        </p>
+
+    </div>
+
+    <div class="events-grid">
+
+        <!-- Event 1 -->
+
+        <div class="event-card">
+
+            <img src="Hausa horses and riders in Durbar Festival in Kano, Nigeria_.jpeg"
+                 alt="Durbar Festival">
+
+            <div class="event-content">
+
+                <span class="event-date">
+                    August
+                </span>
+
+                <h3>Durbar Festival</h3>
+
+                <p>
+
+                    A colourful horse riding festival celebrated by the Hausa people.
+
+                </p>
+
+                <a href="#" class="event-btn">
+
+                    Learn More →
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Event 2 -->
+
+        <div class="event-card">
+
+            <img src="Calabar carnival.jpeg"
+                 alt="Osun Festival">
+
+            <div class="event-content">
+
+                <span class="event-date">
+                    December
+                </span>
+
+                <h3>Calabar Carnival(Cross River State) Festival</h3>
+
+                <p>
+
+                    A viberant month-long December celebration in Cross River State featuring colorful parades,elaborate costumes,music,dance,and millions of revelers.
+
+                </p>
+
+                <a href="#" class="event-btn">
+
+                    Learn More →
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+                <!-- Event 3 -->
+
+        <div class="event-card">
+
+            <img src="4170d6df-c92d-4ffe-9692-049a23f71dba.jpeg"
+                 alt="Osun Festival">
+
+            <div class="event-content">
+
+                <span class="event-date">
+                    August
+                </span>
+
+                <h3>Osun Osogbo Festival</h3>
+
+                <p>
+
+                    One of Nigeria's oldest festivals celebrating Yoruba heritage.
+
+                </p>
+
+                <a href="#" class="event-btn">
+
+                    Learn More →
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Event 5 -->
+
+        <div class="event-card">
+
+            <img src="Yam Festival royal procession.jpeg"
+                 alt="New Yam Festival">
+
+            <div class="event-content">
+
+                <span class="event-date">
+                    September
+                </span>
+
+                <h3>New Yam Festival</h3>
+
+                <p>
+
+                    A joyful Igbo celebration marking the beginning of the harvest season.
+
+                </p>
+
+                <a href="#" class="event-btn">
+
+                    Learn More →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--=========================================
+            TESTIMONIALS
+==========================================-->
+
+<section class="testimonials" id="testimonials">
+
+    <div class="section-title">
+
+        <span>Visitors Reviews</span>
+
+        <h2>What People Say</h2>
+
+        <p>
+            Hear from visitors who have experienced the beauty of Nigerian culture through Native Exhibit.
+        </p>
+
+    </div>
+
+    <div class="testimonial-container">
+
+        <button class="test-btn" id="testPrev">
+
+            <i class="fas fa-chevron-left"></i>
+
+        </button>
+
+        <div class="testimonial-slider">
+
+            <div class="testimonial-track" id="testimonialTrack">
+
+                <!-- Card 1 -->
+
+                <div class="testimonial-card">
+
+                    <img src="571f1f84a36d611aa38fe8acc325b69d.jpg" alt="">
+
+                    <h3>Odunayo Omotolani</h3>
+
+                    <span>Lagos, Nigeria</span>
+
+                    <p>
+
+                        Native Exhibit gave me a deeper appreciation of Nigeria's rich traditions. I absolutely loved every section of the gallery.
+
+                    </p>
+
+                    <div class="stars">★★★★★</div>
+
+                </div>
+
+                <!-- Card 2 -->
+
+                <div class="testimonial-card">
+
+                    <img src="deUtdrvNdv3iWflDTAw6uX4A.jpeg" style="width:70px; height:100px;" alt="">
+
+                    <h3>David Musa</h3>
+
+                    <span>Abuja, Nigeria</span>
+
+                    <p>
+
+                        Beautiful design, smooth navigation and lots of cultural knowledge. Highly recommended.
+
+                    </p>
+
+                    <div class="stars">★★★★★</div>
+
+                </div>
+
+                <!-- Card 3 -->
+
+                <div class="testimonial-card">
+
+                    <img src="images (59).jpeg" alt="">
+
+                    <h3>Chioma Okafor</h3>
+
+                    <span>Enugu, Nigeria</span>
+
+                    <p>
+
+                        This website made me proud of our cultural heritage. Everything feels premium.
+
+                    </p>
+
+                    <div class="stars">★★★★★</div>
+
+                </div>
+
+                <!-- Card 4 -->
+
+                <div class="testimonial-card">
+
+                    <img src="9511e92b-3ad5-43e7-ba31-d79cec4d4d74.jpeg" alt="">
+
+                    <h3>Amina Bello</h3>
+
+                    <span>Kaduna, Nigeria</span>
+
+                    <p>
+
+                        One of the best cultural websites I've visited. Excellent experience from beginning to end.
+
+                    </p>
+
+                    <div class="stars">★★★★★</div>
+
+                </div>
+
+                <!-- Card 5 -->
+
+                <div class="testimonial-card">
+
+                    <img src="Styled by davemando ( Nigeria).jpeg" alt="">
+
+                    <h3>Emeka Obi</h3>
+
+                    <span>Anambra, Nigeria</span>
+
+                    <p>
+
+                        I especially enjoyed the traditional attire collection. Beautiful work.
+
+                    </p>
+
+                    <div class="stars">★★★★★</div>
+
+                </div>
+
+                <!-- Card 6 -->
+
+                <div class="testimonial-card">
+
+                    <img src="89601a69976cb3d7bca92599f6b414ab.jpg" alt="">
+
+                    <h3>Fatima Ibrahim</h3>
+
+                    <span>Kano, Nigeria</span>
+
+                    <p>
+
+                        Modern design, smooth animations and amazing presentation of Nigerian culture.
+
+                    </p>
+
+                    <div class="stars">★★★★★</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <button class="test-btn" id="testNext">
+
+            <i class="fas fa-chevron-right"></i>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!--=========================================
+            STATISTICS SECTION
+==========================================-->
+
+<section class="stats-section" id="statistics">
+
+    <div class="section-title">
+
+        <span>Native Exhibit</span>
+
+        <h2>Our Impact In Numbers</h2>
+
+        <p>
+
+            Celebrating Nigeria's rich cultural heritage through exhibitions,
+            education and unforgettable experiences.
+
+        </p>
+
+    </div>
+
+    <div class="stats-container">
+
+        <div class="stat-card">
+
+            <i class="fas fa-tshirt"></i>
+
+            <h2 class="counter" data-target="250">0</h2>
+
+            <p>Traditional Attires</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fas fa-users"></i>
+
+            <h2 class="counter" data-target="36">0</h2>
+
+            <p>Nigerian Tribes</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fas fa-eye"></i>
+
+            <h2 class="counter" data-target="5000">0</h2>
+
+            <p>Visitors Reached</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fas fa-calendar-alt"></i>
+
+            <h2 class="counter" data-target="120">0</h2>
+
+            <p>Cultural Events</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--=========================================
+            VISITOR COMMENTS
+==========================================-->
+
+<section class="comments-section" id="comments">
+
+    <div class="section-title">
+
+        <span>Community</span>
+
+        <h2>Visitor Comments</h2>
+
+        <p>
+
+            We'd love to hear your thoughts about Native Exhibit.
+            Share your experience with other visitors.
+
+        </p>
+
+    </div>
+
+    <div class="comments-wrapper">
+
+        <!--============================
+                COMMENT FORM
+        ============================-->
+
+        <div class="comment-form">
+
+            <h3>Leave a Comment</h3>
+
+            <form id="commentForm">
+
+                <input
+                    type="text"
+                    id="commentName"
+                    placeholder="Enter your name"
+                    maxlength="40"
+                    required
+                >
+
+                <textarea
+                    id="commentMessage"
+                    rows="5"
+                    maxlength="300"
+                    placeholder="Share your experience..."
+                    required
+                ></textarea>
+
+                <button type="submit" class="comment-btn">
+
+                    Post Comment
+
+                </button>
+
+            </form>
+
+        </div>
+
+        <!--============================
+                COMMENT LIST
+        ============================-->
+
+        <div class="comments-list">
+
+            <h3>
+
+                Recent Comments
+                (<span id="commentCount">2</span>)
+
+            </h3>
+
+            <div id="commentsContainer">
+
+                <!-- Comment 1 -->
+
+                <div class="comment-card">
+
+                    <div class="comment-avatar">
+
+                        GJ
+
+                    </div>
+
+                    <div class="comment-content">
+
+                        <div class="comment-header">
+
+                            <h4>Grace Johnson</h4>
+
+                            <span>2 hours ago</span>
+
+                        </div>
+
+                        <p>
+
+                            I absolutely enjoyed exploring the beautiful
+                            Nigerian traditional attires. Great work!
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Comment 2 -->
+
+                <div class="comment-card">
+
+                    <div class="comment-avatar">
+
+                        DM
+
+                    </div>
+
+                    <div class="comment-content">
+
+                        <div class="comment-header">
+
+                            <h4>David Musa</h4>
+
+                            <span>Yesterday</span>
+
+                        </div>
+
+                        <p>
+
+                            Amazing gallery and smooth experience.
+                            I learned a lot about our cultural heritage.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--=========================================
+                FOOTER
+==========================================-->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Logo -->
+
+        <div class="footer-box">
+
+            <h2>
+
+                <span>Native</span> Exhibit
+
+            </h2>
+
+            <p>
+
+                Discover, celebrate and preserve the beauty of Nigerian
+                traditional attire and cultural heritage through one
+                digital experience.
+
+            </p>
+
+        </div>
+
+        <!-- Quick Links -->
+
+        <div class="footer-box">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#gallery">Gallery</a></li>
+
+                <li><a href="#culture">Culture</a></li>
+
+                <li><a href="#testimonials">Testimonials</a></li>
+
+                <li><a href="#statistics">Statistics</a></li>
+
+                <li><a href="#comments">Comments</a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- Culture -->
+
+        <div class="footer-box">
+
+            <h3>Explore</h3>
+
+            <ul>
+
+                <li><a href="#">Yoruba Attire</a></li>
+
+                <li><a href="#">Igbo Attire</a></li>
+
+                <li><a href="#">Hausa Attire</a></li>
+
+                <li><a href="#">Festivals</a></li>
+
+                <li><a href="#">Royal Collections</a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- Social -->
+
+        <div class="footer-box">
+
+            <h3>Follow Us</h3>
+
+            <div class="footer-social">
+
+    <a href="https://facebook.com/Pius Ashade" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+    <a href="https://instagram.com/Piusical_magix" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="https://x.com/Piusical City" target="_blank">
+        <i class="fab fa-x-twitter"></i>
+    </a>
+
+    <a href="https://youtube.com/@PiusAshade" target="_blank">
+        <i class="fab fa-youtube"></i>
+    </a>
+
+    <a href="https://tiktok.com/Piusical_magix321" target="_blank">
+        <i class="fab fa-tiktok"></i>
+    </a>
+
+    <a href="https://wa.me/2348104081241" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</div>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+
+            © 2026 Native Exhibit. All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+<!--=========================================
+            BACK TO TOP
+==========================================-->
+
+<button id="backToTop" class="back-to-top">
+
+    <i class="fas fa-arrow-up"></i>
+
+</button>
+
+
+
+    <script src="Gallery.js"></script>
+
+</body>
+
+</html>
