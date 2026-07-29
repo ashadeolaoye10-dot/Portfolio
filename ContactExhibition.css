@@ -23,7 +23,7 @@ ul{
 }
 
 /*=========================================
-            NAVBAR
+                NAVBAR
 =========================================*/
 
 .navbar{
@@ -60,50 +60,34 @@ ul{
     color:#D4AF37;
 }
 
-.menu-btn{
-    display:none;
-    font-size:2rem;
-    cursor:pointer;
-    color:#fff;
-}
-
-
 /*=========================================
             HERO SECTION
 =========================================*/
 
-.hero{
-
-    min-height:90vh;
-
+.contact-hero{
+    min-height:80vh;
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     text-align:center;
-
     padding:100px 6%;
-
     background:linear-gradient(
         rgba(0,0,0,.75),
         rgba(0,0,0,.75)
     );
-
 }
 
-.hero-content{
-
+.contact-hero-content{
     max-width:800px;
-
 }
 
-.hero-content h1{
+/*=========================================
+            HERO TEXT
+=========================================*/
+
+.contact-hero-content h1{
 
     font-size:4rem;
-
-    line-height:1.2;
 
     margin-bottom:20px;
 
@@ -111,133 +95,21 @@ ul{
 
 }
 
-.hero-content p{
+.contact-hero-content p{
 
     font-size:1.1rem;
 
-    color:#d0d0d0;
-
     line-height:1.8;
 
-    margin-bottom:35px;
-
-}
-
-.hero-btn{
-
-    display:inline-block;
-
-    padding:15px 35px;
-
-    background:#D4AF37;
-
-    color:#111;
-
-    border-radius:50px;
-
-    font-weight:600;
-
-    transition:.3s;
-
-}
-
-.hero-btn:hover{
-
-    background:#fff;
-
-    color:#111;
-
-}
-
-@media(max-width:768px){
-
-    .menu-btn{
-        display:block;
-        position:relative;
-        z-index:1001;
-        font-size:2rem;
-        color:white;
-        cursor:pointer;
-    }
-
-    .nav-links{
-        position:fixed;
-        top:0;
-        right:-100%;
-        width:250px;
-        height:100vh;
-        background:#111;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        gap:30px;
-        transition:.4s ease;
-        z-index:1000;
-    }
-
-    .nav-links.active{
-        right:0;
-    }
+    color:#d0d0d0;
 
 }
 
 /*=========================================
-        HERO RESPONSIVE
+            CONTACT INTRO
 =========================================*/
 
-@media(max-width:768px){
-
-    .hero{
-
-        padding:80px 20px;
-
-    }
-
-    .hero-content h1{
-
-        font-size:2.8rem;
-
-    }
-
-    .hero-content p{
-
-        font-size:1rem;
-
-    }
-
-}
-
-@media(max-width:480px){
-
-    .hero-content h1{
-
-        font-size:2.2rem;
-
-    }
-
-    .hero-content p{
-
-        font-size:.95rem;
-
-    }
-
-    .hero-btn{
-
-        display:inline-block;
-
-        width:220px;
-
-        text-align:center;
-
-    }
-
-}
-
-/*=========================================
-        UPCOMING EVENTS
-=========================================*/
-
-.events{
+.contact-intro{
 
     padding:100px 6%;
 
@@ -249,7 +121,9 @@ ul{
 
     text-align:center;
 
-    margin-bottom:60px;
+    max-width:800px;
+
+    margin:auto;
 
 }
 
@@ -259,7 +133,7 @@ ul{
 
     color:#D4AF37;
 
-    margin-bottom:15px;
+    margin-bottom:20px;
 
 }
 
@@ -267,127 +141,93 @@ ul{
 
     color:#cfcfcf;
 
-    max-width:700px;
-
-    margin:auto;
-
     line-height:1.8;
 
 }
 
 /*=========================================
-        EVENTS GRID
+            MOBILE NAVBAR
 =========================================*/
 
-.events-container{
+.menu-btn{
 
-    display:grid;
+    display:none;
 
-    grid-template-columns:repeat(3,1fr);
-
-    gap:30px;
-
-}
-
-/*=========================================
-            EVENT CARD
-=========================================*/
-
-.event-card{
-
-    background:#111;
-
-    border-radius:15px;
-
-    overflow:hidden;
-
-    transition:.4s ease;
-
-    border:1px solid rgba(212,175,55,.15);
-
-}
-
-.event-card:hover{
-
-    transform:translateY(-10px);
-
-    border-color:#D4AF37;
-
-}
-
-/*=========================================
-            EVENT IMAGE
-=========================================*/
-
-.event-card img{
-
-    width:100%;
-
-    height:250px;
-
-    object-fit:cover;
-
-    display:block;
-
-}
-
-/*=========================================
-            EVENT CONTENT
-=========================================*/
-
-.event-content{
-
-    padding:25px;
-
-}
-
-.event-content h3{
+    font-size:2rem;
 
     color:#fff;
 
-    margin-bottom:15px;
-
-    font-size:1.4rem;
-
-}
-
-.event-content p{
-
-    color:#cfcfcf;
-
-    line-height:1.8;
-
-    margin-bottom:15px;
-
-}
-
-.event-content span{
-
-    color:#D4AF37;
-
-    font-weight:600;
-
-}
-
-/*=========================================
-        EVENTS RESPONSIVE
-=========================================*/
-
-@media(max-width:992px){
-
-    .events-container{
-
-        grid-template-columns:repeat(2,1fr);
-
-    }
+    cursor:pointer;
 
 }
 
 @media(max-width:768px){
 
-    .events{
+    .menu-btn{
+
+        display:block;
+
+        z-index:1001;
+
+    }
+
+    .nav-links{
+
+        position:fixed;
+
+        top:0;
+
+        right:-100%;
+
+        width:250px;
+
+        height:100vh;
+
+        background:#111;
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        align-items:center;
+
+        gap:30px;
+
+        transition:.4s ease;
+
+        z-index:1000;
+
+    }
+
+    .nav-links.active{
+
+        right:0;
+
+    }
+
+}
+
+/*=========================================
+            RESPONSIVE DESIGN
+=========================================*/
+
+@media(max-width:768px){
+
+    .contact-hero{
 
         padding:80px 20px;
+
+    }
+
+    .contact-intro{
+
+        padding:80px 20px;
+
+    }
+
+    .contact-hero-content h1{
+
+        font-size:2.8rem;
 
     }
 
@@ -397,15 +237,11 @@ ul{
 
     }
 
-    .events-container{
+    .contact-hero-content p,
 
-        grid-template-columns:1fr;
+    .section-title p{
 
-    }
-
-    .event-card img{
-
-        height:220px;
+        font-size:1rem;
 
     }
 
@@ -413,43 +249,33 @@ ul{
 
 @media(max-width:480px){
 
+    .contact-hero-content h1{
+
+        font-size:2.2rem;
+
+    }
+
     .section-title h2{
 
         font-size:2rem;
 
     }
 
-    .event-content{
+    .contact-hero-content p,
 
-        padding:20px;
-
-    }
-
-    .event-content h3{
-
-        font-size:1.2rem;
-
-    }
-
-    .event-content p{
+    .section-title p{
 
         font-size:.95rem;
-
-    }
-
-    .event-card img{
-
-        height:200px;
 
     }
 
 }
 
 /*=========================================
-        FESTIVAL HIGHLIGHTS
+            CONTACT FORM
 =========================================*/
 
-.festivals{
+.contact-form-section{
 
     padding:100px 6%;
 
@@ -457,11 +283,182 @@ ul{
 
 }
 
-.festival-container{
+.contact-container{
+
+    max-width:800px;
+
+    margin:auto;
+
+}
+
+.contact-form{
+
+    background:#111;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    border:1px solid rgba(212,175,55,.15);
+
+}
+
+.contact-form h2{
+
+    text-align:center;
+
+    color:#D4AF37;
+
+    margin-bottom:30px;
+
+    font-size:2rem;
+
+}
+
+/*=========================================
+        FORM INPUTS
+=========================================*/
+
+.contact-form input,
+
+.contact-form textarea{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:20px;
+
+    background:#1a1a1a;
+
+    border:1px solid rgba(212,175,55,.15);
+
+    border-radius:10px;
+
+    color:#fff;
+
+    font-size:1rem;
+
+    outline:none;
+
+    transition:.3s ease;
+
+}
+
+.contact-form input:focus,
+
+.contact-form textarea:focus{
+
+    border-color:#D4AF37;
+
+}
+
+/*=========================================
+        SUBMIT BUTTON
+=========================================*/
+
+.contact-form button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#D4AF37;
+
+    color:#111;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+.contact-form button:hover{
+
+    background:#fff;
+
+    transform:translateY(-3px);
+
+}
+
+
+/*=========================================
+        CONTACT FORM RESPONSIVE
+=========================================*/
+
+@media(max-width:768px){
+
+    .contact-form-section{
+
+        padding:80px 20px;
+
+    }
+
+    .contact-form{
+
+        padding:30px 20px;
+
+    }
+
+    .contact-form h2{
+
+        font-size:1.8rem;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .contact-form{
+
+        padding:25px 15px;
+
+    }
+
+    .contact-form h2{
+
+        font-size:1.5rem;
+
+    }
+
+    .contact-form input,
+
+    .contact-form textarea,
+
+    .contact-form button{
+
+        font-size:.95rem;
+
+    }
+
+}
+
+/*=========================================
+        CONTACT INFORMATION
+=========================================*/
+
+.contact-info{
+
+    padding:100px 6%;
+
+    background:#080808;
+
+}
+
+.info-container{
 
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(4,1fr);
 
     gap:30px;
 
@@ -470,16 +467,18 @@ ul{
 }
 
 /*=========================================
-        FESTIVAL CARD
+            INFO CARD
 =========================================*/
 
-.festival-card{
+.info-card{
 
     background:#111;
 
-    border-radius:15px;
+    padding:35px 25px;
 
-    overflow:hidden;
+    text-align:center;
+
+    border-radius:20px;
 
     border:1px solid rgba(212,175,55,.15);
 
@@ -487,41 +486,24 @@ ul{
 
 }
 
-.festival-card:hover{
 
-    transform:translateY(-10px);
+/*=========================================
+            INFO ICON
+=========================================*/
 
-    border-color:#D4AF37;
+.info-icon{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
 
 }
 
 /*=========================================
-        FESTIVAL IMAGES
+            INFO CONTENT
 =========================================*/
 
-.festival-card img{
-
-    width:100%;
-
-    height:250px;
-
-    object-fit:cover;
-
-    display:block;
-
-}
-
-/*=========================================
-        FESTIVAL CONTENT
-=========================================*/
-
-.festival-content{
-
-    padding:25px;
-
-}
-
-.festival-content h3{
+.info-card h3{
 
     color:#fff;
 
@@ -531,44 +513,41 @@ ul{
 
 }
 
-.festival-content p{
+.info-card p{
 
     color:#cfcfcf;
 
     line-height:1.8;
 
+    font-size:.95rem;
+
 }
 
 /*=========================================
-        HOVER EFFECTS
+            HOVER EFFECT
 =========================================*/
 
-.festival-card:hover h3{
+.info-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#D4AF37;
+
+}
+
+.info-card:hover h3{
 
     color:#D4AF37;
 
 }
 
-.festival-card img{
-
-    transition:.4s ease;
-
-}
-
-.festival-card:hover img{
-
-    transform:scale(1.05);
-
-}
-
-
 /*=========================================
-        FESTIVAL RESPONSIVE
+    CONTACT INFO RESPONSIVE
 =========================================*/
 
 @media(max-width:992px){
 
-    .festival-container{
+    .info-container{
 
         grid-template-columns:repeat(2,1fr);
 
@@ -578,27 +557,27 @@ ul{
 
 @media(max-width:768px){
 
-    .festivals{
+    .contact-info{
 
         padding:80px 20px;
 
     }
 
-    .festival-container{
+    .info-container{
 
         grid-template-columns:1fr;
 
     }
 
-    .festival-card img{
+    .info-card{
 
-        height:220px;
+        padding:30px 20px;
 
     }
 
-    .festival-content{
+    .info-card h3{
 
-        padding:20px;
+        font-size:1.3rem;
 
     }
 
@@ -606,122 +585,62 @@ ul{
 
 @media(max-width:480px){
 
-    .festival-card img{
+    .info-icon{
 
-        height:200px;
+        font-size:2.5rem;
 
     }
 
-    .festival-content h3{
+    .info-card h3{
 
         font-size:1.2rem;
 
     }
 
-    .festival-content p{
+    .info-card p{
 
-        font-size:.95rem;
+        font-size:.9rem;
 
     }
 
 }
 
+
 /*=========================================
-            EVENT TIMELINE
+            FAQ SECTION
 =========================================*/
 
-.timeline-section{
+.faq-section{
 
     padding:100px 6%;
 
-    background:#080808;
+    background:#0b0b0b;
 
 }
 
-.timeline{
+.faq-container{
 
     max-width:900px;
 
-    margin:60px auto 0;
+    margin:50px auto 0;
 
-    position:relative;
+    display:flex;
 
-}
+    flex-direction:column;
 
-/*=========================================
-            TIMELINE LINE
-=========================================*/
-
-.timeline::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:25px;
-
-    top:0;
-
-    width:4px;
-
-    height:100%;
-
-    background:#D4AF37;
-
-    border-radius:10px;
-
-}
-
-
-/*=========================================
-            TIMELINE ITEMS
-=========================================*/
-
-.timeline-item{
-
-    position:relative;
-
-    margin-bottom:40px;
-
-    padding-left:70px;
+    gap:25px;
 
 }
 
 /*=========================================
-            TIMELINE DOT
+            FAQ ITEM
 =========================================*/
 
-.timeline-item::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:16px;
-
-    top:20px;
-
-    width:20px;
-
-    height:20px;
-
-    border-radius:50%;
-
-    background:#D4AF37;
-
-    border:3px solid #111;
-
-}
-
-/*=========================================
-            TIMELINE CARD
-=========================================*/
-
-.timeline-content{
+.faq-item{
 
     background:#111;
 
-    padding:25px;
+    padding:30px;
 
     border-radius:15px;
 
@@ -731,7 +650,35 @@ ul{
 
 }
 
-.timeline-content:hover{
+/*=========================================
+            FAQ CONTENT
+=========================================*/
+
+.faq-item h3{
+
+    color:#fff;
+
+    font-size:1.3rem;
+
+    margin-bottom:15px;
+
+}
+
+.faq-item p{
+
+    color:#cfcfcf;
+
+    line-height:1.8;
+
+    font-size:.95rem;
+
+}
+
+/*=========================================
+            HOVER EFFECT
+=========================================*/
+
+.faq-item:hover{
 
     transform:translateY(-5px);
 
@@ -739,71 +686,31 @@ ul{
 
 }
 
-/*=========================================
-            TIMELINE TEXT
-=========================================*/
-
-.timeline-date{
+.faq-item:hover h3{
 
     color:#D4AF37;
 
-    font-weight:600;
-
-    display:block;
-
-    margin-bottom:10px;
-
-}
-
-.timeline-content h3{
-
-    color:#fff;
-
-    margin-bottom:15px;
-
-    font-size:1.4rem;
-
-}
-
-.timeline-content p{
-
-    color:#cfcfcf;
-
-    line-height:1.8;
-
 }
 
 /*=========================================
-        TIMELINE RESPONSIVE
+            FAQ RESPONSIVE
 =========================================*/
 
 @media(max-width:768px){
 
-    .timeline-section{
+    .faq-section{
 
         padding:80px 20px;
 
     }
 
-    .timeline{
+    .faq-item{
 
-        margin-top:40px;
-
-    }
-
-    .timeline-item{
-
-        padding-left:60px;
+        padding:25px 20px;
 
     }
 
-    .timeline-content{
-
-        padding:20px;
-
-    }
-
-    .timeline-content h3{
+    .faq-item h3{
 
         font-size:1.2rem;
 
@@ -813,57 +720,35 @@ ul{
 
 @media(max-width:480px){
 
-    .timeline::before{
+    .faq-item{
 
-        left:18px;
-
-    }
-
-    .timeline-item{
-
-        padding-left:50px;
+        padding:20px 15px;
 
     }
 
-    .timeline-item::before{
-
-        left:9px;
-
-        width:18px;
-
-        height:18px;
-
-    }
-
-    .timeline-content{
-
-        padding:18px;
-
-    }
-
-    .timeline-content h3{
+    .faq-item h3{
 
         font-size:1.1rem;
 
     }
 
-    .timeline-content p{
+    .faq-item p{
 
-        font-size:.95rem;
+        font-size:.9rem;
 
     }
 
 }
 
 /*=========================================
-            CALL TO ACTION
+            CONTACT CTA
 =========================================*/
 
-.cta-section{
+.contact-cta{
 
     padding:100px 6%;
 
-    background:#0b0b0b;
+    background:#080808;
 
     text-align:center;
 
@@ -909,34 +794,19 @@ ul{
 
     line-height:1.8;
 
-    font-size:1rem;
-
-    margin-bottom:40px;
+    margin-bottom:35px;
 
 }
-
 
 /*=========================================
-            CTA BUTTONS
+            CTA BUTTON
 =========================================*/
-
-.cta-buttons{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:20px;
-
-    flex-wrap:wrap;
-
-}
 
 .cta-btn{
 
     display:inline-block;
 
-    padding:15px 35px;
+    padding:15px 40px;
 
     background:#D4AF37;
 
@@ -958,33 +828,10 @@ ul{
 
     color:#D4AF37;
 
-}
-
-.secondary-btn{
-
-    background:transparent;
-
-    color:#D4AF37;
-
-}
-
-.secondary-btn:hover{
-
-    background:#D4AF37;
-
-    color:#111;
-
-}
-
-/*=========================================
-            BUTTON ANIMATION
-=========================================*/
-
-.cta-btn:hover{
-
     transform:translateY(-4px);
 
 }
+
 
 /*=========================================
         CTA RESPONSIVE
@@ -992,7 +839,7 @@ ul{
 
 @media(max-width:768px){
 
-    .cta-section{
+    .contact-cta{
 
         padding:80px 20px;
 
@@ -1006,7 +853,7 @@ ul{
 
     .cta-content p{
 
-        font-size:.95rem;
+        font-size:1rem;
 
     }
 
@@ -1020,17 +867,15 @@ ul{
 
     }
 
-    .cta-buttons{
+    .cta-content p{
 
-        flex-direction:column;
-
-        align-items:center;
+        font-size:.95rem;
 
     }
 
     .cta-btn{
 
-        width:230px;
+        width:220px;
 
         text-align:center;
 
@@ -1153,8 +998,6 @@ ul{
     color:#bdbdbd;
 
     font-size:14px;
-
-    letter-spacing:.5px;
 
 }
 

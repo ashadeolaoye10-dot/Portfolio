@@ -23,7 +23,7 @@ ul{
 }
 
 /*=========================================
-            NAVBAR
+                NAVBAR
 =========================================*/
 
 .navbar{
@@ -60,19 +60,74 @@ ul{
     color:#D4AF37;
 }
 
-.menu-btn{
-    display:none;
-    font-size:2rem;
-    cursor:pointer;
-    color:#fff;
-}
-
 
 /*=========================================
-            HERO SECTION
+            MOBILE NAVBAR
 =========================================*/
 
-.hero{
+.menu-btn{
+
+    display:none;
+
+    font-size:2rem;
+
+    color:#fff;
+
+    cursor:pointer;
+
+}
+
+@media(max-width:768px){
+
+    .menu-btn{
+
+        display:block;
+
+        z-index:1001;
+
+    }
+
+    .nav-links{
+
+        position:fixed;
+
+        top:0;
+
+        right:-100%;
+
+        width:250px;
+
+        height:100vh;
+
+        background:#111;
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        align-items:center;
+
+        gap:30px;
+
+        transition:.4s ease;
+
+        z-index:1000;
+
+    }
+
+    .nav-links.active{
+
+        right:0;
+
+    }
+
+}
+
+/*=========================================
+            ABOUT HERO
+=========================================*/
+
+.about-hero{
 
     min-height:90vh;
 
@@ -93,17 +148,19 @@ ul{
 
 }
 
-.hero-content{
+.about-content{
 
     max-width:800px;
 
 }
 
-.hero-content h1{
+/*=========================================
+            HERO TEXT
+=========================================*/
+
+.about-content h1{
 
     font-size:4rem;
-
-    line-height:1.2;
 
     margin-bottom:20px;
 
@@ -111,95 +168,39 @@ ul{
 
 }
 
-.hero-content p{
+.about-content p{
 
     font-size:1.1rem;
 
+    line-height:1.9;
+
     color:#d0d0d0;
 
-    line-height:1.8;
+    max-width:700px;
 
-    margin-bottom:35px;
-
-}
-
-.hero-btn{
-
-    display:inline-block;
-
-    padding:15px 35px;
-
-    background:#D4AF37;
-
-    color:#111;
-
-    border-radius:50px;
-
-    font-weight:600;
-
-    transition:.3s;
-
-}
-
-.hero-btn:hover{
-
-    background:#fff;
-
-    color:#111;
-
-}
-
-@media(max-width:768px){
-
-    .menu-btn{
-        display:block;
-        position:relative;
-        z-index:1001;
-        font-size:2rem;
-        color:white;
-        cursor:pointer;
-    }
-
-    .nav-links{
-        position:fixed;
-        top:0;
-        right:-100%;
-        width:250px;
-        height:100vh;
-        background:#111;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        gap:30px;
-        transition:.4s ease;
-        z-index:1000;
-    }
-
-    .nav-links.active{
-        right:0;
-    }
+    margin:auto;
 
 }
 
 /*=========================================
-        HERO RESPONSIVE
+            RESPONSIVE
 =========================================*/
 
 @media(max-width:768px){
 
-    .hero{
+    .about-hero{
 
         padding:80px 20px;
 
     }
 
-    .hero-content h1{
+    .about-content h1{
 
         font-size:2.8rem;
 
     }
 
-    .hero-content p{
+    .about-content p{
 
         font-size:1rem;
 
@@ -209,39 +210,196 @@ ul{
 
 @media(max-width:480px){
 
-    .hero-content h1{
+    .about-content h1{
 
         font-size:2.2rem;
 
     }
 
-    .hero-content p{
+    .about-content p{
 
         font-size:.95rem;
-
-    }
-
-    .hero-btn{
-
-        display:inline-block;
-
-        width:220px;
-
-        text-align:center;
 
     }
 
 }
 
 /*=========================================
-        UPCOMING EVENTS
+                OUR STORY
 =========================================*/
 
-.events{
+.our-story{
 
     padding:100px 6%;
 
     background:#080808;
+
+}
+
+.story-container{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+/*=========================================
+            STORY IMAGE
+=========================================*/
+
+.story-image img{
+
+    width:100%;
+
+    border-radius:20px;
+
+    display:block;
+
+    border:2px solid rgba(212,175,55,.2);
+
+}
+
+
+/*=========================================
+            STORY CONTENT
+=========================================*/
+
+.story-content span{
+
+    color:#D4AF37;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+}
+
+.story-content h2{
+
+    font-size:3rem;
+
+    color:#fff;
+
+    margin:20px 0;
+
+    line-height:1.3;
+
+}
+
+.story-content p{
+
+    color:#cfcfcf;
+
+    line-height:1.9;
+
+    margin-bottom:20px;
+
+    font-size:1rem;
+
+}
+
+/*=========================================
+            HOVER EFFECT
+=========================================*/
+
+.story-image img{
+
+    transition:.4s ease;
+
+}
+
+.story-image img:hover{
+
+    transform:scale(1.03);
+
+    border-color:#D4AF37;
+
+}
+
+/*=========================================
+        OUR STORY RESPONSIVE
+=========================================*/
+
+@media(max-width:992px){
+
+    .story-container{
+
+        grid-template-columns:1fr;
+
+        gap:40px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .our-story{
+
+        padding:80px 20px;
+
+    }
+
+    .story-content{
+
+        text-align:center;
+
+    }
+
+    .story-content h2{
+
+        font-size:2.3rem;
+
+    }
+
+    .story-content p{
+
+        font-size:.95rem;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .story-content h2{
+
+        font-size:1.9rem;
+
+    }
+
+    .story-content p{
+
+        font-size:.9rem;
+
+    }
+
+    .story-image img{
+
+        border-radius:15px;
+
+    }
+
+}
+
+/*=========================================
+            MISSION & VISION
+=========================================*/
+
+.mission-vision{
+
+    padding:100px 6%;
+
+    background:#0b0b0b;
 
 }
 
@@ -276,38 +434,41 @@ ul{
 }
 
 /*=========================================
-        EVENTS GRID
+            CARD LAYOUT
 =========================================*/
 
-.events-container{
+.mv-container{
 
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(2,1fr);
 
     gap:30px;
 
 }
 
+
 /*=========================================
-            EVENT CARD
+        MISSION & VISION CARDS
 =========================================*/
 
-.event-card{
+.mv-card{
 
     background:#111;
 
-    border-radius:15px;
+    padding:40px 30px;
 
-    overflow:hidden;
+    border-radius:20px;
 
-    transition:.4s ease;
+    text-align:center;
 
     border:1px solid rgba(212,175,55,.15);
 
+    transition:.4s ease;
+
 }
 
-.event-card:hover{
+.mv-card:hover{
 
     transform:translateY(-10px);
 
@@ -316,68 +477,50 @@ ul{
 }
 
 /*=========================================
-            EVENT IMAGE
+            CARD ICON
 =========================================*/
 
-.event-card img{
+.mv-icon{
 
-    width:100%;
+    font-size:3rem;
 
-    height:250px;
-
-    object-fit:cover;
-
-    display:block;
+    margin-bottom:20px;
 
 }
 
 /*=========================================
-            EVENT CONTENT
+            CARD CONTENT
 =========================================*/
 
-.event-content{
-
-    padding:25px;
-
-}
-
-.event-content h3{
+.mv-card h3{
 
     color:#fff;
 
-    margin-bottom:15px;
+    font-size:1.8rem;
 
-    font-size:1.4rem;
+    margin-bottom:15px;
 
 }
 
-.event-content p{
+.mv-card p{
 
     color:#cfcfcf;
 
     line-height:1.8;
 
-    margin-bottom:15px;
-
-}
-
-.event-content span{
-
-    color:#D4AF37;
-
-    font-weight:600;
+    font-size:1rem;
 
 }
 
 /*=========================================
-        EVENTS RESPONSIVE
+    MISSION & VISION RESPONSIVE
 =========================================*/
 
 @media(max-width:992px){
 
-    .events-container{
+    .mv-container{
 
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:1fr;
 
     }
 
@@ -385,7 +528,7 @@ ul{
 
 @media(max-width:768px){
 
-    .events{
+    .mission-vision{
 
         padding:80px 20px;
 
@@ -397,15 +540,15 @@ ul{
 
     }
 
-    .events-container{
+    .mv-card{
 
-        grid-template-columns:1fr;
+        padding:30px 20px;
 
     }
 
-    .event-card img{
+    .mv-card h3{
 
-        height:220px;
+        font-size:1.5rem;
 
     }
 
@@ -419,49 +562,49 @@ ul{
 
     }
 
-    .event-content{
-
-        padding:20px;
-
-    }
-
-    .event-content h3{
-
-        font-size:1.2rem;
-
-    }
-
-    .event-content p{
+    .section-title p{
 
         font-size:.95rem;
 
     }
 
-    .event-card img{
+    .mv-icon{
 
-        height:200px;
+        font-size:2.5rem;
+
+    }
+
+    .mv-card h3{
+
+        font-size:1.3rem;
+
+    }
+
+    .mv-card p{
+
+        font-size:.95rem;
 
     }
 
 }
 
 /*=========================================
-        FESTIVAL HIGHLIGHTS
+        WHY NATIVE EXHIBIT
 =========================================*/
 
-.festivals{
+.why-us{
 
     padding:100px 6%;
 
-    background:#0b0b0b;
+    background:#080808;
 
 }
 
-.festival-container{
+.why-container{
 
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(4,1fr);
 
     gap:30px;
 
@@ -470,16 +613,18 @@ ul{
 }
 
 /*=========================================
-        FESTIVAL CARD
+            WHY CARD
 =========================================*/
 
-.festival-card{
+.why-card{
 
     background:#111;
 
-    border-radius:15px;
+    padding:35px 25px;
 
-    overflow:hidden;
+    text-align:center;
+
+    border-radius:20px;
 
     border:1px solid rgba(212,175,55,.15);
 
@@ -487,41 +632,23 @@ ul{
 
 }
 
-.festival-card:hover{
+/*=========================================
+            WHY ICON
+=========================================*/
 
-    transform:translateY(-10px);
+.why-icon{
 
-    border-color:#D4AF37;
+    font-size:3rem;
+
+    margin-bottom:20px;
 
 }
 
 /*=========================================
-        FESTIVAL IMAGES
+            WHY CONTENT
 =========================================*/
 
-.festival-card img{
-
-    width:100%;
-
-    height:250px;
-
-    object-fit:cover;
-
-    display:block;
-
-}
-
-/*=========================================
-        FESTIVAL CONTENT
-=========================================*/
-
-.festival-content{
-
-    padding:25px;
-
-}
-
-.festival-content h3{
+.why-card h3{
 
     color:#fff;
 
@@ -531,44 +658,42 @@ ul{
 
 }
 
-.festival-content p{
+.why-card p{
 
     color:#cfcfcf;
 
     line-height:1.8;
 
+    font-size:.95rem;
+
 }
 
 /*=========================================
-        HOVER EFFECTS
+            HOVER EFFECT
 =========================================*/
 
-.festival-card:hover h3{
+.why-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#D4AF37;
+
+}
+
+.why-card:hover h3{
 
     color:#D4AF37;
 
 }
 
-.festival-card img{
-
-    transition:.4s ease;
-
-}
-
-.festival-card:hover img{
-
-    transform:scale(1.05);
-
-}
-
 
 /*=========================================
-        FESTIVAL RESPONSIVE
+        WHY NATIVE EXHIBIT RESPONSIVE
 =========================================*/
 
 @media(max-width:992px){
 
-    .festival-container{
+    .why-container{
 
         grid-template-columns:repeat(2,1fr);
 
@@ -578,234 +703,27 @@ ul{
 
 @media(max-width:768px){
 
-    .festivals{
+    .why-us{
 
         padding:80px 20px;
 
     }
 
-    .festival-container{
+    .why-container{
 
         grid-template-columns:1fr;
 
     }
 
-    .festival-card img{
+    .why-card{
 
-        height:220px;
-
-    }
-
-    .festival-content{
-
-        padding:20px;
+        padding:30px 20px;
 
     }
 
-}
+    .why-card h3{
 
-@media(max-width:480px){
-
-    .festival-card img{
-
-        height:200px;
-
-    }
-
-    .festival-content h3{
-
-        font-size:1.2rem;
-
-    }
-
-    .festival-content p{
-
-        font-size:.95rem;
-
-    }
-
-}
-
-/*=========================================
-            EVENT TIMELINE
-=========================================*/
-
-.timeline-section{
-
-    padding:100px 6%;
-
-    background:#080808;
-
-}
-
-.timeline{
-
-    max-width:900px;
-
-    margin:60px auto 0;
-
-    position:relative;
-
-}
-
-/*=========================================
-            TIMELINE LINE
-=========================================*/
-
-.timeline::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:25px;
-
-    top:0;
-
-    width:4px;
-
-    height:100%;
-
-    background:#D4AF37;
-
-    border-radius:10px;
-
-}
-
-
-/*=========================================
-            TIMELINE ITEMS
-=========================================*/
-
-.timeline-item{
-
-    position:relative;
-
-    margin-bottom:40px;
-
-    padding-left:70px;
-
-}
-
-/*=========================================
-            TIMELINE DOT
-=========================================*/
-
-.timeline-item::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:16px;
-
-    top:20px;
-
-    width:20px;
-
-    height:20px;
-
-    border-radius:50%;
-
-    background:#D4AF37;
-
-    border:3px solid #111;
-
-}
-
-/*=========================================
-            TIMELINE CARD
-=========================================*/
-
-.timeline-content{
-
-    background:#111;
-
-    padding:25px;
-
-    border-radius:15px;
-
-    border:1px solid rgba(212,175,55,.15);
-
-    transition:.4s ease;
-
-}
-
-.timeline-content:hover{
-
-    transform:translateY(-5px);
-
-    border-color:#D4AF37;
-
-}
-
-/*=========================================
-            TIMELINE TEXT
-=========================================*/
-
-.timeline-date{
-
-    color:#D4AF37;
-
-    font-weight:600;
-
-    display:block;
-
-    margin-bottom:10px;
-
-}
-
-.timeline-content h3{
-
-    color:#fff;
-
-    margin-bottom:15px;
-
-    font-size:1.4rem;
-
-}
-
-.timeline-content p{
-
-    color:#cfcfcf;
-
-    line-height:1.8;
-
-}
-
-/*=========================================
-        TIMELINE RESPONSIVE
-=========================================*/
-
-@media(max-width:768px){
-
-    .timeline-section{
-
-        padding:80px 20px;
-
-    }
-
-    .timeline{
-
-        margin-top:40px;
-
-    }
-
-    .timeline-item{
-
-        padding-left:60px;
-
-    }
-
-    .timeline-content{
-
-        padding:20px;
-
-    }
-
-    .timeline-content h3{
-
-        font-size:1.2rem;
+        font-size:1.3rem;
 
     }
 
@@ -813,43 +731,21 @@ ul{
 
 @media(max-width:480px){
 
-    .timeline::before{
+    .why-icon{
 
-        left:18px;
-
-    }
-
-    .timeline-item{
-
-        padding-left:50px;
+        font-size:2.5rem;
 
     }
 
-    .timeline-item::before{
+    .why-card h3{
 
-        left:9px;
-
-        width:18px;
-
-        height:18px;
+        font-size:1.2rem;
 
     }
 
-    .timeline-content{
+    .why-card p{
 
-        padding:18px;
-
-    }
-
-    .timeline-content h3{
-
-        font-size:1.1rem;
-
-    }
-
-    .timeline-content p{
-
-        font-size:.95rem;
+        font-size:.9rem;
 
     }
 
@@ -859,7 +755,7 @@ ul{
             CALL TO ACTION
 =========================================*/
 
-.cta-section{
+.about-cta{
 
     padding:100px 6%;
 
@@ -909,12 +805,9 @@ ul{
 
     line-height:1.8;
 
-    font-size:1rem;
-
     margin-bottom:40px;
 
 }
-
 
 /*=========================================
             CTA BUTTONS
@@ -958,6 +851,8 @@ ul{
 
     color:#D4AF37;
 
+    transform:translateY(-4px);
+
 }
 
 .secondary-btn{
@@ -977,22 +872,12 @@ ul{
 }
 
 /*=========================================
-            BUTTON ANIMATION
-=========================================*/
-
-.cta-btn:hover{
-
-    transform:translateY(-4px);
-
-}
-
-/*=========================================
         CTA RESPONSIVE
 =========================================*/
 
 @media(max-width:768px){
 
-    .cta-section{
+    .about-cta{
 
         padding:80px 20px;
 
@@ -1030,13 +915,14 @@ ul{
 
     .cta-btn{
 
-        width:230px;
+        width:220px;
 
         text-align:center;
 
     }
 
 }
+
 
 /*=========================================
                 FOOTER
@@ -1096,6 +982,7 @@ ul{
 
 }
 
+
 /*=========================================
             FOOTER LINKS
 =========================================*/
@@ -1153,8 +1040,6 @@ ul{
     color:#bdbdbd;
 
     font-size:14px;
-
-    letter-spacing:.5px;
 
 }
 

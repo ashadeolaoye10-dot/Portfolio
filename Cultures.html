@@ -43,11 +43,11 @@
 
             <li><a href="Cultures.html" class="active">Cultures</a></li>
 
-            <li><a href="Events.html">Events</a></li>
+            <li><a href="Event.html">Events</a></li>
 
-            <li><a href="About.html">About</a></li>
+            <li><a href="AboutExhibition.html">About</a></li>
 
-            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="ContactExhibition.html">Contact</a></li>
 
         </ul>
 
@@ -126,7 +126,7 @@
 
         <div class="culture-card">
 
-            <img src="images/yoruba.jpg" alt="Yoruba Culture">
+            <img src="7caf6c95-1649-4973-98c1-2c4b31385a1d.jpeg" alt="Yoruba Culture">
 
             <div class="culture-content">
 
@@ -153,7 +153,7 @@
 
         <div class="culture-card">
 
-            <img src="images/igbo.jpg" alt="Igbo Culture">
+            <img src="beauty queenn😍😍😍💋.jpeg" alt="Igbo Culture">
 
             <div class="culture-content">
 
@@ -180,7 +180,7 @@
 
         <div class="culture-card">
 
-            <img src="images/hausa.jpg" alt="Hausa Culture">
+            <img src="Hausa Wedding Couple.jpeg" alt="Hausa Culture">
 
             <div class="culture-content">
 
@@ -207,7 +207,7 @@
 
         <div class="culture-card">
 
-            <img src="images/fulani.jpg" alt="Fulani Culture">
+            <img src="9511e92b-3ad5-43e7-ba31-d79cec4d4d74.jpeg" alt="Fulani Culture">
 
             <div class="culture-content">
 
@@ -234,7 +234,7 @@
 
         <div class="culture-card">
 
-            <img src="images/tiv.jpg" alt="Tiv Culture">
+            <img src="571f1f84a36d611aa38fe8acc325b69d.jpg" alt="Tiv Culture">
 
             <div class="culture-content">
 
@@ -261,7 +261,7 @@
 
         <div class="culture-card">
 
-            <img src="images/efik.jpg" alt="Efik Culture">
+            <img src="Have yourself the perfect African themed wedding.jpeg" alt="Efik Culture">
 
             <div class="culture-content">
 
@@ -315,7 +315,7 @@
 
         <div class="attire-card">
 
-            <img src="images/agbada.jpg" alt="Agbada">
+            <img src="images (55).jpeg"  alt="Agbada">
 
             <div class="attire-content">
 
@@ -336,7 +336,7 @@
 
         <div class="attire-card">
 
-            <img src="images/aso-oke.jpg" alt="Aso Oke">
+            <img src="Yoruba Woman and her Husband in Asooke.jpeg" alt="Aso Oke">
 
             <div class="attire-content">
 
@@ -357,7 +357,7 @@
 
         <div class="attire-card">
 
-            <img src="images/isiagu.jpg" alt="Isi Agu">
+            <img src="Mr ShawnFaqua_ IGBO MEN.jpeg" alt="Isi Agu">
 
             <div class="attire-content">
 
@@ -378,7 +378,7 @@
 
         <div class="attire-card">
 
-            <img src="images/babban-riga.jpg" alt="Babban Riga">
+            <img src="1c0cb45ac031ff6ffb0da0d33b3eae7f.jpg" alt="Babban Riga">
 
             <div class="attire-content">
 
@@ -399,7 +399,7 @@
 
         <div class="attire-card">
 
-            <img src="images/george-wrapper.jpg" alt="George Wrapper">
+            <img src="73bbc12a5e40d0670e5f7bb7966680f4.jpg" alt="George Wrapper">
 
             <div class="attire-content">
 
@@ -420,7 +420,7 @@
 
         <div class="attire-card">
 
-            <img src="images/ankara.jpg" alt="Ankara">
+            <img src="Styling 🧡🖤.jpeg" alt="Ankara">
 
             <div class="attire-content">
 
@@ -1326,15 +1326,53 @@ nav{
 
     background:#111;
 
-    border:1px solid rgba(212,175,55,.15);
-
-    border-radius:20px;
+    border-radius:15px;
 
     overflow:hidden;
 
-    transition:.4s ease;
+    width:100%;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    max-width:400px;
+
+    margin:auto;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.3);
+
+}
+
+.culture-card img{
+
+    width:100%;
+
+    height:250px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+.culture-card-content{
+
+    padding:25px;
+
+}
+
+.culture-card-content h3{
+
+    color:#fff;
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+
+}
+
+.culture-card-content p{
+
+    color:#ccc;
+
+    line-height:1.8;
 
 }
 
@@ -1348,49 +1386,9 @@ nav{
 
 }
 
-.culture-card img{
-
-    width:100%;
-
-    height:250px;
-
-    object-fit:cover;
-
-    transition:.5s;
-
-}
-
 .culture-card:hover img{
 
     transform:scale(1.08);
-
-}
-
-.culture-content{
-
-    padding:25px;
-
-}
-
-.culture-content h3{
-
-    color:#fff;
-
-    font-size:1.6rem;
-
-    margin-bottom:15px;
-
-}
-
-.culture-content p{
-
-    color:#bfbfbf;
-
-    font-size:15px;
-
-    line-height:1.8;
-
-    margin-bottom:25px;
 
 }
 
@@ -1450,37 +1448,11 @@ nav{
 
 }
 
-@media (max-width:768px){
+@media(max-width:768px){
 
-    .featured-cultures{
+    .culture-card{
 
-        padding:80px 20px;
-
-    }
-
-    .cultures-container{
-
-        grid-template-columns:1fr;
-
-        gap:25px;
-
-    }
-
-    .section-heading{
-
-        margin-bottom:50px;
-
-    }
-
-    .section-heading h2{
-
-        font-size:2rem;
-
-    }
-
-    .section-heading p{
-
-        font-size:15px;
+        max-width:100%;
 
     }
 
@@ -1490,15 +1462,19 @@ nav{
 
     }
 
-    .culture-content{
+}
 
-        padding:20px;
+@media(max-width:480px){
+
+    .culture-card img{
+
+        height:200px;
 
     }
 
-    .culture-content h3{
+    .culture-card-content h3{
 
-        font-size:1.4rem;
+        font-size:1.8rem;
 
     }
 
@@ -1519,7 +1495,7 @@ nav{
     }
 
     .culture-card img{
-
+        
         height:200px;
 
     }

@@ -67,9 +67,9 @@
             <li><a href="#" class="active">Home</a></li>
             <li><a href="Gallery.html">Gallery</a></li>
             <li><a href="Cultures.html">Cultures</a></li>
-            <li><a href="#">Event</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="Event.html">Event</a></li>
+            <li><a href="AboutExhibition.html">About</a></li>
+            <li><a href="ContactExhibition.html">Contact</a></li>
             <li><a href="#">Login</a></li>
         </ul>
 
@@ -1833,7 +1833,14 @@ opacity:1;
 </style>
 
 <script>
-    const menuBtn = document.getElementById("menuBtn");
+    if (
+    localStorage.getItem("loggedIn") !== "true"
+) {
+
+    window.location.href = "loginExhibition.html";
+
+}
+const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
 menuBtn.addEventListener("click", () => {
@@ -1869,9 +1876,10 @@ window.addEventListener("load", () => {
 
     setTimeout(() => {
 
-        loader.classList.add("hide");
+    loader.classList.add("hide");
+    
 
-    }, 2400);
+}, 2400);
 
 });
 

@@ -1,0 +1,224 @@
+/*=========================================
+            GOOGLE FONT
+=========================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/*=========================================
+            GLOBAL STYLING
+=========================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#050505;
+
+    padding:20px;
+
+}
+
+/*=========================================
+            LOGIN SECTION
+=========================================*/
+
+.login-section{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.login-container{
+
+    width:100%;
+
+    max-width:500px;
+
+    background:#111;
+
+    padding:50px 40px;
+
+    border-radius:20px;
+
+    border:1px solid rgba(212,175,55,.15);
+
+    box-shadow:0 0 30px rgba(0,0,0,.4);
+
+}
+
+/*=========================================
+            LOGIN HEADER
+=========================================*/
+
+.login-header{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+.login-header h1{
+
+    color:#fff;
+
+    font-size:2.2rem;
+
+    margin-bottom:10px;
+
+}
+
+.login-header h1 span{
+
+    color:#D4AF37;
+
+}
+
+.login-header p{
+
+    color:#cfcfcf;
+
+    line-height:1.8;
+
+}
+
+/*=========================================
+            INPUT FIELDS
+=========================================*/
+
+.input-box{
+
+    margin-bottom:20px;
+
+}
+
+.input-box input{
+
+    width:100%;
+
+    padding:15px 18px;
+
+    background:#1a1a1a;
+
+    border:1px solid rgba(212,175,55,.15);
+
+    border-radius:10px;
+
+    color:#fff;
+
+    outline:none;
+
+    transition:.3s ease;
+
+}
+
+.input-box input:focus{
+
+    border-color:#D4AF37;
+
+}
+
+
+/*=========================================
+            LOGIN BUTTON
+=========================================*/
+
+.login-btn{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#D4AF37;
+
+    color:#111;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+.login-btn:hover{
+
+    background:transparent;
+
+    color:#D4AF37;
+
+    border:1px solid #D4AF37;
+
+}
+
+/*=========================================
+            RESPONSIVE
+=========================================*/
+
+@media(max-width:768px){
+
+    .login-container{
+
+        padding:40px 25px;
+
+    }
+
+    .login-header h1{
+
+        font-size:1.9rem;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .login-container{
+
+        padding:35px 20px;
+
+    }
+
+    .login-header h1{
+
+        font-size:1.7rem;
+
+    }
+
+    .login-header p{
+
+        font-size:.9rem;
+
+    }
+
+}

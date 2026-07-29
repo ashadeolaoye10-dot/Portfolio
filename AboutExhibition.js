@@ -1,21 +1,34 @@
+/*=========================================
+            MOBILE MENU
+=========================================*/
+
 const menuBtn = document.querySelector(".menu-btn");
+
 const navLinks = document.querySelector(".nav-links");
 
-menuBtn.addEventListener("click", () => {
+if(menuBtn && navLinks){
 
-    navLinks.classList.toggle("active");
+    menuBtn.addEventListener("click", () => {
 
-    if(navLinks.classList.contains("active")){
+        navLinks.classList.toggle("active");
 
-        menuBtn.innerHTML = "✕";
+        if(navLinks.classList.contains("active")){
 
-    }else{
+            menuBtn.textContent = "✕";
 
-        menuBtn.innerHTML = "☰";
+        }else{
 
-    }
+            menuBtn.textContent = "☰";
 
-});
+        }
+
+    });
+
+}
+
+/*=========================================
+        CLOSE MENU ON LINK CLICK
+=========================================*/
 
 const navItems = document.querySelectorAll(".nav-links a");
 
@@ -25,56 +38,55 @@ navItems.forEach(item => {
 
         navLinks.classList.remove("active");
 
-        menuBtn.innerHTML = "☰";
+        menuBtn.textContent = "☰";
 
     });
 
 });
 
-
 /*=========================================
-        EVENT CARD ANIMATION
+        OUR STORY ANIMATION
 =========================================*/
 
-const eventCards = document.querySelectorAll(".event-card");
+const storySection = document.querySelector(".our-story");
 
-const eventObserver = new IntersectionObserver((entries) => {
+if(storySection){
 
-    entries.forEach(entry => {
+    const storyObserver = new IntersectionObserver((entries)=>{
 
-        if(entry.isIntersecting){
+        entries.forEach(entry=>{
 
-            entry.target.style.opacity = "1";
+            if(entry.isIntersecting){
 
-            entry.target.style.transform = "translateY(0)";
+                entry.target.style.opacity = "1";
 
-        }
+                entry.target.style.transform = "translateY(0)";
 
+            }
+
+        });
+
+    },{
+        threshold:0.2
     });
 
-},{
-    threshold:0.2
-});
+    storySection.style.opacity = "0";
 
-eventCards.forEach(card => {
+    storySection.style.transform = "translateY(50px)";
 
-    card.style.opacity = "0";
+    storySection.style.transition = "all .8s ease";
 
-    card.style.transform = "translateY(50px)";
+    storyObserver.observe(storySection);
 
-    card.style.transition = "all .8s ease";
-
-    eventObserver.observe(card);
-
-});
+}
 
 /*=========================================
-        FESTIVAL ANIMATION
+    MISSION & VISION ANIMATION
 =========================================*/
 
-const festivalCards = document.querySelectorAll(".festival-card");
+const mvCards = document.querySelectorAll(".mv-card");
 
-const festivalObserver = new IntersectionObserver((entries)=>{
+const mvObserver = new IntersectionObserver((entries)=>{
 
     entries.forEach(entry=>{
 
@@ -92,7 +104,7 @@ const festivalObserver = new IntersectionObserver((entries)=>{
     threshold:0.2
 });
 
-festivalCards.forEach(card=>{
+mvCards.forEach(card=>{
 
     card.style.opacity = "0";
 
@@ -100,17 +112,17 @@ festivalCards.forEach(card=>{
 
     card.style.transition = "all .8s ease";
 
-    festivalObserver.observe(card);
+    mvObserver.observe(card);
 
 });
 
 /*=========================================
-        TIMELINE ANIMATION
+        WHY NATIVE EXHIBIT ANIMATION
 =========================================*/
 
-const timelineCards = document.querySelectorAll(".timeline-item");
+const whyCards = document.querySelectorAll(".why-card");
 
-const timelineObserver = new IntersectionObserver((entries)=>{
+const whyObserver = new IntersectionObserver((entries)=>{
 
     entries.forEach(entry=>{
 
@@ -118,7 +130,7 @@ const timelineObserver = new IntersectionObserver((entries)=>{
 
             entry.target.style.opacity = "1";
 
-            entry.target.style.transform = "translateX(0)";
+            entry.target.style.transform = "translateY(0)";
 
         }
 
@@ -128,15 +140,15 @@ const timelineObserver = new IntersectionObserver((entries)=>{
     threshold:0.2
 });
 
-timelineCards.forEach(card=>{
+whyCards.forEach(card=>{
 
     card.style.opacity = "0";
 
-    card.style.transform = "translateX(-50px)";
+    card.style.transform = "translateY(50px)";
 
     card.style.transition = "all .8s ease";
 
-    timelineObserver.observe(card);
+    whyObserver.observe(card);
 
 });
 
@@ -144,7 +156,7 @@ timelineCards.forEach(card=>{
         CTA ANIMATION
 =========================================*/
 
-const ctaSection = document.querySelector(".cta-section");
+const ctaSection = document.querySelector(".about-cta");
 
 if(ctaSection){
 
