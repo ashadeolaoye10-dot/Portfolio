@@ -11,6 +11,22 @@
 </head>
 <body>
 
+<nav class="navbar">
+
+    <div class="nav-logo">
+        PIXUS BANK
+    </div>
+
+    <div class="nav-links">
+
+        <a href="DashboardPage.html">Dashboard</a>
+
+        <a href="HomePage.html">Home</a>
+
+    </div>
+
+</nav>
+
 <div class="container">
 
     <div class="transactions-card">
@@ -203,6 +219,104 @@ td{
 .debit{
 
     color:#ef4444;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 20px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(255,255,255,.1);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+}
+
+.nav-logo{
+
+    font-size:1.3rem;
+
+    font-weight:700;
+
+    color:#60A5FA;
+}
+
+.nav-links{
+
+    display:flex;
+
+    gap:10px;
+}
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+.nav-links a:hover{
+
+    background:linear-gradient(
+    135deg,
+    #1D4ED8,
+    #60A5FA
+    );
+}
+
+/* ==========================
+   MOBILE RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+    .navbar{
+
+        flex-direction:column;
+
+        gap:12px;
+
+        text-align:center;
+    }
+
+    .nav-links{
+
+        width:100%;
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+    }
+
+    .nav-links a{
+
+        flex:1;
+
+        min-width:120px;
+    }
+
 }
 
 @media(max-width:768px){

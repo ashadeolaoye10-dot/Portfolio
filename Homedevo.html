@@ -59,6 +59,79 @@ body{
     }
 }
 
+
+/* ================= NAVBAR ================= */
+
+.menu-btn{
+
+    display:none;
+
+    color:white;
+
+    font-size:2rem;
+
+    cursor:pointer;
+
+}
+
+/* ================= MOBILE NAV ================= */
+
+@media(max-width:768px){
+
+    nav{
+
+        position:relative;
+
+        flex-wrap:wrap;
+
+        padding:15px 20px;
+
+    }
+
+    .logo{
+
+        font-size:1.8rem;
+
+    }
+
+    .menu-btn{
+
+        display:block;
+
+    }
+
+    #themeToggle{
+
+        margin-left:auto;
+
+        margin-right:15px;
+
+    }
+
+    nav ul{
+
+        width:100%;
+
+        display:none;
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:15px;
+
+        padding-top:20px;
+
+    }
+
+    nav ul.active{
+
+        display:flex;
+
+    }
+
+}
+
 /* Main Content */
 .content{
     display:none;
@@ -236,17 +309,30 @@ footer{
 <div class="content" id="content">
 
     <nav>
-        <div class="logo">FaithSpace</div>
 
-        <ul>
-            <li><a href="Homedevo.html">Home</a></li>
-            <li><a href="devotionals.html">Devotionals</a></li>
-            <li><a href="PrayerCenter.html">Prayer Center</a></li>
-            <li><a href="ScriptureLiberary.html">Scriptures</a></li>
-            <li><a href="WorshipCenter.html">Worship</a></li>
-        </ul>
-        <button id="themeToggle">🌙</button>
-    </nav>
+    <div class="logo">FaithSpace</div>
+
+    <div class="menu-btn" id="menuBtn">
+        ☰
+    </div>
+
+    <ul id="navLinks">
+
+        <li><a href="Homedevo.html">Home</a></li>
+
+        <li><a href="devotionals.html">Devotionals</a></li>
+
+        <li><a href="PrayerCenter.html">Prayer Center</a></li>
+
+        <li><a href="ScriptureLiberary.html">Scriptures</a></li>
+
+        <li><a href="WorshipCenter.html">Worship</a></li>
+
+    </ul>
+
+    <button id="themeToggle">🌙</button>
+
+</nav>
 
     <section class="hero">
         <div>
@@ -406,6 +492,18 @@ window.addEventListener("load", () => {
         }, 800);
 
     }, 3000);
+
+});
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const navLinks =
+document.getElementById("navLinks");
+
+menuBtn.addEventListener("click",()=>{
+
+    navLinks.classList.toggle("active");
 
 });
 
