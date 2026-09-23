@@ -1,61 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills | Pius Ashade</title>
 
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Skills and technologies used by Pius Ashade — frontend, backend, database, and tools.">
+
+<title>Skills | Pius Ashade</title>
+
+<link rel="stylesheet" href="css/skills.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
-<nav>
-    <div class="logo">Pius.dev</div>
+<header>
+<nav class="navbar">
 
-    <ul>
+    <div class="logo">
+        <div class="logo-circle"><span>PA</span></div>
+        <div class="logo-text">
+            <h2>Pius Ashade</h2>
+            <p>Software Engineer</p>
+        </div>
+    </div>
+
+    <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="AboutPro.html">About</a></li>
         <li><a href="Projects.html">Projects</a></li>
-        <li><a href="Skills.html">Skills</a></li>
+        <li><a href="Skills.html" class="active">Skills</a></li>
         <li><a href="Contact1.html">Contact</a></li>
     </ul>
+
+    <div class="hamburger" id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
 </nav>
+</header>
+
+<section class="page-header">
+
+    <span class="pre-title">Skills</span>
+    <h1>What I <span class="highlight">Work With</span></h1>
+    <p>Technologies and tools I use to design, build and ship software applications.</p>
+
+</section>
 
 <section class="skills-section">
-
-    <div class="skills-header">
-        <h1>My Skills</h1>
-        <p>Technologies and tools I use to build software applications.</p>
-    </div>
 
     <div class="skills-grid">
 
         <div class="skill-card">
+            <span class="card-number">01</span>
             <h2>Frontend</h2>
-            <p>Building responsive and interactive user interfaces</p>
+            <p>Building responsive and interactive user interfaces.</p>
 
             <div class="skill-tags">
                 <span>HTML</span>
-                <span>React</span>
                 <span>CSS</span>
                 <span>JavaScript</span>
+                <span>React</span>
             </div>
         </div>
 
         <div class="skill-card">
+            <span class="card-number">02</span>
             <h2>Backend</h2>
-            <p>Logic, APIs and server-side development</p>
+            <p>Logic, APIs and server-side development.</p>
 
             <div class="skill-tags">
                 <span>Java</span>
-                <span>Spring boot(learning)</span>
-                <span>J-unit</span>
+                <span>Spring Boot (learning)</span>
+                <span>JUnit</span>
             </div>
         </div>
 
         <div class="skill-card">
+            <span class="card-number">03</span>
             <h2>Database</h2>
-            <p>Storing and managing application data</p>
+            <p>Storing and managing application data.</p>
 
             <div class="skill-tags">
                 <span>MongoDB</span>
@@ -63,20 +90,21 @@
         </div>
 
         <div class="skill-card">
+            <span class="card-number">04</span>
             <h2>Tools</h2>
-            <p>Development tools I use daily</p>
+            <p>Development tools I use daily.</p>
 
             <div class="skill-tags">
-                <span>Intellij</span>
+                <span>IntelliJ</span>
                 <span>GitHub</span>
                 <span>VS Code</span>
-
             </div>
         </div>
 
         <div class="skill-card">
+            <span class="card-number">05</span>
             <h2>Other Skills</h2>
-            <p>Extra abilities that help me build better software</p>
+            <p>Extra abilities that help me build better software.</p>
 
             <div class="skill-tags">
                 <span>Problem Solving</span>
@@ -89,257 +117,696 @@
 
 </section>
 
+<section class="cta">
+
+    <span>Let's Work Together</span>
+    <h2>Have a Project In Mind?</h2>
+    <p>I'm open to freelance work, internships, and collaboration opportunities.</p>
+    <a href="Contact1.html" class="btn-primary">Contact Me</a>
+
+</section>
+
 <footer>
-    <p>© 2026 Pius Ashade. All Rights Reserved.</p>
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <div class="footer-logo">
+                <div class="logo-circle"><span>PA</span></div>
+                <h3>Pius Ashade</h3>
+            </div>
+            <p>Software engineering student building clean, functional web applications.</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="AboutPro.html">About</a></li>
+                <li><a href="Projects.html">Projects</a></li>
+                <li><a href="Contact1.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-box">
+            <h3>Connect</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Pius Ashade. All Rights Reserved.</p>
+        <button id="backToTop">Back to Top <i class="fa-solid fa-arrow-up"></i></button>
+    </div>
+
 </footer>
 <style>
-    /* ===== SKILLS PAGE (DEEP VIBE STYLE) ===== */
+/* ==========================================
+   RESET & BASE
+========================================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-html,
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    width:100%;
+    font-family:'Poppins',sans-serif;
+    background:#050505;
+    color:#fff;
     overflow-x:hidden;
-}
-.skills-section{
-    padding:120px 10% 80px;
-    background:#070B1A;
-    min-height:100vh;
+    width:100%;
 }
 
-.skills-header{
-    text-align:center;
-    margin-bottom:60px;
+a{
+    text-decoration:none;
 }
 
-.skills-header h1{
+ul{
+    list-style:none;
+}
+
+::selection{
+    background:#D4AF37;
+    color:#050505;
+}
+
+/* ==========================================
+   NAVBAR
+========================================== */
+
+header{
+    width:100%;
+    position:sticky;
+    top:0;
+    left:0;
+    z-index:1000;
+    background:rgba(5,5,5,.75);
+    backdrop-filter:blur(14px);
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 8%;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.logo-circle{
+    width:40px;
+    height:40px;
+    border:1px solid #D4AF37;
+    color:#D4AF37;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:1px;
+    transform:rotate(45deg);
+    flex-shrink:0;
+}
+
+.logo-circle span{
+    transform:rotate(-45deg);
+    display:block;
+}
+
+.logo-text h2{
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.logo-text p{
+    color:#0A4DCC;
+    font-size:11px;
+    letter-spacing:1px;
+    font-weight:600;
+}
+
+.nav-links{
+    display:flex;
+    gap:40px;
+}
+
+.nav-links li a{
+    color:#999;
+    font-weight:500;
+    font-size:13px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active{
+    color:#D4AF37;
+}
+
+.hamburger{
+    display:none;
+    font-size:24px;
+    color:#D4AF37;
+    cursor:pointer;
+}
+
+@media(max-width:900px){
+
+    .nav-links{
+        position:absolute;
+        top:76px;
+        left:0;
+        width:100%;
+        background:#050505;
+        flex-direction:column;
+        text-align:center;
+        padding:25px 0;
+        gap:22px;
+        display:none;
+        border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .nav-links.show-menu{
+        display:flex;
+    }
+
+    .hamburger{
+        display:block;
+    }
+
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.btn-primary{
+    background:#D4AF37;
+    color:#050505;
+    padding:16px 34px;
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    border:1px solid #D4AF37;
+    transition:.3s;
+    display:inline-block;
+}
+
+.btn-primary:hover{
+    background:transparent;
+    color:#D4AF37;
+}
+
+/* ==========================================
+   PAGE HEADER
+========================================== */
+
+.page-header{
+    padding:160px 8% 60px;
+    background:linear-gradient(120deg,rgba(10,77,204,.10),transparent 60%);
+    border-left:3px solid #0A4DCC;
+    margin-left:8%;
+    max-width:780px;
+}
+
+.page-header .pre-title{
+    color:#D4AF37;
+    font-weight:600;
+    letter-spacing:2px;
+    font-size:13px;
+    text-transform:uppercase;
+}
+
+.page-header h1{
     font-size:3rem;
-    color:#22D3EE;
-    text-shadow:0 0 15px rgba(34,211,238,0.4);
+    font-weight:700;
+    color:#fff;
+    margin:14px 0 16px;
+    line-height:1.2;
 }
 
-.skills-header p{
-    color:#cbd5e1;
-    margin-top:10px;
-    font-size:1.1rem;
+.page-header h1 .highlight{
+    color:#D4AF37;
 }
 
-/* GRID */
+.page-header p{
+    color:#999;
+    font-size:1rem;
+    line-height:1.8;
+    max-width:520px;
+}
+
+/* ==========================================
+   SKILLS GRID
+========================================== */
+
+.skills-section{
+    padding:60px 8% 110px;
+}
 
 .skills-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:rgba(255,255,255,.08);
 }
 
-/* CARD */
-
 .skill-card{
-    background:rgba(15,22,48,0.8);
-    border:1px solid rgba(167,139,250,0.2);
-    border-radius:16px;
-    padding:25px;
-    transition:0.4s;
-    backdrop-filter:blur(10px);
+    background:#050505;
+    padding:38px;
+    transition:.3s;
+    border-top:3px solid transparent;
+}
+
+.skill-card:nth-child(3n+1){
+    border-top-color:#D4AF37;
+}
+
+.skill-card:nth-child(3n+2){
+    border-top-color:#0A4DCC;
+}
+
+.skill-card:nth-child(3n+3){
+    border-top-color:#D4AF37;
 }
 
 .skill-card:hover{
-    transform:translateY(-10px);
-    border-color:#22D3EE;
-    box-shadow:0 0 25px rgba(34,211,238,0.2);
+    background:#0d0d0d;
+}
+
+.card-number{
+    display:inline-block;
+    color:#050505;
+    background:#D4AF37;
+    font-size:13px;
+    font-weight:700;
+    padding:4px 10px;
+    margin-bottom:20px;
+}
+
+.skill-card:nth-child(3n+2) .card-number{
+    background:#0A4DCC;
+    color:#fff;
 }
 
 .skill-card h2{
-    color:#A78BFA;
+    color:#fff;
+    font-size:19px;
     margin-bottom:10px;
 }
 
-.skill-card p{
-    color:#E5E7EB;
-    margin-bottom:15px;
-    font-size:0.95rem;
+.skill-card > p{
+    color:#888;
+    line-height:1.7;
+    font-size:14px;
+    margin-bottom:22px;
 }
-
-/* TAGS */
 
 .skill-tags{
     display:flex;
     flex-wrap:wrap;
-    gap:10px;
+    gap:8px;
 }
 
 .skill-tags span{
-    background:rgba(34,211,238,0.1);
-    border:1px solid rgba(34,211,238,0.3);
-    color:#22D3EE;
-    padding:6px 12px;
-    border-radius:20px;
-    font-size:13px;
+    border:1px solid rgba(212,175,55,.35);
+    color:#ccc;
+    padding:6px 14px;
+    font-size:12px;
+    transition:.3s;
 }
 
-/* FOOTER */
+.skill-tags span:hover{
+    background:#D4AF37;
+    border-color:#D4AF37;
+    color:#050505;
+}
+
+.skill-card:nth-child(3n+2) .skill-tags span{
+    border-color:rgba(10,77,204,.5);
+}
+
+.skill-card:nth-child(3n+2) .skill-tags span:hover{
+    background:#0A4DCC;
+    border-color:#0A4DCC;
+    color:#fff;
+}
+
+/* ==========================================
+   CTA
+========================================== */
+
+.cta{
+    margin:0 8% 110px;
+    padding:70px 8%;
+    text-align:center;
+    background:linear-gradient(135deg,#D4AF37,#F4C542,#B8860B);
+}
+
+.cta span{
+    color:#050505;
+    font-weight:700;
+    letter-spacing:2px;
+    font-size:13px;
+    text-transform:uppercase;
+}
+
+.cta h2{
+    color:#050505;
+    font-size:2.2rem;
+    margin:16px 0;
+}
+
+.cta p{
+    color:rgba(5,5,5,.75);
+    max-width:500px;
+    margin:0 auto 34px;
+    font-size:15px;
+}
+
+.cta .btn-primary{
+    background:#050505;
+    color:#F4C542;
+    border-color:#050505;
+}
+
+.cta .btn-primary:hover{
+    background:transparent;
+    color:#050505;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
 
 footer{
-    background:#0F1630;
-    text-align:center;
-    padding:20px;
-    color:#cbd5e1;
+    padding:70px 8% 30px;
+    border-top:1px solid rgba(255,255,255,.08);
 }
 
-nav{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    padding:18px 10%;
+.footer-container{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
+    margin-bottom:50px;
+}
+
+.footer-logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:18px;
+}
+
+.footer-logo h3{
+    color:#fff;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    font-size:15px;
+}
+
+.footer-box p{
+    color:#777;
+    line-height:1.8;
+    font-size:14px;
+    max-width:320px;
+}
+
+.footer-box h3{
+    color:#D4AF37;
+    margin-bottom:18px;
+    font-size:13px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    font-weight:600;
+}
+
+.footer-box ul li{
+    margin:10px 0;
+}
+
+.footer-box ul li a{
+    color:#888;
+    transition:.3s;
+    font-size:14px;
+}
+
+.footer-box ul li a:hover{
+    color:#D4AF37;
+}
+
+.social-icons{
+    display:flex;
+    gap:16px;
+}
+
+.social-icons a{
+    width:38px;
+    height:38px;
+    border:1px solid rgba(255,255,255,.15);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#999;
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    border-color:#0A4DCC;
+    background:#0A4DCC;
+    color:#fff;
+}
+
+footer hr{
+    border:none;
+    border-top:1px solid rgba(255,255,255,.08);
+    margin-bottom:25px;
+}
+
+.footer-bottom{
     display:flex;
     justify-content:space-between;
     align-items:center;
-
-    background:rgba(7,11,26,0.7);
-    backdrop-filter: blur(12px);
-    border-bottom:1px solid rgba(34,211,238,0.15);
-
-    z-index:1000;
+    flex-wrap:wrap;
+    gap:20px;
 }
 
-/* LOGO */
-
-.logo{
-    font-size:24px;
-    font-weight:bold;
-    color:#22D3EE;
-    text-shadow:0 0 10px rgba(34,211,238,0.5);
-    letter-spacing:1px;
+.footer-bottom p{
+    color:#666;
+    font-size:13px;
 }
 
-/* MENU */
-
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:40px;
+#backToTop{
+    display:none;
+    background:transparent;
+    border:1px solid rgba(212,175,55,.4);
+    color:#D4AF37;
+    padding:10px 20px;
+    cursor:pointer;
+    font-size:13px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    transition:.3s;
 }
 
-nav ul li a{
-    text-decoration:none;
-    color:#E5E7EB;
-    font-size:15px;
-    transition:0.3s;
-    position:relative;
+#backToTop:hover{
+    background:#D4AF37;
+    color:#050505;
 }
 
-/* hover glow effect */
-nav ul li a:hover{
-    color:#22D3EE;
+/* ==========================================
+   SCROLL REVEAL
+========================================== */
+
+.reveal-hidden{
+    opacity:0;
+    transform:translateY(30px);
+    transition:opacity .7s ease, transform .7s ease;
 }
 
-/* animated underline */
-nav ul li a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-6px;
-    width:0%;
-    height:2px;
-    background:#A78BFA;
-    transition:0.3s;
+.reveal-visible{
+    opacity:1;
+    transform:translateY(0);
 }
 
-nav ul li a:hover::after{
-    width:50%;
-}
+/* ==========================================
+   MOBILE RESPONSIVE — all sections, explicit
+========================================== */
 
-/* MOBILE RESPONSIVE */
-/* =========================
-   MOBILE RESPONSIVE
-   ========================= */
+@media(max-width:900px){
 
-@media (max-width:768px){
-
-    /* NAVBAR */
-    nav{
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        padding:15px 4%;
+    .navbar{
+        padding:18px 5%;
     }
 
-    .logo{
-        font-size:1.5rem;
+}
+
+@media(max-width:768px){
+
+    .page-header{
+        padding:130px 6% 50px;
+        margin-left:6%;
+        border-left:none;
+        border-top:3px solid #0A4DCC;
+        padding-top:30px;
     }
 
-    nav ul{
-        display:flex;
-        flex-direction:row;
-        flex-wrap:nowrap;
-        gap:12px;
-        list-style:none;
+    .page-header h1{
+        font-size:2.1rem;
     }
 
-    nav ul li a{
-        font-size:11px;
-    }
-
-    /* SKILLS SECTION */
     .skills-section{
-        padding:120px 20px 60px;
+        padding:50px 6% 80px;
     }
 
-    .skills-header h1{
-        font-size:2.6rem;
-        text-align:center;
-    }
-
-    .skills-header p{
-        font-size:1rem;
-        text-align:center;
-        padding:0 10px;
-    }
-
-    /* GRID */
     .skills-grid{
         grid-template-columns:1fr;
-        gap:20px;
     }
 
-    /* CARD */
     .skill-card{
-        width:100%;
-        padding:20px;
+        padding:30px;
+    }
+
+    .cta{
+        margin:0 5% 80px;
+        padding:50px 6%;
+    }
+
+    .cta h2{
+        font-size:1.8rem;
+    }
+
+    .footer-container{
+        grid-template-columns:1fr;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .navbar{
+        padding:16px 5%;
+    }
+
+    .logo-text h2{
+        font-size:14px;
+    }
+
+    .logo-text p{
+        font-size:10px;
+    }
+
+    .page-header h1{
+        font-size:1.7rem;
     }
 
     .skill-card h2{
-        font-size:1.3rem;
+        font-size:17px;
     }
 
-    .skill-card p{
-        font-size:0.95rem;
-        line-height:1.6;
-    }
-
-    /* TAGS */
-    .skill-tags{
-        justify-content:center;
-    }
-
-    .skill-tags span{
-        font-size:12px;
-        padding:6px 10px;
-    }
-
-    /* FOOTER */
-    footer{
-        text-align:center;
-        padding:15px;
-        font-size:14px;
-    }
 }
-
 </style>
+<script>
+/* ==========================================
+   HAMBURGER MENU
+========================================== */
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show-menu");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("show-menu");
+    });
+});
+
+
+/* ==========================================
+   BACK TO TOP BUTTON
+========================================== */
+
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+    if(window.scrollY > 400){
+        backToTop.style.display = "inline-block";
+    }
+    else{
+        backToTop.style.display = "none";
+    }
+});
+
+backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+
+/* ==========================================
+   SCROLL REVEAL — Skills page elements
+========================================== */
+
+const revealTargets = document.querySelectorAll(
+    ".page-header, .skill-card, .cta"
+);
+
+const revealObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+            entry.target.classList.add("reveal-visible");
+            revealObserver.unobserve(entry.target);
+        }
+
+    });
+
+}, { threshold: 0.15 });
+
+revealTargets.forEach(target => {
+    target.classList.add("reveal-hidden");
+    revealObserver.observe(target);
+});
+
+
+/* ==========================================
+   STAGGERED REVEAL FOR SKILL CARDS
+========================================== */
+
+document.querySelectorAll(".skill-card").forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.1}s`;
+});
+</script>
 </body>
 </html>

@@ -1,61 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pius Ashade — Software Engineering student and full-stack web developer. Explore projects built with Java, HTML, CSS, JavaScript and MongoDB.">
 
-<title>Pius Ashade Portfolio</title>
+<title>Pius Ashade | Software Engineer & Web Developer</title>
 
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 </head>
-
 <body>
 
-<nav>
+<header>
+<nav class="navbar">
 
-<div class="logo">Pius.dev</div>
+    <div class="logo">
+        <div class="logo-circle">PA</div>
+        <div class="logo-text">
+            <h2>Pius Ashade</h2>
+            <p>Software Engineer</p>
+        </div>
+    </div>
 
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="AboutPro.html">About</a></li>
-<li><a href="Projects.html">Projects</a></li>
-<li><a href="Skills.html">Skills</a></li>
-<li><a href="Contact1.html">Contact</a></li>
-</ul>
+    <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="AboutPro.html">About</a></li>
+        <li><a href="Projects.html">Projects</a></li>
+        <li><a href="Skills.html">Skills</a></li>
+        <li><a href="Contact1.html">Contact</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+    </div>
 
 </nav>
+</header>
 
 <section class="hero">
 
-<div>
+    <div class="hero-overlay"></div>
 
-<h1>Hello, I'm <span>Pius Ashade</span></h1>
+    <div class="hero-content">
 
-<h2 class="typing"></h2>
+        <span class="hero-badge">👋 Available for Freelance & Internship Roles</span>
 
-<p>
-Passionate software engineering student
-building web applications using Java,
-HTML, CSS, JavaScript and MongoDB.
-</p>
+        <h1>Hello, I'm <span class="highlight">Pius Ashade</span></h1>
 
-<a href="Projects.html" class="btn">
-View Projects
-</a>
+        <h2 class="typing"></h2>
 
-</div>
+        <p>
+            Passionate software engineering student building modern,
+            reliable web applications using Java, HTML, CSS, Spring Boot, Spring, React,
+            JavaScript and MongoDB. I turn ideas into clean,
+            functional products.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="Projects.html" class="btn-primary">View My Work</a>
+            <a href="Contact1.html" class="btn-secondary">Get In Touch</a>
+        </div>
+
+    </div>
 
 </section>
 
+<section class="what-i-do">
+
+    <div class="section-title">
+        <span class="pre-title">What I Do</span>
+        <h2>Skills I Bring To The Table</h2>
+        <p>A quick look at the areas I focus on as a developer.</p>
+    </div>
+
+    <div class="services-grid">
+
+        <div class="service-card">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h3>Frontend Development</h3>
+            <p>Building responsive, accessible interfaces with HTML, CSS and JavaScript.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-server"></i>
+            <h3>Backend Development</h3>
+            <p>Developing reliable server-side logic and APIs using Java.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-database"></i>
+            <h3>Database Design</h3>
+            <p>Structuring and managing data with MongoDB for real-world applications.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="featured-projects">
+
+    <div class="section-title">
+        <span class="pre-title">Portfolio</span>
+        <h2>Featured Projects</h2>
+        <p>A few of the projects I've built recently.</p>
+    </div>
+
+    <div class="projects-grid">
+
+        <div class="project-card">
+            <div class="project-tag">Web App</div>
+            <h3>Project One</h3>
+            <p>Short description of this project goes here.</p>
+            <a href="Projects.html" class="project-link">View Details <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="project-card">
+            <div class="project-tag">Web App</div>
+            <h3>Project Two</h3>
+            <p>Short description of this project goes here.</p>
+            <a href="Projects.html" class="project-link">View Details <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="project-card">
+            <div class="project-tag">Web App</div>
+            <h3>Project Three</h3>
+            <p>Short description of this project goes here.</p>
+            <a href="Projects.html" class="project-link">View Details <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+    </div>
+
+    <div class="view-all-wrap">
+        <a href="Projects.html" class="btn-outline">See All Projects</a>
+    </div>
+
+</section>
+
+<section class="cta">
+
+    <span>Let's Work Together</span>
+    <h2>Have a Project In Mind?</h2>
+    <p>I'm open to freelance work, internships, and collaboration opportunities.</p>
+    <a href="Contact1.html" class="btn-primary">Contact Me</a>
+
+</section>
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <div class="footer-logo">
+                <div class="logo-circle">PA</div>
+                <h3>Pius Ashade</h3>
+            </div>
+            <p>Software engineering student building clean, functional web applications.</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="AboutPro.html">About</a></li>
+                <li><a href="Projects.html">Projects</a></li>
+                <li><a href="Skills.html">Skills</a></li>
+                <li><a href="Contact1.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-box">
+            <h3>Connect</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Pius Ashade. All Rights Reserved.</p>
+        <button id="backToTop">Back to Top <i class="fa-solid fa-arrow-up"></i></button>
+    </div>
+
+</footer>
+
 <style>
-    *{
+/* ==========================================
+   RESET & BASE
+========================================== */
+
+*{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
 }
 
 html{
@@ -63,179 +209,727 @@ html{
 }
 
 body{
-    background:#0f172a;
-    color:white;
+    font-family:'Poppins',sans-serif;
+    background:#050505;
+    color:#fff;
+    overflow-x:hidden;
 }
 
-/* Navbar */
+a{
+    text-decoration:none;
+}
 
-nav{
-    position:fixed;
-    top:0;
+ul{
+    list-style:none;
+}
+
+::selection{
+    background:#D4AF37;
+    color:#050505;
+}
+
+/* ==========================================
+   NAVBAR — thin line style, no background block
+========================================== */
+
+header{
     width:100%;
-    background:#1e293b;
-    padding:20px 10%;
+    position:sticky;
+    top:0;
+    left:0;
+    z-index:1000;
+    background:rgba(5,5,5,.75);
+    backdrop-filter:blur(14px);
+}
+
+.navbar{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    z-index:1000;
+    padding:22px 8%;
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .logo{
-    color:#38bdf8;
-    font-size:28px;
-    font-weight:bold;
-}
-
-nav ul{
     display:flex;
-    list-style:none;
-    gap:25px;
+    align-items:center;
+    gap:14px;
 }
 
-nav a{
-    text-decoration:none;
-    color:white;
+.logo-circle{
+    width:40px;
+    height:40px;
+    border:1px solid #D4AF37;
+    border-radius:0;
+    color:#D4AF37;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:1px;
+    transform:rotate(45deg);
+}
+
+.logo-circle span{
+    transform:rotate(-45deg);
+    display:block;
+}
+
+.logo-text h2{
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.logo-text p{
+    color:#666;
+    font-size:11px;
+    letter-spacing:1px;
+}
+
+.nav-links{
+    display:flex;
+    gap:40px;
+}
+
+.nav-links li a{
+    color:#999;
+    font-weight:500;
+    font-size:13px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
     transition:.3s;
 }
 
-nav a:hover{
-    color:#38bdf8;
+.nav-links li a:hover,
+.nav-links li a.active{
+    color:#D4AF37;
 }
 
-/* Hero Section */
+.hamburger{
+    display:none;
+    font-size:24px;
+    color:#D4AF37;
+    cursor:pointer;
+}
+
+@media(max-width:900px){
+
+    .nav-links{
+        position:absolute;
+        top:76px;
+        left:0;
+        width:100%;
+        background:#050505;
+        flex-direction:column;
+        text-align:center;
+        padding:25px 0;
+        gap:22px;
+        display:none;
+        border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .nav-links.show-menu{
+        display:flex;
+    }
+
+    .hamburger{
+        display:block;
+    }
+
+}
+
+/* ==========================================
+   HERO — split layout, oversized type
+========================================== */
 
 .hero{
+    position:relative;
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    text-align:center;
-    padding:100px 20px;
+    padding:160px 8% 100px;
 }
 
-.hero h1{
-    font-size:4rem;
+.hero::before{
+    content:"CODE";
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:22vw;
+    font-weight:800;
+    color:transparent;
+    -webkit-text-stroke:1px rgba(255,255,255,.04);
+    white-space:nowrap;
+    z-index:0;
+    pointer-events:none;
 }
 
-.hero span{
-    color:#38bdf8;
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:780px;
+    text-align:left;
+    border-left:2px solid #D4AF37;
+    padding-left:40px;
 }
 
-.hero p{
-    margin:20px auto;
-    max-width:700px;
-    font-size:1.1rem;
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:#F4C542;
+    font-size:13px;
+    font-weight:500;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:26px;
 }
 
-.btn{
+.hero-badge::before{
+    content:"";
+    width:8px;
+    height:8px;
+    background:#D4AF37;
+    border-radius:50%;
     display:inline-block;
-    background:#38bdf8;
-    color:white;
-    padding:12px 30px;
-    border-radius:8px;
-    text-decoration:none;
-    margin-top:20px;
+    box-shadow:0 0 8px #D4AF37;
 }
 
-/* Sections */
-
-section{
-    padding:100px 10%;
-}
-
-.title{
-    text-align:center;
-    color:#38bdf8;
-    margin-bottom:40px;
-}
-
-.card{
-    background:#1e293b;
-    padding:25px;
-    border-radius:15px;
+.hero-content h1{
+    font-size:3.4rem;
+    font-weight:700;
+    line-height:1.15;
     margin-bottom:20px;
-    transition:.4s;
+    color:#fff;
 }
 
-.card:hover{
-    transform:translateY(-10px);
+.hero-content h1 .highlight{
+    color:#D4AF37;
 }
 
-/* Projects */
-
-.projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:20px;
+.typing{
+    color:#666;
+    font-size:1.2rem;
+    font-weight:500;
+    min-height:30px;
+    margin-bottom:22px;
+    font-family:monospace;
 }
 
-/* Skills */
-
-.skills{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-    gap:20px;
+.typing::after{
+    content:"|";
+    color:#D4AF37;
 }
 
-.skill{
-    background:#1e293b;
-    padding:20px;
-    text-align:center;
-    border-radius:10px;
+.hero-content > p{
+    color:#999;
+    font-size:1rem;
+    line-height:1.9;
+    max-width:520px;
+    margin-bottom:38px;
 }
 
-/* Contact */
-
-form{
-    max-width:600px;
-    margin:auto;
+.hero-buttons{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
 }
 
-input,
-textarea{
-    width:100%;
-    padding:15px;
-    margin-bottom:15px;
-    border:none;
-    border-radius:8px;
+.btn-primary{
+    background:#D4AF37;
+    color:#050505;
+    padding:16px 34px;
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    border:1px solid #D4AF37;
+    transition:.3s;
 }
 
-button{
-    width:100%;
-    padding:15px;
-    background:#38bdf8;
-    border:none;
-    color:white;
-    cursor:pointer;
-    border-radius:8px;
+.btn-primary:hover{
+    background:transparent;
+    color:#D4AF37;
 }
 
-footer{
-    background:#1e293b;
-    text-align:center;
-    padding:20px;
+.btn-secondary{
+    background:transparent;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.25);
+    padding:16px 34px;
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+
+.btn-secondary:hover{
+    border-color:#D4AF37;
+    color:#D4AF37;
+}
+
+.btn-outline{
+    display:inline-block;
+    border:1px solid #D4AF37;
+    color:#D4AF37;
+    padding:15px 32px;
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+
+.btn-outline:hover{
+    background:#D4AF37;
+    color:#050505;
 }
 
 @media(max-width:768px){
 
-.hero h1{
-    font-size:2.5rem;
+    .hero-content{
+        border-left:none;
+        border-top:2px solid #D4AF37;
+        padding-left:0;
+        padding-top:30px;
+    }
+
+    .hero-content h1{
+        font-size:2.1rem;
+    }
+
+    .hero-buttons a{
+        width:100%;
+        text-align:center;
+    }
+
 }
 
-nav{
+/* ==========================================
+   SECTION TITLES
+========================================== */
+
+.section-title{
+    max-width:650px;
+    margin:0 0 70px;
+}
+
+.pre-title{
+    color:#D4AF37;
+    font-weight:600;
+    letter-spacing:2px;
+    font-size:13px;
+    text-transform:uppercase;
+}
+
+.section-title h2{
+    font-size:2.2rem;
+    margin:14px 0 10px;
+    color:#fff;
+}
+
+.section-title p{
+    color:#777;
+    font-size:15px;
+}
+
+/* ==========================================
+   WHAT I DO — numbered rows, no cards
+========================================== */
+
+.what-i-do{
+    padding:110px 8%;
+    border-top:1px solid rgba(255,255,255,.06);
+}
+
+.services-grid{
+    display:flex;
     flex-direction:column;
 }
 
-nav ul{
-    margin-top:10px;
+.service-card{
+    display:grid;
+    grid-template-columns:80px 1fr 40px;
+    align-items:center;
+    gap:30px;
+    padding:34px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    text-align:left;
+    transition:.3s;
+    position:relative;
 }
+
+.service-card::before{
+    counter-increment:service;
+    content:"0" counter(service);
+    font-size:22px;
+    font-weight:700;
+    color:#333;
+    transition:.3s;
+}
+
+.services-grid{
+    counter-reset:service;
+}
+
+.service-card i{
+    display:none;
+}
+
+.service-card h3{
+    color:#fff;
+    font-size:20px;
+    margin-bottom:6px;
+}
+
+.service-card p{
+    color:#888;
+    line-height:1.7;
+    font-size:14px;
+}
+
+.service-card::after{
+    content:"→";
+    font-size:22px;
+    color:#333;
+    transition:.3s;
+    justify-self:end;
+}
+
+.service-card:hover{
+    padding-left:15px;
+}
+
+.service-card:hover::before,
+.service-card:hover::after{
+    color:#D4AF37;
+}
+
+@media(max-width:600px){
+
+    .service-card{
+        grid-template-columns:50px 1fr;
+    }
+
+    .service-card::after{
+        display:none;
+    }
+
+}
+
+/* ==========================================
+   FEATURED PROJECTS — bordered, minimal
+========================================== */
+
+.featured-projects{
+    padding:110px 8%;
+    border-top:1px solid rgba(255,255,255,.06);
+}
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:rgba(255,255,255,.08);
+}
+
+.project-card{
+    background:#050505;
+    padding:40px 32px;
+    transition:.3s;
+}
+
+.project-card:hover{
+    background:#0d0d0d;
+}
+
+.project-tag{
+    display:inline-block;
+    color:#D4AF37;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:22px;
+}
+
+.project-card h3{
+    color:#fff;
+    font-size:21px;
+    margin-bottom:12px;
+}
+
+.project-card p{
+    color:#888;
+    line-height:1.7;
+    margin-bottom:26px;
+    font-size:14px;
+}
+
+.project-link{
+    color:#fff;
+    font-weight:500;
+    font-size:13px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    border-bottom:1px solid #D4AF37;
+    padding-bottom:4px;
+    transition:.3s;
+}
+
+.project-link:hover{
+    color:#D4AF37;
+    gap:14px;
+}
+
+.view-all-wrap{
+    text-align:center;
+    margin-top:55px;
+}
+
+@media(max-width:992px){
+
+    .projects-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .what-i-do,
+    .featured-projects{
+        padding:80px 6%;
+    }
+
+    .projects-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-title h2{
+        font-size:1.8rem;
+    }
+
+}
+
+/* ==========================================
+   CTA — outlined box, not solid gold block
+========================================== */
+
+.cta{
+    margin:0 8% 110px;
+    padding:70px 8%;
+    text-align:center;
+    border:1px solid rgba(212,175,55,.35);
+    position:relative;
+}
+
+.cta::before,
+.cta::after{
+    content:"";
+    position:absolute;
+    width:16px;
+    height:16px;
+    border:2px solid #D4AF37;
+}
+
+.cta::before{
+    top:-1px;
+    left:-1px;
+    border-right:none;
+    border-bottom:none;
+}
+
+.cta::after{
+    bottom:-1px;
+    right:-1px;
+    border-left:none;
+    border-top:none;
+}
+
+.cta span{
+    color:#D4AF37;
+    font-weight:600;
+    letter-spacing:2px;
+    font-size:13px;
+    text-transform:uppercase;
+}
+
+.cta h2{
+    color:#fff;
+    font-size:2.2rem;
+    margin:16px 0;
+}
+
+.cta p{
+    color:#999;
+    max-width:500px;
+    margin:0 auto 34px;
+    font-size:15px;
+}
+
+@media(max-width:768px){
+
+    .cta{
+        margin:0 5% 80px;
+        padding:50px 6%;
+    }
+
+    .cta h2{
+        font-size:1.8rem;
+    }
+
+}
+
+/* ==========================================
+   FOOTER — open layout, no card blocks
+========================================== */
+
+footer{
+    padding:70px 8% 30px;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
+    margin-bottom:50px;
+}
+
+.footer-logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:18px;
+}
+
+.footer-logo h3{
+    color:#fff;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    font-size:15px;
+}
+
+.footer-box p{
+    color:#777;
+    line-height:1.8;
+    font-size:14px;
+    max-width:320px;
+}
+
+.footer-box h3{
+    color:#D4AF37;
+    margin-bottom:18px;
+    font-size:13px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    font-weight:600;
+}
+
+.footer-box ul li{
+    margin:10px 0;
+}
+
+.footer-box ul li a{
+    color:#888;
+    transition:.3s;
+    font-size:14px;
+}
+
+.footer-box ul li a:hover{
+    color:#D4AF37;
+}
+
+.social-icons{
+    display:flex;
+    gap:16px;
+}
+
+.social-icons a{
+    width:38px;
+    height:38px;
+    border:1px solid rgba(255,255,255,.15);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#999;
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    border-color:#D4AF37;
+    color:#D4AF37;
+}
+
+footer hr{
+    border:none;
+    border-top:1px solid rgba(255,255,255,.08);
+    margin-bottom:25px;
+}
+
+.footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.footer-bottom p{
+    color:#666;
+    font-size:13px;
+}
+
+#backToTop{
+    background:transparent;
+    border:1px solid rgba(212,175,55,.4);
+    color:#D4AF37;
+    padding:10px 20px;
+    cursor:pointer;
+    font-size:13px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+
+#backToTop:hover{
+    background:#D4AF37;
+    color:#050505;
+}
+
+@media(max-width:768px){
+
+    .footer-container{
+        grid-template-columns:1fr;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+    }
+
 }
 </style>
 
 <script>
+/* ==========================================
+   TYPING EFFECT
+========================================== */
+
 const text = [
     "Software Engineer",
+    "Fullstack Developer",
     "Java Developer",
     "Frontend Developer",
     "Problem Solver"
@@ -268,6 +962,72 @@ let letter = "";
     }
 
 })();
+
+
+/* ==========================================
+   HAMBURGER MENU
+========================================== */
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show-menu");
+});
+
+// close menu when a link is clicked (mobile)
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("show-menu");
+    });
+});
+
+
+/* ==========================================
+   BACK TO TOP BUTTON
+========================================== */
+
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+    if(window.scrollY > 400){
+        backToTop.style.display = "inline-block";
+    }
+    else{
+        backToTop.style.display = "none";
+    }
+});
+
+backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+
+/* ==========================================
+   SCROLL REVEAL (fade/slide in on scroll)
+========================================== */
+
+const revealTargets = document.querySelectorAll(
+    ".service-card, .project-card, .hero-content"
+);
+
+const revealObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+            entry.target.classList.add("reveal-visible");
+            revealObserver.unobserve(entry.target);
+        }
+
+    });
+
+}, { threshold: 0.15 });
+
+revealTargets.forEach(target => {
+    target.classList.add("reveal-hidden");
+    revealObserver.observe(target);
+});
 </script>
 
 </body>

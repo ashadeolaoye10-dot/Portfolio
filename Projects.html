@@ -1,82 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Pius Ashade</title>
 
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Projects by Pius Ashade — web applications built with Java, HTML, CSS, JavaScript and MongoDB.">
+
+<title>Projects | Pius Ashade</title>
+
+<link rel="stylesheet" href="css/projects.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 <body>
-<nav>
-    <div class="logo">Pius.dev</div>
 
-    <ul>
+<header>
+<nav class="navbar">
+
+    <div class="logo">
+        <div class="logo-circle"><span>PA</span></div>
+        <div class="logo-text">
+            <h2>Pius Ashade</h2>
+            <p>Software Engineer</p>
+        </div>
+    </div>
+
+    <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="AboutPro.html">About</a></li>
-        <li><a href="Projects.html">Projects</a></li>
+        <li><a href="Projects.html" class="active">Projects</a></li>
         <li><a href="Skills.html">Skills</a></li>
         <li><a href="Contact1.html">Contact</a></li>
     </ul>
-</nav>
-<section class="projects-section">
 
-    <div class="projects-header">
-        <h1>My Projects</h1>
-        <p>
-            Some projects I have built while learning
-            software engineering and web development.
-        </p>
+    <div class="hamburger" id="hamburger">
+        <i class="fa-solid fa-bars"></i>
     </div>
+
+</nav>
+</header>
+
+<section class="page-header">
+
+    <span class="pre-title">Portfolio</span>
+    <h1>My <span class="highlight">Projects</span></h1>
+    <p>A collection of what I've built while learning software engineering and web development.</p>
+
+</section>
+
+<section class="projects-section">
 
     <div class="projects-grid">
 
-        <!-- LMS -->
-
         <div class="project-box">
 
-            <img src="james-PT-gOmCUlCY-unsplash.jpg"
-                 alt="Devotional Website">
+            <div class="project-img">
+                <img src="james-PT-gOmCUlCY-unsplash.jpg" alt="Christian Devotional Website">
+            </div>
 
             <div class="project-content">
 
-                <h2> Christian Devotional Website</h2>
+                <h2>Christian Devotional Website</h2>
 
-                <p>
-                    A platform for managing students,
-                    courses, assignments and results.
-                </p>
+                <p>A multi-page devotional web app for daily reading, reflection and prayer.</p>
 
                 <div class="tech">
-                    <span>JavaScript</span>
-                    <span>Css</span>
                     <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
                 </div>
 
                 <div class="project-buttons">
-                    <a href="https://github.com/ashadeolaoye10-dot">GitHub</a>
-                    <a href="Homedevo.html">Live Demo</a>
+                    <a href="https://github.com/ashadeolaoye10-dot" class="btn-primary">GitHub</a>
+                    <a href="Homedevo.html" class="btn-secondary">Live Demo</a>
                 </div>
 
             </div>
 
         </div>
 
-        <!-- Bank -->
-
         <div class="project-box">
 
-            <img src="etienne-martin-2_K82gx9Uk8-unsplash.jpg"
-                 alt="Bank Website">
+            <div class="project-img">
+                <img src="etienne-martin-2_K82gx9Uk8-unsplash.jpg" alt="Bank Website Frontend">
+            </div>
 
             <div class="project-content">
 
                 <h2>Bank Website Frontend</h2>
 
-                <p>
-                    Responsive banking website with
-                    modern UI and animations.
-                </p>
+                <p>A responsive, frontend-only simulated banking site with modern UI and animations.</p>
 
                 <div class="tech">
                     <span>HTML</span>
@@ -85,28 +100,25 @@
                 </div>
 
                 <div class="project-buttons">
-                    <a href="https://github.com/ashadeolaoye10-dot">GitHub</a>
-                    <a href="HomePage.html">Live Demo</a>
+                    <a href="https://github.com/ashadeolaoye10-dot" class="btn-primary">GitHub</a>
+                    <a href="HomePage.html" class="btn-secondary">Live Demo</a>
                 </div>
 
             </div>
 
         </div>
 
-        <!-- Ping Pong -->
-
         <div class="project-box">
 
-            <img src="ChatGPT Image Jun 30.png"
-                 alt="Plogo Food Webpage">
+            <div class="project-img">
+                <img src="ChatGPT Image Jun 30.png" alt="Nigerian Attire Exhibition Webpage">
+            </div>
 
             <div class="project-content">
 
-                <h2>Nigerian Attire ExhibitionWebpage</h2>
+                <h2>Nigerian Attire Exhibition Webpage</h2>
 
-                <p>
-                A cultural exhibition website showcasing the beauty, diversity, and heritage of Nigerian traditional attire.
-                </p>
+                <p>A cultural exhibition site showcasing the beauty, diversity, and heritage of Nigerian traditional attire.</p>
 
                 <div class="tech">
                     <span>HTML</span>
@@ -115,8 +127,8 @@
                 </div>
 
                 <div class="project-buttons">
-                    <a href="https://github.com/ashadeolaoye10-dot">GitHub</a>
-                    <a href="Exhibition.html">Live Demo</a>
+                    <a href="https://github.com/ashadeolaoye10-dot" class="btn-primary">GitHub</a>
+                    <a href="Exhibition.html" class="btn-secondary">Live Demo</a>
                 </div>
 
             </div>
@@ -125,19 +137,15 @@
 
         <div class="project-box">
 
-            <img src="mohamed-nohassi--0xMiYQmk8g-unsplash.jpg"
-                 alt="ChatBot">
+            <div class="project-img">
+                <img src="mohamed-nohassi--0xMiYQmk8g-unsplash.jpg" alt="ChatBot">
+            </div>
 
             <div class="project-content">
 
-                <h2>ChatBot </h2>
+                <h2>ChatBot</h2>
 
-                <p>
-                    A chatbot AI website is a simple conversational system that responds to user questions based on predefined rules and limited understanding.
-                    It is designed to assist users with basic interactions and information,
-                    but it has limitations in handling complex or out-of-scope queries.
-                </p>
-                </p>
+                <p>A simple conversational system that responds to user questions based on predefined rules, built to assist with basic interactions and information.</p>
 
                 <div class="tech">
                     <span>HTML</span>
@@ -146,8 +154,8 @@
                 </div>
 
                 <div class="project-buttons">
-                    <a href="#">GitHub</a>
-                    <a href="Chatbot.html">Live Demo</a>
+                    <a href="#" class="btn-primary">GitHub</a>
+                    <a href="Chatbot.html" class="btn-secondary">Live Demo</a>
                 </div>
 
             </div>
@@ -156,19 +164,43 @@
 
         <div class="project-box">
 
-            <img src="compagnons-HsTnjCVQ798-unsplash.jpg"
-                 alt="CBT Websites">
+    <div class="project-img">
+        <img src="ChatGPT Image Sep 22, 2026, 03_13_13 PM.png" alt="Unicorn Innovations Hill Recruitment Website">
+    </div>
+
+    <div class="project-content">
+
+        <h2>Recruitment Website</h2>
+
+        <p>A multi-page job platform where admins post openings and applicants apply directly, with applications routed to the admin's inbox for review.</p>
+
+        <div class="tech">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Java</span>
+            <span>MongoDB</span>
+        </div>
+
+        <div class="project-buttons">
+            <a href="https://github.com/ashadeolaoye10-dot/UnicornInnovationsJobBackend" class="btn-primary">GitHub</a>
+            <a href="https://www.unicorninnovationshill.com" class="btn-secondary">Live Demo</a>
+        </div>
+
+    </div>
+
+</div>
+        <div class="project-box">
+
+            <div class="project-img">
+                <img src="compagnons-HsTnjCVQ798-unsplash.jpg" alt="CBT Website">
+            </div>
 
             <div class="project-content">
-                <h2>CBT Websites</h2>
 
-                <p>
-                 An online platform designed for conducting computer-Based Tests,
-                 allowing users to take exams digitally,
-                 allowing users to take exams digitally, answer questions,
-                 and recieve results effeciently in a structured and automated way.
-                </p>
-                </p>
+                <h2>CBT Website</h2>
+
+                <p>An online platform for conducting Computer-Based Tests — users take exams digitally, answer questions, and receive results automatically.</p>
 
                 <div class="tech">
                     <span>HTML</span>
@@ -177,29 +209,26 @@
                 </div>
 
                 <div class="project-buttons">
-                    <a href="#">GitHub</a>
-                    <a href="CBT.html">Live Demo</a>
+                    <a href="#" class="btn-primary">GitHub</a>
+                    <a href="CBT.html" class="btn-secondary">Live Demo</a>
                 </div>
 
             </div>
 
         </div>
 
-        <!-- Future Project -->
+        <div class="project-box project-box-upcoming">
 
-        <div class="project-box">
-
-            <img src="muhammad-rosyid-izzulkhaq-pBTggy2z2do-unsplash.jpg"
-                 alt="Task Manager">
+            <div class="project-img">
+                <img src="muhammad-rosyid-izzulkhaq-pBTggy2z2do-unsplash.jpg" alt="Task Manager App">
+                <div class="upcoming-badge">Coming Soon</div>
+            </div>
 
             <div class="project-content">
 
                 <h2>Task Manager App</h2>
 
-                <p>
-                    Organize tasks, deadlines and
-                    project activities efficiently.
-                </p>
+                <p>A tool to organize tasks, deadlines and project activities efficiently.</p>
 
                 <div class="tech">
                     <span>Java</span>
@@ -207,8 +236,8 @@
                 </div>
 
                 <div class="project-buttons">
-                    <a href="#">GitHub</a>
-                    <a href="#">Coming Soon</a>
+                    <a href="#" class="btn-primary btn-disabled">GitHub</a>
+                    <a href="#" class="btn-secondary btn-disabled">Coming Soon</a>
                 </div>
 
             </div>
@@ -219,314 +248,709 @@
 
 </section>
 
+<section class="cta">
+
+    <span>Let's Work Together</span>
+    <h2>Have a Project In Mind?</h2>
+    <p>I'm open to freelance work, internships, and collaboration opportunities.</p>
+    <a href="Contact1.html" class="btn-primary">Contact Me</a>
+
+</section>
+
 <footer>
-    <p>© 2026 Pius Ashade. All Rights Reserved.</p>
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <div class="footer-logo">
+                <div class="logo-circle"><span>PA</span></div>
+                <h3>Pius Ashade</h3>
+            </div>
+            <p>Software engineering student building clean, functional web applications.</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="AboutPro.html">About</a></li>
+                <li><a href="Projects.html">Projects</a></li>
+                <li><a href="Contact1.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-box">
+            <h3>Connect</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Pius Ashade. All Rights Reserved.</p>
+        <button id="backToTop">Back to Top <i class="fa-solid fa-arrow-up"></i></button>
+    </div>
+
 </footer>
 
 <style>
-    /* ===== PROJECTS PAGE (DEEP VIBE THEME) ===== */
+/* ==========================================
+   RESET & BASE
+========================================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-html,
+html{
+    scroll-behavior:smooth;
+}
+
 body{
+    font-family:'Poppins',sans-serif;
+    background:#050505;
+    color:#fff;
     overflow-x:hidden;
 }
-.projects-section{
-    padding:120px 10% 80px;
-    background:#070B1A;
-    min-height:100vh;
+
+a{
+    text-decoration:none;
 }
 
-.projects-header{
+ul{
+    list-style:none;
+}
+
+::selection{
+    background:#D4AF37;
+    color:#050505;
+}
+
+/* ==========================================
+   NAVBAR
+========================================== */
+
+header{
+    width:100%;
+    position:sticky;
+    top:0;
+    left:0;
+    z-index:1000;
+    background:rgba(5,5,5,.75);
+    backdrop-filter:blur(14px);
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 8%;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.logo-circle{
+    width:40px;
+    height:40px;
+    border:1px solid #D4AF37;
+    color:#D4AF37;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:1px;
+    transform:rotate(45deg);
+}
+
+.logo-circle span{
+    transform:rotate(-45deg);
+    display:block;
+}
+
+.logo-text h2{
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.logo-text p{
+    color:#0A4DCC;
+    font-size:11px;
+    letter-spacing:1px;
+    font-weight:600;
+}
+
+.nav-links{
+    display:flex;
+    gap:40px;
+}
+
+.nav-links li a{
+    color:#999;
+    font-weight:500;
+    font-size:13px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active{
+    color:#D4AF37;
+}
+
+.hamburger{
+    display:none;
+    font-size:24px;
+    color:#D4AF37;
+    cursor:pointer;
+}
+
+@media(max-width:900px){
+
+    .nav-links{
+        position:absolute;
+        top:76px;
+        left:0;
+        width:100%;
+        background:#050505;
+        flex-direction:column;
+        text-align:center;
+        padding:25px 0;
+        gap:22px;
+        display:none;
+        border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .nav-links.show-menu{
+        display:flex;
+    }
+
+    .hamburger{
+        display:block;
+    }
+
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.btn-primary{
+    background:#D4AF37;
+    color:#050505;
+    padding:12px 26px;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    border:1px solid #D4AF37;
+    transition:.3s;
+    display:inline-block;
     text-align:center;
-    margin-bottom:60px;
 }
 
-.projects-header h1{
+.btn-primary:hover{
+    background:transparent;
+    color:#D4AF37;
+}
+
+.btn-secondary{
+    background:transparent;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.25);
+    padding:12px 26px;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    transition:.3s;
+    display:inline-block;
+    text-align:center;
+}
+
+.btn-secondary:hover{
+    border-color:#0A4DCC;
+    color:#0A4DCC;
+}
+
+.btn-disabled{
+    opacity:.4;
+    pointer-events:none;
+}
+
+/* ==========================================
+   PAGE HEADER
+========================================== */
+
+.page-header{
+    padding:160px 8% 60px;
+    background:linear-gradient(120deg,rgba(10,77,204,.10),transparent 60%);
+    border-left:3px solid #0A4DCC;
+    margin-left:8%;
+    max-width:780px;
+}
+
+.page-header .pre-title{
+    color:#D4AF37;
+    font-weight:600;
+    letter-spacing:2px;
+    font-size:13px;
+    text-transform:uppercase;
+}
+
+.page-header h1{
     font-size:3rem;
-    color:#22D3EE;
-    text-shadow:0 0 15px rgba(34,211,238,0.4);
+    font-weight:700;
+    color:#fff;
+    margin:14px 0 16px;
+    line-height:1.2;
 }
 
-.projects-header p{
-    color:#cbd5e1;
-    margin-top:10px;
-    font-size:1.1rem;
+.page-header h1 .highlight{
+    color:#D4AF37;
 }
 
-/* GRID */
+.page-header p{
+    color:#999;
+    font-size:1rem;
+    line-height:1.8;
+    max-width:520px;
+}
+
+@media(max-width:768px){
+
+    .page-header{
+        padding:130px 6% 50px;
+        margin-left:6%;
+        border-left:none;
+        border-top:3px solid #0A4DCC;
+        padding-top:30px;
+    }
+
+    .page-header h1{
+        font-size:2.1rem;
+    }
+
+}
+
+/* ==========================================
+   PROJECTS GRID
+========================================== */
+
+.projects-section{
+    padding:60px 8% 110px;
+}
 
 .projects-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:1px;
+    background:rgba(255,255,255,.08);
 }
 
-/* CARD */
-
 .project-box{
-    background:rgba(15,22,48,0.8);
-    border:1px solid rgba(167,139,250,0.2);
-    border-radius:16px;
-    overflow:hidden;
-    transition:0.4s ease;
-    backdrop-filter: blur(10px);
-    box-shadow:0 0 20px rgba(0,0,0,0.4);
+    background:#050505;
+    transition:.3s;
+    display:flex;
+    flex-direction:column;
 }
 
 .project-box:hover{
-    transform:translateY(-12px);
-    border-color:#22D3EE;
-    box-shadow:0 0 25px rgba(34,211,238,0.25);
+    background:#0d0d0d;
 }
 
-/* IMAGE */
-
-.project-box img{
+.project-img{
     width:100%;
     height:220px;
-    object-fit:cover;
-    filter:brightness(0.9);
+    overflow:hidden;
+    position:relative;
 }
 
-/* CONTENT */
+.project-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:grayscale(40%) brightness(.85);
+    transition:.5s ease;
+}
+
+.project-box:hover .project-img img{
+    filter:grayscale(0%) brightness(1);
+    transform:scale(1.08);
+}
+
+.upcoming-badge{
+    position:absolute;
+    top:16px;
+    right:16px;
+    background:#0A4DCC;
+    color:#fff;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    padding:6px 14px;
+}
 
 .project-content{
-    padding:20px;
+    padding:32px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
 }
 
 .project-content h2{
-    color:#A78BFA;
-    margin-bottom:10px;
-    font-size:1.4rem;
+    color:#fff;
+    font-size:1.3rem;
+    margin-bottom:12px;
 }
 
 .project-content p{
-    color:#E5E7EB;
-    line-height:1.6;
-    margin-bottom:15px;
+    color:#888;
+    line-height:1.7;
+    font-size:14px;
+    margin-bottom:20px;
+    flex:1;
 }
-
-/* TECH TAGS */
 
 .tech{
     display:flex;
     flex-wrap:wrap;
-    gap:10px;
-    margin-bottom:18px;
+    gap:8px;
+    margin-bottom:24px;
 }
 
 .tech span{
-    background:rgba(34,211,238,0.1);
-    border:1px solid rgba(34,211,238,0.3);
-    color:#22D3EE;
-    padding:6px 12px;
-    border-radius:20px;
-    font-size:13px;
+    border:1px solid rgba(212,175,55,.35);
+    color:#D4AF37;
+    padding:5px 14px;
+    font-size:12px;
 }
-
-/* BUTTONS */
 
 .project-buttons{
     display:flex;
-    gap:10px;
+    gap:12px;
 }
 
-.project-buttons a{
-    text-decoration:none;
-    padding:10px 16px;
-    border-radius:8px;
-    font-size:14px;
-    transition:0.3s;
+.project-box-upcoming .project-img img{
+    filter:grayscale(80%) brightness(.5);
 }
 
-/* Primary button */
-.project-buttons a:first-child{
-    background:#22D3EE;
-    color:#070B1A;
-    font-weight:bold;
-}
+@media(max-width:768px){
 
-/* Secondary button */
-.project-buttons a:last-child{
-    border:1px solid #A78BFA;
-    color:#A78BFA;
-}
-
-.project-buttons a:hover{
-    transform:scale(1.05);
-}
-
-/* FOOTER (if needed) */
-
-footer{
-    background:#0F1630;
-    text-align:center;
-    padding:20px;
-    color:#cbd5e1;
-}
-
-/* ===== HEADER (DEEP COOL VIBE) ===== */
-
-nav{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    padding:18px 10%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    background:rgba(7,11,26,0.7);
-    backdrop-filter: blur(12px);
-    border-bottom:1px solid rgba(34,211,238,0.15);
-
-    z-index:1000;
-}
-
-/* LOGO */
-
-.logo{
-    font-size:24px;
-    font-weight:bold;
-    color:#22D3EE;
-    text-shadow:0 0 10px rgba(34,211,238,0.5);
-    letter-spacing:1px;
-}
-
-/* MENU */
-
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:95px;
-}
-
-nav ul li a{
-    text-decoration:none;
-    color:#E5E7EB;
-    font-size:15px;
-    transition:0.3s;
-    position:relative;
-}
-
-/* hover glow effect */
-nav ul li a:hover{
-    color:#22D3EE;
-}
-
-/* animated underline */
-nav ul li a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-6px;
-    width:0%;
-    height:2px;
-    background:#A78BFA;
-    transition:0.3s;
-}
-
-nav ul li a:hover::after{
-    width:100%;
-}
-
-/* MOBILE RESPONSIVE */
-
-/* Mobile Responsive Design */
-/* MOBILE RESPONSIVE */
-@media (max-width:768px){
-
-    /* HEADER */
-    nav{
-        padding:15px 5%;
-        flex-direction:column;
-        gap:15px;
-    }
-
-    .logo{
-        font-size:2rem;
-    }
-
-    nav ul{
-        width:100%;
-        display:flex;
-        justify-content:center;
-        flex-wrap:wrap;
-        gap:18px;
-    }
-
-    nav ul li a{
-        font-size:14px;
-    }
-
-    /* PROJECT SECTION */
     .projects-section{
-        padding:140px 20px 60px;
+        padding:50px 6% 80px;
     }
 
-    .projects-header h1{
-        font-size:4rem;
-        line-height:1;
-    }
-
-    .projects-header p{
-        font-size:1rem;
-        padding:0 10px;
-    }
-
-    /* GRID */
-    .projects-grid{
+        .projects-grid{
         grid-template-columns:1fr;
-        gap:25px;
-    }
-
-    /* CARD */
-    .project-box{
-        width:100%;
-    }
-
-    .project-box img{
-        width:100%;
-        height:220px;
-        object-fit:cover;
     }
 
     .project-content{
-        padding:18px;
+        padding:26px;
     }
 
-    .project-content h2{
-        font-size:1.3rem;
-    }
-
-    .project-content p{
-        font-size:0.95rem;
-        line-height:1.6;
-    }
-
-    /* BUTTONS */
     .project-buttons{
         flex-direction:column;
     }
 
-    .project-buttons a{
-        width:100%;
+}
+
+/* ==========================================
+   CTA
+========================================== */
+
+.cta{
+    margin:0 8% 110px;
+    padding:70px 8%;
+    text-align:center;
+    background:linear-gradient(135deg,#D4AF37,#F4C542,#B8860B);
+}
+
+.cta span{
+    color:#050505;
+    font-weight:700;
+    letter-spacing:2px;
+    font-size:13px;
+    text-transform:uppercase;
+}
+
+.cta h2{
+    color:#050505;
+    font-size:2.2rem;
+    margin:16px 0;
+}
+
+.cta p{
+    color:rgba(5,5,5,.75);
+    max-width:500px;
+    margin:0 auto 34px;
+    font-size:15px;
+}
+
+.cta .btn-primary{
+    background:#050505;
+    color:#F4C542;
+    border-color:#050505;
+    padding:16px 34px;
+    font-size:14px;
+}
+
+.cta .btn-primary:hover{
+    background:transparent;
+    color:#050505;
+}
+
+@media(max-width:768px){
+
+    .cta{
+        margin:0 5% 80px;
+        padding:50px 6%;
+    }
+
+    .cta h2{
+        font-size:1.8rem;
+    }
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+    padding:70px 8% 30px;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
+    margin-bottom:50px;
+}
+
+.footer-logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:18px;
+}
+
+.footer-logo h3{
+    color:#fff;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    font-size:15px;
+}
+
+.footer-box p{
+    color:#777;
+    line-height:1.8;
+    font-size:14px;
+    max-width:320px;
+}
+
+.footer-box h3{
+    color:#D4AF37;
+    margin-bottom:18px;
+    font-size:13px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    font-weight:600;
+}
+
+.footer-box ul li{
+    margin:10px 0;
+}
+
+.footer-box ul li a{
+    color:#888;
+    transition:.3s;
+    font-size:14px;
+}
+
+.footer-box ul li a:hover{
+    color:#D4AF37;
+}
+
+.social-icons{
+    display:flex;
+    gap:16px;
+}
+
+.social-icons a{
+    width:38px;
+    height:38px;
+    border:1px solid rgba(255,255,255,.15);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#999;
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    border-color:#0A4DCC;
+    background:#0A4DCC;
+    color:#fff;
+}
+
+footer hr{
+    border:none;
+    border-top:1px solid rgba(255,255,255,.08);
+    margin-bottom:25px;
+}
+
+.footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.footer-bottom p{
+    color:#666;
+    font-size:13px;
+}
+
+#backToTop{
+    display:none;
+    background:transparent;
+    border:1px solid rgba(212,175,55,.4);
+    color:#D4AF37;
+    padding:10px 20px;
+    cursor:pointer;
+    font-size:13px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+
+#backToTop:hover{
+    background:#D4AF37;
+    color:#050505;
+}
+
+@media(max-width:768px){
+
+    .footer-container{
+        grid-template-columns:1fr;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
         text-align:center;
     }
 
-    /* PREVENT WHITE SPACE */
-    html,
-    body{
-        overflow-x:hidden;
-    }
+}
+
+/* ==========================================
+   SCROLL REVEAL
+========================================== */
+
+.reveal-hidden{
+    opacity:0;
+    transform:translateY(30px);
+    transition:opacity .7s ease, transform .7s ease;
+}
+
+.reveal-visible{
+    opacity:1;
+    transform:translateY(0);
 }
 </style>
+<script>
+/* ==========================================
+   HAMBURGER MENU
+========================================== */
 
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show-menu");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("show-menu");
+    });
+});
+
+
+/* ==========================================
+   BACK TO TOP BUTTON
+========================================== */
+
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+    if(window.scrollY > 400){
+        backToTop.style.display = "inline-block";
+    }
+    else{
+        backToTop.style.display = "none";
+    }
+});
+
+backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+
+/* ==========================================
+   SCROLL REVEAL — Projects page elements
+========================================== */
+
+const revealTargets = document.querySelectorAll(
+    ".page-header, .project-box, .cta"
+);
+
+const revealObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+            entry.target.classList.add("reveal-visible");
+            revealObserver.unobserve(entry.target);
+        }
+
+    });
+
+}, { threshold: 0.15 });
+
+revealTargets.forEach(target => {
+    target.classList.add("reveal-hidden");
+    revealObserver.observe(target);
+});
+
+
+/* ==========================================
+   STAGGERED REVEAL FOR PROJECT CARDS
+========================================== */
+
+document.querySelectorAll(".project-box").forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.1}s`;
+});  
+</script>
 </body>
 </html>
